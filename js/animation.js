@@ -30,7 +30,7 @@ window.onload = function() {
     }
   }
   
-  r.camera.position = [0,0,14];
+  r.camera.position = [0,0,17];
   
   r.render();
     

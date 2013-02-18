@@ -35,7 +35,7 @@ window.onload = function() {
       // configure the edge length
       c.lengthX = c.lengthY = c.lengthZ = 2;
       // .. and the color based on the
-      c.color = [ 150 % x, 150 % y, 1 ];
+      c.color = [ 0, 0.8, 1 ];
 
       // add it
       r.add(c);

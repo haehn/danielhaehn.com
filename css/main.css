@@ -7,14 +7,20 @@ body {
 		and slightly modified
   */
 	background-image: url("../gfx/bg.png");
+	color: #a0a3a7;
+	font: normal normal 14px/18px "HelveticaNeue-Light",
+		"Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+	text-align: justify;
 }
 
 #navbar {
-	height: 40px; background: rgba(0, 0, 0, 0.5);
+	height: 40px;
+	background: rgba(0, 0, 0, 0.5);
 }
 
 #title {
-	margin-top: 16px; margin-left: -20px;
+	margin-top: 16px;
+	margin-left: -20px;
 }
 
 .topcorner {
@@ -27,4 +33,22 @@ body {
 
 .hidden {
 	display: none;
+}
+
+.highlight {
+	color: #0cf;
+}
+
+.roundimage {
+	-webkit-border-radius: 30em;
+	-moz-border-radius: 30em;
+	border-radius: 30em;
+	border: 2px solid whitesmoke;
+	vertical-align: middle;
+}
+
+#content {
+	margin-left: 130px;
+	position: absolute;
+	margin-top: 20px;
 }

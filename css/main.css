@@ -1,3 +1,30 @@
+body {
+	padding: 0px;
+	margin: 0px;
+	/* 	
+		background from
+		 http://designerfied.com/wp-content/themes/dfeazy/fullpage-bg/bg-04.png
+		and slightly modified
+  */
+	background-image: url("../gfx/bg.png");
+}
+
+#navbar {
+	height: 40px; background: rgba(0, 0, 0, 0.5);
+}
+
+#title {
+	margin-top: 16px; margin-left: -20px;
+}
+
 .topcorner {
-	float:left;width:155px;height:120px;margin-top: -20px;margin-left:-10px;
+	float: left;
+	width: 155px;
+	height: 120px;
+	margin-top: -20px;
+	margin-left: -10px;
+}
+
+.hidden {
+	display: none;
 }

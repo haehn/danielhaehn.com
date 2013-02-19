@@ -52,3 +52,12 @@ body {
 	position: absolute;
 	margin-top: 20px;
 }
+
+.socialicon {
+	opacity: 0.1;
+	margin-left: 2px;
+}
+
+.socialicon:hover {
+	opacity: 0.3;
+}

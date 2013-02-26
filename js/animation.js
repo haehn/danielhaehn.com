@@ -1,4 +1,4 @@
-window.onload = function() {
+animation = function() {
   try {
     
     // create and initialize a 3D renderer

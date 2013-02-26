@@ -3,6 +3,17 @@
 <link type='text/css' rel='stylesheet' href='css/main.css' />
 <script type='text/javascript' src='js/xtk.js'></script>
 <script type='text/javascript' src='js/animation.js'></script>
+<script type='text/javascript' src='js/dstack.js'></script>
+<script type="text/javascript">
+
+window.onload = function() {
+  // create the XTK animation
+  animation();
+  // .. and the DStack
+  var dstack = new DStack('stack');
+}
+
+</script>
 </head>
 
 <body>
@@ -15,19 +26,25 @@
 	</div>
 	<div id='content'>
 		<img src='gfx/daniel.jpg' class='roundimage' style='float: left'>
-		<div style='margin-left: 110px; width: 360px;'>
+		<div id='intro' style='margin-left: 110px; width: 360px;'>
 			Hi! My name is <span class='highlight'>Daniel Haehn</span> and I am a
 			computer guy with a passion for <span class='highlight'>open
 				source technologies</span> and <span class='highlight'>open science
 				methodologies</span>. I have a strong interest in <span class='highlight'>visualization</span>,
 			<span class='highlight'>medical imaging</span> and <span
-				class='highlight'>human-computer interaction</span>.
-				<br><br>
-				Currently, I am a <span class='highlight'>Research Software Developer</span> at <span class='highlight'>Boston Children's Hospital</span>.<br><br>
-				<img class='socialicon' src='gfx/twitter.png'>
-				<img class='socialicon' src='gfx/linkedin.png'>
-				<img class='socialicon' src='gfx/github.png'>
-				<img class='socialicon' src='gfx/mail.png'>
+				class='highlight'>human-computer interaction</span>. <br>
+			<br> Currently, I am a <span class='highlight'>Research
+				Software Developer</span> at <span class='highlight'>Boston
+				Children's Hospital</span>.<br>
+			<br> <img class='socialicon' src='gfx/twitter.png'> <img
+				class='socialicon' src='gfx/linkedin.png'> <img
+				class='socialicon' src='gfx/github.png'> <img
+				class='socialicon' src='gfx/mail.png'>
+		</div>
+		<div id='stack' style='position: absolute; left: 300px; top: 140px;'>
+			<div style='height: 333px; width: 500px; background: yellow;'></div>
+			<div style='height: 353px; width: 500px; background: red;'></div>
+			<div style='height: 343px; width: 500px; background: green;'></div>
 		</div>
 	</div>
 </body>

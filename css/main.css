@@ -63,7 +63,18 @@ body {
 }
 
 .stackelement {
-	width: 500px;
-	background: rgba(0,0,0,0.7);
+	background: rgba(0, 0, 0, 1.0);
 	border: 2px solid whitesmoke;
+}
+
+.stackelement:hover {
+	background: rgba(0, 0, 0, 1);
+}
+
+.stackimage {
+	opacity: 1.0;
+}
+
+.stackimage:hover {
+	opacity: 1.0;
 }

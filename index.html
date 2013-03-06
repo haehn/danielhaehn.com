@@ -5,14 +5,13 @@
 <script type='text/javascript' src='js/animation.js'></script>
 <script type='text/javascript' src='js/dstack.js'></script>
 <script type="text/javascript">
+  window.onload = function() {
 
-window.onload = function() {
-  // create the XTK animation
-  animation();
-  // .. and the DStack
-  var dstack = new DStack('stack');
-}
-
+    // create the XTK animation
+    animation();
+    // .. and the DStack
+    var dstack = new DStack('stack');
+  }
 </script>
 </head>
 
@@ -32,20 +31,25 @@ window.onload = function() {
 				source technologies</span> and <span class='highlight'>open science
 				methodologies</span>. I have a strong interest in <span class='highlight'>visualization</span>,
 			<span class='highlight'>medical imaging</span> and <span
-				class='highlight'>human-computer interaction</span>. <br>
-			<br> Currently, I am a <span class='highlight'>Research
-				Software Developer</span> at <span class='highlight'>Boston
-				Children's Hospital</span>.<br>
-			<br> <img class='socialicon' src='gfx/twitter.png'> <img
-				class='socialicon' src='gfx/linkedin.png'> <img
-				class='socialicon' src='gfx/github.png'> <img
-				class='socialicon' src='gfx/mail.png'>
+				class='highlight'>human-computer interaction</span>. <br> <br>
+			Currently, I am a <span class='highlight'>Research Software
+				Developer</span> at <span class='highlight'>Boston Children's
+				Hospital</span>.<br> <br> <img class='socialicon'
+				src='gfx/twitter.png'> <img class='socialicon'
+				src='gfx/linkedin.png'> <img class='socialicon'
+				src='gfx/github.png'> <img class='socialicon'
+				src='gfx/mail.png'>
 		</div>
 		<div id='stack' style='position: absolute; left: 300px; top: 140px;'>
-			<div style='height: 333px;' class='stackelement'></div>
-			<div style='height: 353px;' class='stackelement'></div>
-			<div style='height: 343px;' class='stackelement'></div>
+			<div style='height: 353px; width: 520px;' class='stackelement'></div>
+			<div style='height: 343px; width: 510px;' class='stackelement'>
+				<img src='gfx/slicedrop.png' class='stackimage'>
+			</div>
+			<div style='height: 333px; width: 500px;' class='stackelement'>
+				<img src='gfx/xtk.png' class='stackimage'>
+			</div>
 		</div>
+	</div>
 	</div>
 </body>
 </html>

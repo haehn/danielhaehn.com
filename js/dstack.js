@@ -13,7 +13,7 @@ DStack = function(id) {
   this._children = this._parent.children;
 
   this._timing = 500;
-  
+
   this.setup();
 
 };
@@ -42,14 +42,14 @@ DStack.prototype.setup = function() {
     c.style.zIndex = i;
     c.style.position = 'absolute';
 
-    c.onclick = this.onClick.bind(this);
+    c.onclick = this.onClick.bind(this, c);
 
   }
 
 };
 
 DStack.randomlyRotate = function(element, lastValue) {
-  
+
   // activate rotation
   var _value = lastValue - Math.floor(Math.random() * 11);
 
@@ -58,14 +58,12 @@ DStack.randomlyRotate = function(element, lastValue) {
   element.style.MozTransform = "rotate(" + _value + "deg)";
   element.style.OTransform = "rotate(" + _value + "deg)";
   element.style.transform = "rotate(" + _value + "deg)";
-  
+
   return _value;
-  
+
 };
 
-DStack.prototype.onClick = function(e) {
-
-  var _div = e.target;
+DStack.prototype.onClick = function(_div) {
 
   var _children = this._children;
   var _childrenCount = _children.length;
@@ -81,7 +79,7 @@ DStack.prototype.onClick = function(e) {
   //
   // make sure the last top one is now in the bottom
   // but perform an animated translation
-  
+
   var _valueX = _div.clientWidth / 2;
   var _valueY = -_div.clientHeight / 2;
   _div.style.webkitTransform += "translate(" + _valueX + "px," + _valueY
@@ -95,7 +93,7 @@ DStack.prototype.onClick = function(e) {
     _div.style.zIndex = 0;
 
     DStack.randomlyRotate(_div, 0);
-    
+
   }, this._timing);
 
 };

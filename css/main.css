@@ -13,6 +13,17 @@ body {
 	text-align: justify;
 }
 
+ul {
+	list-style-type: square;
+	padding-left: 20px;
+	margin: 0px;
+}
+
+a {
+	color: #0cf;
+	text-decoration: none;
+}
+
 #navbar {
 	height: 40px;
 	background: rgba(0, 0, 0, 0.5);
@@ -65,6 +76,7 @@ body {
 .stackelement {
 	background: rgba(0, 0, 0, 1.0);
 	border: 2px solid whitesmoke;
+	cursor: ne-resize;
 }
 
 .stackelement:hover {

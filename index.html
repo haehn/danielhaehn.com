@@ -7,12 +7,15 @@
 <script type="text/javascript">
   window.onload = function() {
 
-    // create the XTK animation
-    animation();
-    // .. and the DStack
+    // create the DSTACK
     var dstack = new DStack('stack');
+    
+    // .. and the XTK animation
+    animation();
+    
   }
 </script>
+<title>DANIELHAEHN.COM</title>
 </head>
 
 <body>
@@ -24,8 +27,8 @@
 		<img id='title' src='gfx/danielhaehn.png'>
 	</div>
 	<div id='content'>
-		<img src='gfx/daniel.jpg' class='roundimage' style='float: left'>
-		<div id='intro' style='margin-left: 110px; width: 360px;'>
+		<img src='gfx/daniel.jpg' class='roundimage' style='float: left; width:89px;'>
+		<div id='intro' style='margin-left: 20px; width: 360px; float:left;'>
 			Hi! My name is <span class='highlight'>Daniel Haehn</span> and I am a
 			computer guy with a passion for <span class='highlight'>open
 				source technologies</span> and <span class='highlight'>open science
@@ -34,15 +37,28 @@
 				class='highlight'>human-computer interaction</span>. <br> <br>
 			Currently, I am a <span class='highlight'>Research Software
 				Developer</span> at <span class='highlight'>Boston Children's
-				Hospital</span>.<br> <br> <img class='socialicon'
-				src='gfx/twitter.png'> <img class='socialicon'
-				src='gfx/linkedin.png'> <img class='socialicon'
-				src='gfx/github.png'> <img class='socialicon'
-				src='gfx/mail.png'>
+				Hospital</span>.<br> <br> <a
+				href='https://twitter.com/danielhaehn' target='_blank'><img
+				class='
+				socialicon' src='gfx/twitter.png'></a> <a
+				href='http://www.linkedin.com/in/haehn' target='_blank'><img
+				class=' socialicon' src='gfx/linkedin.png'></a> <a
+				href='https://github.com/haehn' target='_blank'><img
+				class='
+				socialicon' src='gfx/github.png'></a> <a
+				href='mailto:LASTNAME@ieee.org' target='_blank'><img
+				class=' socialicon' src='gfx/mail.png'></a>
+		</div>
+		<div id='dates' style='margin-left:70px; width: 200px; float:right; font-size:11px;'>
+		Upcoming events
+		<ul>
+		<li>Speaker @ <a href='http://vizbi.org/2013/' target='_blank'>VIZBI</a></li>
+		<li>Poster @ <a href='http://www.ismrm.org/13/' target='_blank'>ISMRM</a></li>
+		</ul>
 		</div>
 		<div id='stack' style='position: absolute; left: 300px; top: 140px;'>
-		  <div style='width:515px; height:348px;' class='stackelement'>
-		  </div>
+			<div style='width: 515px; height: 348px;' class='stackelement'>
+			</div>
 			<div style='width: 520px; height: 353px;' class='stackelement'>
 				<img src='gfx/coronary.png' class='stackimage'>
 			</div>

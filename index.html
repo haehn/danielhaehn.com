@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
 <link type='text/css' rel='stylesheet' href='css/main.css' />
@@ -9,26 +10,29 @@
 
     // create the DSTACK
     var dstack = new DStack('stack');
-    
+
     // .. and the XTK animation
     animation();
-    
+
   }
 </script>
 <script type="text/javascript">
-
   // google analytics
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-39083462-1']);
-  _gaq.push(['_setDomainName', 'danielhaehn.com']);
-  _gaq.push(['_trackPageview']);
+  _gaq.push([ '_setAccount', 'UA-39083462-1' ]);
+  _gaq.push([ '_setDomainName', 'danielhaehn.com' ]);
+  _gaq.push([ '_trackPageview' ]);
 
   (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+        : 'http://www')
+        + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
   })();
-
 </script>
 <title>DANIELHAEHN.COM</title>
 </head>
@@ -42,8 +46,9 @@
 		<img id='title' src='gfx/danielhaehn.png'>
 	</div>
 	<div id='content'>
-		<img src='gfx/daniel.jpg' class='roundimage' style='float: left; width:89px;'>
-		<div id='intro' style='margin-left: 20px; width: 360px; float:left;'>
+		<img src='gfx/daniel.jpg' class='roundimage'
+			style='float: left; width: 89px;'>
+		<div id='intro' style='margin-left: 20px; width: 360px; float: left;'>
 			Hi! My name is <span class='highlight'>Daniel Haehn</span> and I am a
 			computer guy with a passion for <span class='highlight'>open
 				source technologies</span> and <span class='highlight'>open science
@@ -64,16 +69,17 @@
 				href='mailto:LASTNAME@ieee.org' target='_blank'><img
 				class=' socialicon' src='gfx/mail.png'></a>
 		</div>
-		<div id='dates' style='margin-left:70px; width: 200px; float:right; font-size:11px;'>
-		Upcoming events
-		<ul>
-		<li>Speaker @ <a href='http://vizbi.org/2013/' target='_blank'>VIZBI</a></li>
-		<li>Poster @ <a href='http://www.ismrm.org/13/' target='_blank'>ISMRM</a></li>
-		</ul>
+		<div id='dates'
+			style='margin-left: 70px; width: 200px; float: right; font-size: 11px;'>
+			Upcoming events
+			<ul>
+				<li>Speaker @ <a href='http://vizbi.org/2013/' target='_blank'>VIZBI</a></li>
+				<li>Poster @ <a href='http://www.ismrm.org/13/' target='_blank'>ISMRM</a></li>
+			</ul>
 		</div>
 		<div id='stack' style='position: absolute; left: 300px; top: 140px;'>
 			<div style='width: 515px; height: 348px;' class='stackelement'>
-			  <img src='gfx/staytuned.png' class='stackimage'>
+				<img src='gfx/staytuned.png' class='stackimage'>
 			</div>
 			<div style='width: 520px; height: 353px;' class='stackelement'>
 				<img src='gfx/coronary.png' class='stackimage'>

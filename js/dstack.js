@@ -1,5 +1,7 @@
 /*
  * dstack.js Daniel's div stack.
+ * 
+ * MIT licensed.
  */
 
 /**

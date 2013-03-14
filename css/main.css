@@ -22,6 +22,7 @@ ul {
 a {
 	color: #0cf;
 	text-decoration: none;
+	border:none;
 }
 
 #navbar {

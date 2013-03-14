@@ -91,3 +91,13 @@ a {
 .stackimage:hover {
 	opacity: 1.0;
 }
+
+.stacklink {
+	position:absolute;
+}
+
+.stacklink:hover {
+	opacity: 0.1;
+	background-color: lightblue;
+	cursor: pointer;
+}

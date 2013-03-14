@@ -1,6 +1,6 @@
 /*
  * dstack.js Daniel's div stack.
- * 
+ *
  * MIT licensed.
  */
 
@@ -32,11 +32,11 @@ DStack.prototype.setup = function() {
     var c = _children[i];
 
     // configure the animation
-    c.style.webkitTransition = "all "+this._timing+"ms ease-in-out";
-    c.style.mozTransition = "all "+this._timing+"ms ease-in-out";
-    c.style.oTransition = "all "+this._timing+"ms ease-in-out";
-    c.style.msTransition = "all "+this._timing+"ms ease-in-out";
-    c.style.transition = "all "+this._timing+"ms ease-in-out";
+    c.style.webkitTransition = "all " + this._timing + "ms ease-in-out";
+    c.style.mozTransition = "all " + this._timing + "ms ease-in-out";
+    c.style.oTransition = "all " + this._timing + "ms ease-in-out";
+    c.style.msTransition = "all " + this._timing + "ms ease-in-out";
+    c.style.transition = "all " + this._timing + "ms ease-in-out";
 
     // rotate now
     _lastValue = DStack.randomlyRotate(c, _lastValue);
@@ -84,18 +84,34 @@ DStack.prototype.onClick = function(_div) {
 
   var _valueX = _div.clientWidth / 2;
   var _valueY = -_div.clientHeight / 2;
-  _div.style.webkitTransform += "translate(" + _valueX + "px," + _valueY
-      + "px)";
+  _div.style.webkitTransform += "translate(" + _valueX + "px," + _valueY +
+      "px)";
   _div.style.msTransform += "translate(" + _valueX + "px," + _valueY + "px)";
   _div.style.MozTransform += "translate(" + _valueX + "px," + _valueY + "px)";
   _div.style.OTransform += "translate(" + _valueX + "px," + _valueY + "px)";
   _div.style.transform += "translate(" + _valueX + "px," + _valueY + "px)";
 
   setTimeout(function() {
+
     _div.style.zIndex = 0;
 
     DStack.randomlyRotate(_div, 0);
 
   }, this._timing);
+
+};
+
+DStack.stopEvent = function(e) {
+
+  if (!e){e = window.event;}
+
+  // IE9 & Other Browsers
+  if (e.stopPropagation) {
+    e.stopPropagation();
+  }
+  // IE8 and Lower
+  else {
+    e.cancelBubble = true;
+  }
 
 };

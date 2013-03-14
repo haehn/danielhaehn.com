@@ -32,26 +32,27 @@
 
     // create the DSTACK
     var dstack = new DStack('stack');
-
+    
     // .. and the XTK animation
     animation();
-
+    
   }
 </script>
 <script type="text/javascript">
   // google analytics
   var _gaq = _gaq || [];
-  _gaq.push([ '_setAccount', 'UA-39083462-1' ]);
-  _gaq.push([ '_setDomainName', 'danielhaehn.com' ]);
-  _gaq.push([ '_trackPageview' ]);
-
+  _gaq.push(['_setAccount', 'UA-39083462-1']);
+  _gaq.push(['_setDomainName', 'danielhaehn.com']);
+  _gaq.push(['_trackPageview']);
+  
   (function() {
+
     var ga = document.createElement('script');
     ga.type = 'text/javascript';
     ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl'
-        : 'http://www')
-        + '.google-analytics.com/ga.js';
+        : 'http://www') +
+        '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(ga, s);
   })();
@@ -104,12 +105,24 @@
 			</div>
 			<div style='width: 520px; height: 353px;' class='stackelement'>
 				<img src='gfx/coronary.png' class='stackimage' alt='SLICER.VMTK.ORG'>
+				<a href='http://slicer.vmtk.org' target='_blank'
+					onclick='DStack.stopEvent(arguments[0]);'
+					style='height: 40px; width: 160px; bottom: 12px; right: 32px;'
+					class='stacklink'></a>
 			</div>
 			<div style='width: 510px; height: 343px;' class='stackelement'>
 				<img src='gfx/slicedrop.png' class='stackimage' alt='SLICEDROP.COM'>
+				<a href='http://slicedrop.com' target='_blank'
+					onclick='DStack.stopEvent(arguments[0]);'
+					style='height: 40px; width: 150px; top: 0px; right: 0px;'
+					class='stacklink'></a>
 			</div>
 			<div style='width: 500px; height: 333px;' class='stackelement'>
-				<img src='gfx/xtk.png' class='stackimage' alt='GOXTK.COM'>
+				<img src='gfx/xtk.png' class='stackimage' alt='GOXTK.COM'> <a
+					href='http://goxtk.com' target='_blank'
+					onclick='DStack.stopEvent(arguments[0]);'
+					style='height: 40px; width: 160px; bottom: 17px; left: 165px;'
+					class='stacklink'></a>
 			</div>
 		</div>
 	</div>

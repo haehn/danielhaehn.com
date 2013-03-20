@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+
+<title>VIZBI 2013: Physiology &amp; Function</title>
+
+<meta name="description"
+	content="Physiology & Function presentation for VIZBI 2013">
+<meta name="author" content="Daniel Haehn">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style"
+	content="black-translucent" />
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="css/reveal.min.css">
+<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<script>
+  document.write('<link rel="stylesheet" href="css/print/'
+      + (window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper')
+      + '.css" type="text/css" media="print">');
+</script>
+
+<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+<script src='js/xtk_edge.js' type='text/javascript'></script>
+<script src='js/xtk_xdat.gui.js' type='text/javascript'></script>
+
+</head>
+
+<body>
+
+	<div class="reveal">
+
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section>
+				<h1>Physiology &amp; function</h1>
+				<p>
+					<br>
+				</p>
+				<p>
+					<img src="http://i.imgur.com/i6WKt12.png"> <br>
+				</p>
+				<p>Daniel Haehn</p>
+			</section>
+			<section>
+				<h2>Steve pieper</h2>
+			</section>
+			<section>
+				<h2>Daniel haehn</h2>
+			</section>
+			<section>
+				<h2>Webgl?</h2>
+				<div class='fragment roll-in' id='x-teaser'
+					style='width: 100%; height: 100%; min-height:600px; min-width:800px;'>
+				</div>
+			</section>
+			<section>
+				<section>
+					<h2>brain camera!</h2>
+				</section>
+				<section>
+					<h2>multi modality imaging</h2>
+				</section>
+				<section>
+					<h2>Fetal MRI</h2>
+					<div>
+						<br>
+					</div>
+					<div>
+						<img src="http://i.imgur.com/J13qfSQ.png"> <br>
+					</div>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>2d visualization</h2>
+
+				</section>
+				<section>
+					<h2>2d visualization</h2>
+					<h3>label maps</h3>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>3d visualization</h2>
+				</section>
+				<section>
+					<h2>3d visualization</h2>
+					<h3>volume rendering</h3>
+				</section>
+				<section>
+					<h2>3d visualization</h2>
+					<h3>Surfaces</h3>
+				</section>
+				<section>
+					<h2>3d visualization</h2>
+					<h3>fiber tracking</h3>
+				</section>
+			</section>
+			<section>
+				<h2>registration</h2>
+			</section>
+			<section>
+				<h2>software</h2>
+			</section>
+			<section>
+				<h2>file formats</h2>
+			</section>
+			<section>
+				<section>
+					<h2>demos</h2>
+				</section>
+				<section>
+					<h2>demos</h2>
+					<h3>slice:DROP</h3>
+				</section>
+				<section>
+					<h2>DEMOS</h2>
+					<h3>knee atlas</h3>
+				</section>
+				<section>
+					<h2>demos</h2>
+					<h3>brain atlas</h3>
+				</section>
+				<section>
+					<h2>demos</h2>
+					<h3>slicer webGl export</h3>
+				</section>
+			</section>
+			<section>
+				<h2>future</h2>
+			</section>
+			<section>
+				<h1>
+					<br>
+				</h1>
+				<h1>
+					<br>
+				</h1>
+				<h1>thank you</h1>
+			</section>
+		</div>
+
+
+	</div>
+
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.min.js"></script>
+
+	<script>
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls : true,
+      progress : true,
+      history : true,
+      center : true,
+      overview : false,
+      rollingLinks : false,
+
+      theme : Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition : Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+      // Optional libraries used to extend on reveal.js
+      dependencies : [ {
+        src : 'lib/js/classList.js',
+        condition : function() {
+          return !document.body.classList;
+        }
+      }, {
+//         src : 'plugin/markdown/showdown.js',
+//         condition : function() {
+//           return !!document.querySelector('[data-markdown]');
+//         }
+//       }, {
+//         src : 'plugin/markdown/markdown.js',
+//         condition : function() {
+//           return !!document.querySelector('[data-markdown]');
+//         }
+//       }, {
+        src : 'plugin/highlight/highlight.js',
+        async : true,
+        callback : function() {
+          hljs.initHighlightingOnLoad();
+        }
+//       }, {
+//         src : 'plugin/zoom-js/zoom.js',
+//         async : true,
+//         condition : function() {
+//           return !!document.body.classList;
+//         }
+//       }, {
+//         src : 'plugin/notes/notes.js',
+//         async : true,
+//         condition : function() {
+//           return !!document.body.classList;
+//         }
+      }
+      // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+      // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+    });
+
+    function showTeaser() {
+      
+      Xrenderer = new X.renderer3D();
+      Xrenderer.container = 'x-teaser';
+      Xrenderer.init();
+
+      var v = new X.volume();
+      v.file = 'data/10mo.nrrd';
+      v.volumeRendering = true;
+      v.lowerThreshold = 100;
+      v.opacity = 0.3;
+
+      Xrenderer.add(v);
+
+      Xrenderer.camera.position = [ 0, 0, 350 ];
+      Xrenderer.camera.up = [ 0, -1, 0 ];
+      Xrenderer.render();
+      
+      Xrenderer.onShowtime = function() {
+       
+        Xgui = new dat.GUI();
+        var volumegui = Xgui.addFolder('Volume');
+        volumegui.add(v, 'volumeRendering');
+        volumegui.add(v, 'opacity', 0, 1);
+        volumegui.add(v, 'lowerThreshold', v.min, v.max);
+        volumegui.add(v, 'upperThreshold', v.min, v.max);
+        volumegui.add(v, 'indexX', 0, v.dimensions[0]-1);
+        volumegui.add(v, 'indexY', 0, v.dimensions[1]-1);
+        volumegui.add(v, 'indexZ', 0, v.dimensions[2]-1);
+        volumegui.open();
+        
+      } 
+
+    }
+    
+    function hideWebGL() {
+      
+      if (Xrenderer) {
+	      
+	      Xrenderer.destroy();
+	      
+	      Xrenderer = null;
+	      
+      }
+      
+      if (Xgui) {
+        
+        Xgui.destroy();
+        
+        Xgui = null;
+        
+      }
+      
+    }
+    
+    // callbacks
+		Reveal.addEventListener( 'slidechanged', function( event ) {
+		    // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+		      
+		      if (Xrenderer) {
+		        hideWebGL();
+		      }
+		    
+		} );  
+    
+		Reveal.addEventListener( 'fragmentshown', function( event ) {
+		    // event.fragment = the fragment DOM element
+		    if (event.fragment.id == 'x-teaser') {
+		      showTeaser();
+		    }
+		} );    
+    
+  </script>
+
+</body>
+</html>

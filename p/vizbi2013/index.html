@@ -1,133 +1,366 @@
 <!doctype html>
-<html>
+<html lang="en">
+
 <head>
-<title>VIZBI2013</title>
-<meta name="author" content="Daniel Haehn" />
-<link href="css/style.css" rel="stylesheet" />
+<meta charset="utf-8">
+
+<title>VIZBI 2013: Physiology &amp; Function</title>
+
+<meta name="description"
+	content="Physiology & Function presentation for VIZBI 2013">
+<meta name="author" content="Daniel Haehn">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style"
+	content="black-translucent" />
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="css/reveal.min.css">
+<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<script>
+  document.write('<link rel="stylesheet" href="css/print/' +
+      (window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper') +
+      '.css" type="text/css" media="print">');
+</script>
+
+<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+<script src='js/xtk_edge.js' type='text/javascript'></script>
+<script src='js/xtk_xdat.gui.js' type='text/javascript'></script>
+
 </head>
-<body class="impress-not-supported">
 
-	<div class="fallback-message">
-		<p>
-			Your browser <b>doesn't support the features required</b> by
-			impress.js, so you are presented with a simplified version of this
-			presentation.
-		</p>
-		<p>
-			For the best experience please use the latest <b>Chrome</b>, <b>Safari</b>
-			or <b>Firefox</b> browser.
-		</p>
+<body>
+
+	<div class="reveal">
+
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section>
+				<h1>Physiology &amp; function</h1>
+				<p>
+					<br>
+				</p>
+				<p>
+					<img src="gfx/title.png"> <br>
+				</p>
+				<p>Daniel Haehn</p>
+			</section>
+			<section>
+				<h2>Steve pieper</h2>
+				<div style='float: left'>
+					<img src='gfx/steve.png' style='vertical-align: top'>
+					<ul style='margin-left: 100px; margin-top: 50px;'>
+						<li>CEO at Isomics, Inc.</li>
+						<li>Chief Architect of 3D Slicer</li>
+						<li>VIZBI Veteran</li>
+					</ul>
+					<span style="float: right;"><img src="gfx/slicer.png"
+						style="border: none; background: none; box-shadow: none;"><br>
+					<a href='http://slicer.org'>http://slicer.org</a></span>
+				</div>
+			</section>
+			<section>
+				<h2>Daniel haehn</h2>
+				<div style='float: left'>
+					<img src='gfx/daniel.png' style='vertical-align: top'>
+					<ul style='margin-left: 100px; margin-top: 50px;'>
+						<li>Research Software Developer</li>
+						<li>Contributor to 3D Slicer</li>
+						<li>WebGL Enthusiast</li>
+					</ul>
+				</div>
+        <span style="float: left;width:500px;"><img src="gfx/bch.png"
+          style="margin-left:250px;float:left;border: none; background: none; box-shadow: none;"></span>				
+				<span style="float: right;"><img src="gfx/slicedrop.png"
+					style="border: none; background: none; box-shadow: none;"><br>
+				<a href='http://slicedrop.com'>http://slicedrop.com</a></span>
+
+			</section>
+			<section>
+				<h2>Webgl?</h2>
+				<div class='fragment roll-in' id='x-teaser'
+					style='width: 100%; height: 100%; min-height: 600px; min-width: 800px;'>
+				</div>
+			</section>
+			<section>
+				<section>
+					<h2>brain camera!</h2>
+					<img src='gfx/braincamera.jpg'>
+					<img class='fragment' style='position:absolute;left:0px;top:150px;' src='gfx/braincamera2.jpg'>
+					<img class='fragment' style='position:absolute;right:0px;top:50px;' src='gfx/braincamera3.jpg'>
+				</section>
+        <section>
+          <h2>MRI Data</h2>
+          <div class='fragment roll-in' id='x-slices' style='float:left;width:300px;height:300px;'></div>
+          <span style='float:left;margin-left:100px;margin-top:50px;'>Typically</span>
+          <ul style='margin-left: 150px;float:left;'>
+            <li>~1mm resolution</li>
+            <li>256x256x170 vx dimensions<br>(for Neuroimaging)</li>
+          </ul>          
+        </section>				
+				<section>
+					<h2>multi modality imaging</h2>
+					<img src='gfx/multimodal.png'>
+				</section>
+				<section>
+					<h2>Fetal MRI</h2>
+					<div>
+						<br>
+					</div>
+					<div>
+						<img src="gfx/fetalmri.png"> <br>
+					</div>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>2d visualization</h2>
+
+				</section>
+				<section>
+					<h2>2d visualization</h2>
+					<h3>label maps</h3>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>3d visualization</h2>
+				</section>
+				<section>
+					<h2>3d visualization</h2>
+					<h3>volume rendering</h3>
+				</section>
+				<section>
+					<h2>3d visualization</h2>
+					<h3>Surfaces</h3>
+				</section>
+				<section>
+					<h2>3d visualization</h2>
+					<h3>fiber tracking</h3>
+				</section>
+			</section>
+			<section>
+				<h2>registration</h2>
+			</section>
+			<section>
+				<h2>software</h2>
+			</section>
+			<section>
+				<h2>file formats</h2>
+			</section>
+			<section>
+				<section>
+					<h2>demos</h2>
+				</section>
+				<section>
+					<h2>demos</h2>
+					<h3>slice:DROP</h3>
+				</section>
+				<section>
+					<h2>DEMOS</h2>
+					<h3>knee atlas</h3>
+				</section>
+				<section>
+					<h2>demos</h2>
+					<h3>brain atlas</h3>
+				</section>
+				<section>
+					<h2>demos</h2>
+					<h3>slicer webGl export</h3>
+				</section>
+			</section>
+			<section>
+				<h2>future</h2>
+			</section>
+			<section>
+				<h1>
+					<br>
+				</h1>
+				<h1>
+					<br>
+				</h1>
+				<h1>thank you</h1>
+			</section>
+		</div>
+
+
 	</div>
 
-	<div id='title'>
-		<div id='upper_title'>
-			<img src='gfx/brains.png'
-				style='position: absolute; bottom: 51%; left: 50%; margin-left: -242px;'>
-		</div>
-		<div id='lower_title'>
-			<h1>Physiology & Function</h1>
-			<div style='margin-top:50px;'>
-				Daniel Haehn
-			</div>
-		</div>
-	</div>
 
-	<div id='navbar'>
-		<div id='nowebgl' class='topcorner'>
-			<img src='gfx/nowebgl.png' alt='Static cubes'>
-		</div>
-		<span class='navbar_title'>Physiology & Function</span>
-	</div>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.min.js"></script>
 
-	<div id="impress">
-
-		<div id="one" class="step slide" data-x="0" data-y="0">
-			Steve Pieper
-		</div>
-
-		<div id="two" class="step slide" data-x="1200" data-y="0">
-			Daniel Haehn
-		</div>
-
-		<div id="three" class="step slide" data-x="2400" data-y="0">
-			WebGL teaser
-		</div>
-		
-    <div id="four" class="step slide" data-x="0" data-y="0">
-      brain camera
-    </div>
-        
-    <div id="one" class="step slide" data-x="0" data-y="0">
-      multi modalities
-    </div>
-    
-    <div id="four" class="step slide" data-x="0" data-y="0">
-      fetal mri
-    </div>
-    
-    <div id="one" class="step slide" data-x="0" data-y="0">
-      2d visualization
-    </div>
-    
-    <div id="one" class="step slide" data-x="0" data-y="0">
-      2d segmentation
-    </div>    
-    
-    <div id="one" class="step slide" data-x="0" data-y="0">
-      3d visualization
-    </div>
-    
-    <div id="one" class="step slide" data-x="0" data-y="0">
-      3d - techniques
-    </div> 
-    
-    <div id="one" class="step slide" data-x="0" data-y="0">
-      3d segmentation (with WebGL)
-    </div>
-    
-    <div id="one" class="step slide" data-x="0" data-y="0">
-      dti - fiber tracking (with WebGL)
-    </div>    
-    
-    <div id="one" class="step slide" data-x="0" data-y="0">
-      registration
-    </div>
-    
-    <div id="one" class="step slide" data-x="0" data-y="0">
-      software
-    </div>    
-    
-    <div id="one" class="step slide" data-x="0" data-y="0">
-      file formats
-    </div>
-    
-    <div id="one" class="step slide" data-x="0" data-y="0">
-      slicedrop demo
-    </div>    
-    
-    <div id="one" class="step slide" data-x="0" data-y="0">
-      slicer webglexport
-    </div>
-    
-    <div id="one" class="step slide" data-x="0" data-y="0">
-      knee atlas
-    </div>
-    
-    <div id="one" class="step slide" data-x="0" data-y="0">
-      brain atlas
-    </div>
-    
-    <div id="one" class="step slide" data-x="0" data-y="0">
-      future
-       (webcl, zspace)
-    </div>    
-
-	</div>
-
-	<script src="js/impress.js"></script>
-	<script src="js/main.js"></script>
 	<script>
-    impress().init();
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      overview: false,
+      rollingLinks: false,
+      
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+      
+      // Optional libraries used to extend on reveal.js
+      dependencies: [{
+        src: 'lib/js/classList.js',
+        condition: function() {
+
+          return !document.body.classList;
+        }
+      }, {
+        //         src : 'plugin/markdown/showdown.js',
+        //         condition : function() {
+        //           return !!document.querySelector('[data-markdown]');
+        //         }
+        //       }, {
+        //         src : 'plugin/markdown/markdown.js',
+        //         condition : function() {
+        //           return !!document.querySelector('[data-markdown]');
+        //         }
+        //       }, {
+        src: 'plugin/highlight/highlight.js',
+        async: true,
+        callback: function() {
+
+          hljs.initHighlightingOnLoad();
+        }
+      //       }, {
+      //         src : 'plugin/zoom-js/zoom.js',
+      //         async : true,
+      //         condition : function() {
+      //           return !!document.body.classList;
+      //         }
+      //       }, {
+      //         src : 'plugin/notes/notes.js',
+      //         async : true,
+      //         condition : function() {
+      //           return !!document.body.classList;
+      //         }
+      }
+      // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+      // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+    });
+    
+    Xrenderer = null;
+    Xgui = null;
+    
+    function showTeaser() {
+
+      Xrenderer = new X.renderer3D();
+      Xrenderer.container = 'x-teaser';
+      Xrenderer.init();
+      
+      var v = new X.volume();
+      v.file = 'data/10mo.nrrd';
+      v.volumeRendering = true;
+      v.lowerThreshold = 100;
+      v.opacity = 0.3;
+      
+      Xrenderer.add(v);
+      
+      Xrenderer.camera.position = [0, 0, 350];
+      Xrenderer.camera.up = [0, -1, 0];
+      Xrenderer.render();
+      
+      Xrenderer.onShowtime = function() {
+
+        Xgui = new dat.GUI();
+        var volumegui = Xgui.addFolder('Volume');
+        volumegui.add(v, 'volumeRendering');
+        volumegui.add(v, 'opacity', 0, 1);
+        volumegui.add(v, 'lowerThreshold', v.min, v.max);
+        volumegui.add(v, 'upperThreshold', v.min, v.max);
+        volumegui.add(v, 'indexX', 0, v.dimensions[0] - 1);
+        volumegui.add(v, 'indexY', 0, v.dimensions[1] - 1);
+        volumegui.add(v, 'indexZ', 0, v.dimensions[2] - 1);
+        volumegui.open();
+        
+      }
+
+    }
+    
+    function showSlices() {
+      
+      Xrenderer = new X.renderer2D();
+      Xrenderer.container = 'x-slices';
+      Xrenderer.orientation = 'Z';
+      Xrenderer.init();
+      Xrenderer.rotate();
+      Xrenderer.rotate();
+      
+      
+      var v = new X.volume();
+      v.file = 'data/slices.nii.gz';
+      v.reslicing = false;
+      
+      
+      Xrenderer.add(v);
+      
+      Xrenderer.render();
+      
+      Xrenderer.onShowtime = function() {
+        v.windowHigh = 735; 
+      }
+      
+      
+    }
+
+    function hideWebGL() {
+      
+      if (Xrenderer) {
+        
+        Xrenderer.destroy();
+        
+        Xrenderer = null;
+        
+      }
+      
+      if (Xgui) {
+        
+        Xgui.destroy();
+        
+        Xgui = null;
+        
+      }
+      
+    }
+
+    // callbacks
+    Reveal.addEventListener('slidechanged', function(event) {
+
+      // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+      
+      if (Xrenderer) {
+        hideWebGL();
+      }
+      
+    });
+    
+    Reveal.addEventListener('fragmentshown', function(event) {
+
+      // event.fragment = the fragment DOM element
+      if (event.fragment.id == 'x-teaser') {
+        showTeaser();
+      } else if (event.fragment.id == 'x-slices') {
+        showSlices();
+      }
+      
+    });
   </script>
 
 </body>

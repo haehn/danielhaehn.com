@@ -66,7 +66,7 @@
 					</ul>
 					<span style="float: right;"><img src="gfx/slicer.png"
 						style="border: none; background: none; box-shadow: none;"><br>
-					<a href='http://slicer.org'>http://slicer.org</a></span>
+						<a href='http://slicer.org'>http://slicer.org</a></span>
 				</div>
 			</section>
 			<section>
@@ -79,11 +79,12 @@
 						<li>WebGL Enthusiast</li>
 					</ul>
 				</div>
-        <span style="float: left;width:500px;"><img src="gfx/bch.png"
-          style="margin-left:250px;float:left;border: none; background: none; box-shadow: none;"></span>				
+				<span style="float: left; width: 500px;"><img
+					src="gfx/bch.png"
+					style="margin-left: 250px; float: left; border: none; background: none; box-shadow: none;"></span>
 				<span style="float: right;"><img src="gfx/slicedrop.png"
 					style="border: none; background: none; box-shadow: none;"><br>
-				<a href='http://slicedrop.com'>http://slicedrop.com</a></span>
+					<a href='http://slicedrop.com'>http://slicedrop.com</a></span>
 
 			</section>
 			<section>
@@ -95,19 +96,23 @@
 			<section>
 				<section>
 					<h2>brain camera!</h2>
-					<img src='gfx/braincamera.jpg'>
-					<img class='fragment' style='position:absolute;left:0px;top:150px;' src='gfx/braincamera2.jpg'>
-					<img class='fragment' style='position:absolute;right:0px;top:50px;' src='gfx/braincamera3.jpg'>
+					<img src='gfx/braincamera.jpg'> <img class='fragment'
+						style='position: absolute; left: 0px; top: 150px;'
+						src='gfx/braincamera2.jpg'> <img class='fragment'
+						style='position: absolute; right: 0px; top: 50px;'
+						src='gfx/braincamera3.jpg'>
 				</section>
-        <section>
-          <h2>MRI Data</h2>
-          <div class='fragment roll-in' id='x-slices' style='float:left;width:300px;height:300px;'></div>
-          <span style='float:left;margin-left:100px;margin-top:50px;'>Typically</span>
-          <ul style='margin-left: 150px;float:left;'>
-            <li>~1mm resolution</li>
-            <li>256x256x170 vx dimensions<br>(for Neuroimaging)</li>
-          </ul>          
-        </section>				
+				<section>
+					<h2>MRI Data</h2>
+					<div class='fragment roll-in' id='x-slices'
+						style='float: left; width: 300px; height: 300px;'></div>
+					<span style='float: left; margin-left: 100px; margin-top: 50px;'>Typically</span>
+					<ul style='margin-left: 150px; float: left;'>
+						<li>~1mm resolution</li>
+						<li>256x256x170 vx dimensions<br>(for Neuroimaging)
+						</li>
+					</ul>
+				</section>
 				<section>
 					<h2>multi modality imaging</h2>
 					<img src='gfx/multimodal.png'>
@@ -118,7 +123,36 @@
 						<br>
 					</div>
 					<div>
-						<img src="gfx/fetalmri.png"> <br>
+						<img src="gfx/fetalmri.png">
+						<div class='fragment'
+							style='position: absolute; left: 0px; top: 350px;'>
+							<img src='gfx/fetalmri_problem.png'>Problem: Motion
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>Fetal MRI: Diagnostic</h2>
+					<div class='fragment' id='x-fetal'>
+						<div style='float: left; width: 300px;'>
+							<div id='x-fetal1'
+								style='margin-left: 100px; background-color: black; float: left; width: 300px; height: 300px;'></div>
+							<small
+								style='vertical-align: text-bottom; margin-left: 150px; width: 200px;'>28
+								weeks, unhealthy</small>
+						</div>
+						<div style='float: right; width: 300px;'>
+							<div id='x-fetal2'
+								style='margin-right: 100px; background-color: black; float: right; width: 300px; height: 300px;'></div>
+							<small
+								style='vertical-align: text-bottom; margin-left: -190px; width: 300px;'>28
+								weeks, healthy atlas *</small>
+						</div>
+						<div
+							style='position: absolute; bottom: -50px; margin-left: 300px;'>After
+							Motion Correction</div>
+						<span
+							style='font-size: 12px; position: absolute; bottom: -100px; right: 0px;'>* Atlas
+							data from Imperial College</span>
 					</div>
 				</section>
 			</section>
@@ -257,6 +291,7 @@
     });
     
     Xrenderer = null;
+    Xrenderer2 = null;
     Xgui = null;
     
     function showTeaser() {
@@ -293,9 +328,9 @@
       }
 
     }
-    
+
     function showSlices() {
-      
+
       Xrenderer = new X.renderer2D();
       Xrenderer.container = 'x-slices';
       Xrenderer.orientation = 'Z';
@@ -303,30 +338,87 @@
       Xrenderer.rotate();
       Xrenderer.rotate();
       
-      
+
       var v = new X.volume();
       v.file = 'data/slices.nii.gz';
       v.reslicing = false;
       
+
+      Xrenderer.add(v);
+      
+      Xrenderer.render();
+      
+      Xrenderer.onShowtime = function() {
+
+        v.windowHigh = 735;
+      }
+
+
+    }
+
+    function showFetal() {
+
+      Xrenderer = new X.renderer2D();
+      Xrenderer.container = 'x-fetal1';
+      Xrenderer.orientation = 'Z';
+      Xrenderer.init();
+      //Xrenderer.rotate();
+      //Xrenderer.rotate();
+      
+      var v = new X.volume();
+      v.file = 'data/fetal_cropped.nii.gz';
+      v.reslicing = false;
       
       Xrenderer.add(v);
       
       Xrenderer.render();
       
       Xrenderer.onShowtime = function() {
-        v.windowHigh = 735; 
+
+        v.windowHigh = 1900;
       }
+
+      Xrenderer2 = new X.renderer2D();
+      Xrenderer2.container = 'x-fetal2';
+      Xrenderer2.orientation = 'Z';
+      Xrenderer2.init();
+      //Xrenderer.rotate();
+      //Xrenderer.rotate();
       
+      var v2 = new X.volume();
+      v2.file = 'data/fetal_atlas.nii.gz';
+      v2.reslicing = false;
       
+      Xrenderer2.add(v2);
+      
+      Xrenderer2.render();
+      
+      Xrenderer2.onShowtime = function() {
+
+        v2.windowLow = 190;
+      }
+
+
+
     }
 
+
+
     function hideWebGL() {
-      
+
       if (Xrenderer) {
         
         Xrenderer.destroy();
         
         Xrenderer = null;
+        
+      }
+      
+      if (Xrenderer2) {
+        
+        Xrenderer2.destroy();
+        
+        Xrenderer2 = null;
         
       }
       
@@ -358,6 +450,8 @@
         showTeaser();
       } else if (event.fragment.id == 'x-slices') {
         showSlices();
+      } else if (event.fragment.id == 'x-fetal') {
+        showFetal();
       }
       
     });

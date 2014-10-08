@@ -48,22 +48,22 @@ animation = function() {
 
   r.render();
 
-  for ( var c in cubes) {
+  // for ( var c in cubes) {
 
-    speeds[c] = (Math.floor(Math.random() * 20));
-  }
+  //   speeds[c] = (Math.floor(Math.random() * 20));
+  // }
 
-  // .. and animate!!
-  r.onRender = function() {
+  // // .. and animate!!
+  // r.onRender = function() {
 
-    // rotate the camera in X-direction
-    r.camera.rotate([ 1, 0 ]);
-    for ( var c in cubes) {
-      cube = cubes[c];
-      cube.transform.rotateX(speeds[c]);
-      // c.transform.rotateY(Math.floor(Math.random()*11));
-    }
+  //   // rotate the camera in X-direction
+  //   r.camera.rotate([ 1, 0 ]);
+  //   for ( var c in cubes) {
+  //     cube = cubes[c];
+  //     cube.transform.rotateX(speeds[c]);
+  //     // c.transform.rotateY(Math.floor(Math.random()*11));
+  //   }
 
-  };
+  // };
 
 };

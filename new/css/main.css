@@ -12,10 +12,15 @@ body {
 	position: absolute;
 }
 
+#colorwheel {
+	position:absolute;
+	z-index: 1000;
+}
+
 #bild {
-	-webkit-animation:5s crazy_eyes linear infinite,5s;
-	-moz-animation:5s crazy_eyes linear infinite,5s;
-	animation:5s crazy_eyes linear infinite,5s;
+	-webkit-animation:5s crazy_eyes linear infinite,1s;
+	-moz-animation:5s crazy_eyes linear infinite,1s;
+	animation:5s crazy_eyes linear infinite,1s;
 	width: 100%;
 }
 

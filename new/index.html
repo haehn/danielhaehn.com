@@ -16,25 +16,34 @@
  -->
 <html>
 <head>
-<meta charset='utf-8'>
-<meta name='keywords'
-	content='Daniel Haehn, XTK, SliceDrop, WebGL, Visualization, Medical Imaging, Machine Learning, Connectomics'>
-<meta name='description' content='The personal website of Daniel Haehn'>
-<meta name='author' content='Daniel Haehn'>
-<meta name='robots' content='FOLLOW,INDEX'>
-<title>DANIELHAEHN.COM</title>
-<link type='text/css' rel='stylesheet' href='css/main.css' />
-<script type='text/javascript' src='js/colorwheel.js'></script>
+  <meta charset='utf-8'>
+  <meta name='keywords' content='Daniel Haehn, XTK, SliceDrop, WebGL, Visualization, Medical Imaging, Machine Learning, Connectomics'>
+  <meta name='description' content='The personal website of Daniel Haehn'>
+  <meta name='author' content='Daniel Haehn'>
+  <meta name='robots' content='FOLLOW,INDEX'>
+  <title>DANIELHAEHN.COM</title>
+  <link type='text/css' rel='stylesheet' href='css/main.css' />
+  <script type='text/javascript' src='js/colorwheel.js'></script>
+  <script type='text/javascript'>
+    window.onload = function() {
+
+      COLORWHEEL.init();
+
+    };
+  </script>
 </head>
 <body>
   <div id='header'>
-  	<img src='gfx/daniel.jpg' id='bild' />
+    <img src='gfx/daniel.jpg' id='daniel' />
+    <img src='gfx/crazy_daniel.jpg' id='crazy_daniel' />
+    <div id='colorwheel'>
+      <canvas id='surface' width='50' height='50'></canvas>
+      <img src='gfx/eye.png' id='eye' class='eye' />
+      <img src='gfx/eye_red.png' id='eye_red' class='eye' />
+    </div>
   </div>
 
-  <div id="colorwheel" class="">
-            <canvas id="surface" width="50" height="50"></canvas>
-            <div class="cover" style="opacity: 0.134141;"></div>
-            <div class="hsv-cursor" style="left: 122.8px; top: 39.0367px; border-color: rgb(51, 51, 51);"></div>
-        </div>
+
+
 </body>
 </html>

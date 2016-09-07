@@ -1,190 +1,99 @@
-window.onload = function() {
+var COLORWHEEL = COLORWHEEL || {};
 
+COLORWHEEL.CRAZY_EYES = false;
 
-	/* ---------------------------------- */
-	/* ---- HSV-circle color picker ----- */
-	/* ---------------------------------- */
-	var hsv_map = document.getElementById('colorwheel'),
-		hsv_mapCover = hsv_map.children[1], // well...
-		hsv_mapCursor = hsv_map.children[2],
-		hsv_barBGLayer = hsv_map.children[3],
+COLORWHEEL.init = function() {
 
-		colorDisc = document.getElementById('surface'),
-		colorDiscRadius = colorDisc.offsetHeight / 2,
-		luminanceBar = document.getElementById('luminanceBar'),
+	//
+	// this code is based on a much more complicated version of
+	//   http://www.dematte.at/colorPicker/
+	// good work brother!!
+	//
+	var colorwheel = document.getElementById('colorwheel');
+	var colordisc = document.getElementById('surface');
+	var eye = document.getElementById('eye');
+	var eye_red = document.getElementById('eye_red');
+	var daniel = document.getElementById('daniel');
+	var crazy_daniel = document.getElementById('crazy_daniel');
 
-		hsvDown = function(e) { // mouseDown callback
-			var target = e.target || e.srcElement;
+	var colordisc_radius = colordisc.offsetHeight / 2;
 
-			if (e.preventDefault) e.preventDefault();
+	// draw color disc
+	var x = colordisc.width / 2;
+	var y = colordisc.height / 2;
+	var a = x - 1;
+	var b = y - 1;
+	var ctx = colordisc.getContext("2d");
 
-			currentTarget = target.id ? target : target.parentNode;
-			// startPoint = Tools.getOrigin(currentTarget);
-			console.log(e);
-			currentTargetHeight = currentTarget.offsetHeight; // as diameter of circle
+	ctx.save();
+	ctx.translate(x - a, y - b);
+	ctx.scale(a, b);
 
-			// Tools.addEvent(window, 'mousemove', hsvMove);
-			hsv_map.addEventListener('mousemove', hsvMove)
-			hsv_map.className = 'no-cursor';
-			hsvMove(e);
-			startRender();
-		},
-		hsvMove = function(e) { // mouseMove callback
-			var r, x, y, h, s,
-				page = getPageXY(e);
+	var coef = Math.PI / 180;
+	for(var angle = 360; angle > 0; angle -= 1) {
+		ctx.beginPath();
+		ctx.moveTo(1,1);
+		ctx.arc(1, 1, 1, (angle - .5 - 1) * coef, (angle + .5 + 1) * coef);
 
-			if(currentTarget === hsv_map) { // the circle
-				r = currentTargetHeight / 2,
-				x = page.X - startPoint.left - r,
-				y = page.Y - startPoint.top - r,
-				h = 360 - ((Math.atan2(y, x) * 180 / Math.PI) + (y < 0 ? 360 : 0)),
-				s = (Math.sqrt((x * x) + (y * y)) / r) * 100;
-				// myColor.setColor({h: h, s: s}, 'hsv');
-				console.log(h,s)
-			}
-		},
+		var gradient = ctx.createRadialGradient(1, 1, 1, 1, 1, 0);
+		gradient.addColorStop(0, 'hsl(' + (360 - angle + 0) + ', 100%, 50%)');
+		gradient.addColorStop(1, "#FFFFFF");
 
-		renderHSVPicker = function(color) { // used in renderCallback of 'new ColorPicker'
-			var pi2 = Math.PI * 2,
-				x = Math.cos(pi2 - color.hsv.h * pi2),
-				y = Math.sin(pi2 - color.hsv.h * pi2),
-				r = color.hsv.s * (colorDiscRadius - 5);
+		ctx.fillStyle = gradient;
+		ctx.fill();
 
-			hsv_mapCover.style.opacity = 1 - color.hsv.v;
-			// this is the faster version...
-			hsv_barWhiteLayer.style.opacity = 1 - color.hsv.s;
-			hsv_barBGLayer.style.backgroundColor = 'rgb(' +
-				color.hueRGB.r + ',' +
-				color.hueRGB.g + ',' +
-				color.hueRGB.b + ')';
-
-			hsv_mapCursor.style.cssText =
-				'left: ' + (x * r + colorDiscRadius) + 'px;' + 
-				'top: ' + (y * r + colorDiscRadius) + 'px;' +
-				// maybe change className of hsv_map to change colors of all cursors...
-				'border-color: ' + (color.RGBLuminance > 0.22 ? '#333;' : '#ddd');
-			hsv_barCursors.className = color.RGBLuminance > 0.22 ? hsv_barCursorsCln + ' dark' : hsv_barCursorsCln;
-			if (hsv_Leftcursor) hsv_Leftcursor.style.top = hsv_Rightcursor.style.top = ((1 - color.hsv.v) * colorDiscRadius * 2) + 'px';
-		};
-
-	hsv_map.addEventListener('mousedown', hsvDown);
-	// generic function for drawing a canvas disc
-	var drawDisk = function(ctx, coords, radius, steps, colorCallback) {
-			var x = coords[0] || coords, // coordinate on x-axis
-				y = coords[1] || coords, // coordinate on y-axis
-				a = radius[0] || radius, // radius on x-axis
-				b = radius[1] || radius, // radius on y-axis
-				angle = 360,
-				rotate = 0, coef = Math.PI / 180;
-
-			ctx.save();
-			ctx.translate(x - a, y - b);
-			ctx.scale(a, b);
-
-			steps = (angle / steps) || 360;
-
-			for (; angle > 0 ; angle -= steps){
-				ctx.beginPath();
-				if (steps !== 360) ctx.moveTo(1, 1); // stroke
-				ctx.arc(1, 1, 1,
-					(angle - (steps / 2) - 1) * coef,
-					(angle + (steps  / 2) + 1) * coef);
-
-				if (colorCallback) {
-					colorCallback(ctx, angle);
-				} else {
-					ctx.fillStyle = 'black';
-					ctx.fill();
-				}
-			}
-			ctx.restore();
-		},
-		drawCircle = function(ctx, coords, radius, color, width) { // uses drawDisk
-			width = width || 1;
-			radius = [
-				(radius[0] || radius) - width / 2,
-				(radius[1] || radius) - width / 2
-			];
-			drawDisk(ctx, coords, radius, 1, function(ctx, angle){
-				ctx.restore();
-				ctx.lineWidth = width;
-				ctx.strokeStyle = color || '#000';
-				ctx.stroke();
-			});
-		};
-
-	if (colorDisc.getContext) {
-		drawDisk( // HSV color wheel with white center
-			colorDisc.getContext("2d"),
-			[colorDisc.width / 2, colorDisc.height / 2],
-			[colorDisc.width / 2 - 1, colorDisc.height / 2 - 1],
-			360,
-			function(ctx, angle) {
-				var gradient = ctx.createRadialGradient(1, 1, 1, 1, 1, 0);
-				gradient.addColorStop(0, 'hsl(' + (360 - angle + 0) + ', 100%, 50%)');
-				gradient.addColorStop(1, "#FFFFFF");
-
-				ctx.fillStyle = gradient;
-				ctx.fill();
-			}
-		);
-		drawCircle( // gray border
-			colorDisc.getContext("2d"),
-			[colorDisc.width / 2, colorDisc.height / 2],
-			[colorDisc.width / 2, colorDisc.height / 2],
-			'#555',
-			1
-		);
 	}
+	ctx.restore();
 
+	// draw outer circle
+	ctx.save();
+	ctx.translate(x - a, y - b);
+	ctx.scale(a, b);
+	ctx.beginPath();
+	ctx.arc(1, 1, 1, (180 - 1) * coef, (540 + 1) * coef);
+	ctx.restore();
+	ctx.lineWidth = 2;
+	ctx.strokeStyle = '#555';
+	ctx.stroke();
+	ctx.restore();
 
+	colordisc.addEventListener('mousemove', function(e) {
 
+		if (e.preventDefault) e.preventDefault();
 
-	/*
-	 * This script is set up so it runs either with ColorPicker or with Color only.
-	 * The difference here is that ColorPicker has a renderCallback that Color doesn't have
-	 * therefor we have to set a render intervall in case it's missing...
-	 * setInterval() can be exchanged to window.requestAnimationFrame(callBack)...
-	 *
-	 * If you want to render on mouseMove only then get rid of startRender(); in
-	 * all the mouseDown callbacks and add doRender(myColor.colors); in all
-	 * mouseMove callbacks. (Also remove all stopRender(); in mouseUp callbacks)
-	*/
-	var doRender = function(color) {
-			renderHSVPicker(color);
-			// colorModel.innerHTML = displayModel(color); // experimental
-		},
-		renderTimer,
-		// those functions are in case there is no ColorPicker but only Colors involved
-		startRender = function(oneTime){
-				renderTimer = window.setInterval(
-					function() {
-						doRender(myColor.colors);
-					// http://stackoverflow.com/questions/2940054/
-					}, 13); // 1000 / 60); // ~16.666 -> 60Hz or 60fps
-			
-		},
-		stopRender = function(){
-			if (isColorPicker) {
-				myColor.stopRender();
-			} else {
-				window.clearInterval(renderTimer);
-			}
-		};
-		renderCallback = doRender;
+		if (COLORWHEEL.CRAZY_EYES) {
+			return false;
+		}
 
+		var r = colordisc_radius;
+		var x = e.clientX - colordisc.getBoundingClientRect().left - r;
+		var y = e.clientY - colordisc.getBoundingClientRect().top - r;
+		var h = 360 - ((Math.atan2(y, x) * 180 / Math.PI) + (y < 0 ? 360 : 0));
+		var s = (Math.sqrt((x * x) + (y * y)) / r) * 100;
+		
+		daniel.style.webkitFilter = 'hue-rotate('+(h-140)+'deg)';
+		daniel.style.mozFilter = 'hue-rotate('+(h-140)+'deg)';
 
+	});
 
-	// ------------------------------------------------------ //
-	// ------------------ helper functions ------------------ //
-	// -------------------------------------------------------//
+	eye.addEventListener('click', function(e) {
 
-	function getPageXY(e) {
-		return {
-			X: e.pageX || e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft,
-			Y: e.pageY || e.clientY + document.body.scrollTop + document.documentElement.scrollTop
-		};
-	}
+		eye_red.style.display = 'block';
+		eye.style.display = 'none';
 
+		// activate crazy daniel
+		crazy_daniel.style.display = 'block';
+
+	});
+
+	eye_red.addEventListener('click', function(e) {
+
+		eye.style.display = 'block';
+		eye_red.style.display = 'none';
+
+		// deactivate crazy daniel
+		crazy_daniel.style.display = 'none';
+
+	});
 
 };

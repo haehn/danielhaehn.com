@@ -1,0 +1,69 @@
+==================================================================
+https://keybase.io/haehn
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://danielhaehn.com
+  * I am haehn (https://keybase.io/haehn) on keybase.
+  * I have a public key with fingerprint 848A E455 F72E 75BE 2776  C457 BFE5 EA96 3DA6 5BA3
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01015a5f3ef2a5e06e3b97d03b5ff7a671038d855bf54502aceedeedc1f9db5775cc0a",
+            "fingerprint": "848ae455f72e75be2776c457bfe5ea963da65ba3",
+            "host": "keybase.io",
+            "key_id": "bfe5ea963da65ba3",
+            "kid": "01015a5f3ef2a5e06e3b97d03b5ff7a671038d855bf54502aceedeedc1f9db5775cc0a",
+            "uid": "5a5737cda6c8881aa1815518e1f94119",
+            "username": "haehn"
+        },
+        "service": {
+            "hostname": "danielhaehn.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1484066278,
+    "expire_in": 157680000,
+    "prev": "7a29a3eee87567161392850e2dd180f651e87cf76ab9d270a3ce4cfe91b38c19",
+    "seqno": 5,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.61
+Comment: https://keybase.io/crypto
+
+yMIjAnicrVJrSBRRFF7NyiTpafSQoqkQZdF53bl3NiGzN5Ia9CPI2O7MnNHRdWab
+nbXHZlFG/SoLLKhICpR+FD0QylevxSgQkbCoDKICK4giDCEsqjuL/etnlwuXe873
+fec7h9OXPSmQlTZraNWW7oq2WWn9D87EA9vi2e8TnOYYe7lQgquD1AMRA2JeuM4y
+uBDHC7yAKDIlMEWKgFdA0lRs8JKGTBNTBQu8RAyCkGYiGfEi1QEMdnXBVA0NYYx0
+nadckDMtuxrcqGvZHpMlMqEgI2RiETDSQMRY0WWENRMQUFWRDKogjUqMWOPEfAYz
+p9EYFFoOi7FPOGXvH/j/7DuekmNSWMI6q6ITQgRKBSIgJBBgcFkQVB8YA9em9cDQ
+NRRqbK4xyLFQg6WDP1W/jYm0QW0LIilQoe7UM27UdTxHdyI+1/OiIZ/r7Y364N2g
+hSdkwpplG2yMjNAAbsxybC4kMKTuWb6uIBOZVxQRkyAHe6KWC2HLRyCsEJ4dvww0
+MElMRZVKAEAwYoNQBEkVCeJBNAyB8KaCBJbRTaxQTTVEzFNJB1k3QRU0ieipZmOw
+y3a4EGI2aTWTjFnVNvXiLnCNyftVGYG0rMCUyen+egWyps38u3TBisxA38cdzY++
+Vh4baOqd86xlalde1dKidck7h5eMFiw88m6svyOSmX090vbgw6FTq1tOS9nd+8nV
+2ku/Xw2j2VOUtzc7c7C4csPWogOtybbm108357eLlw8ODs+/8GV4Tet09+L70v5v
+kxffbV80Cvtzh0K4MfpivOFh873dT76PjXzeuSBtcGOxXt3aM5D7PD29vCjn2vaf
+na+u9Fq1Z7/P3Tc3x3q8qWTex/FPJ6++W5t4Nr80r3aN3b1p6LiXbFrPz8lP5C/r
+6Ap+WHbrRInS+mPpjNtHm3Jrf4z3XFDipRkrO8vc/u7zxWOVUHjuxnJ15HDEe7Ei
+v72gvSX6+WXZ0dE35b9min8A2ZxBiA==
+=UT57
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/haehn
+
+==================================================================
+

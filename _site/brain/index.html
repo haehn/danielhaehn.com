@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!-- 
+
+         \\
+          \\_   \\
+           (')   \\_
+   jgs    / )=.- -(')
+        o( )o( )_-\_
+
+ http://danielhaehn.com
+ 
+ email me!   h a e h n <AT> i e e e . o r g
+
+ PZ.
+
+ -->
+<html>
+  <head>
+    <title>machine learning + visualization + connectomics – DANIELHAEHN.com</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content=" 
+
+In connectomics, we create a map of the mammalian brain at nano-scale. For this, we acquire image stacks of rat brain using electron microscopy. These images are so high resolution that individual neurons (nerve cells) and their connections (synapses) are visible.
+
+" />
+    <meta property="og:description" content=" 
+
+In connectomics, we create a map of the mammalian brain at nano-scale. For this, we acquire image stacks of rat brain using electron microscopy. These images are so high resolution that individual neurons (nerve cells) and their connections (synapses) are visible.
+
+" />
+    
+    <meta name="author" content="" />
+
+    
+    <meta property="og:title" content="machine learning + visualization + connectomics" />
+    <meta property="twitter:title" content="machine learning + visualization + connectomics" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title=" - " href="/feed.xml" />
+
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/"><img src="/gfx/danielhaehncom.png" title="DANIELHAEHN.com"/></a>
+
+          <nav>
+            <a href="/posts">Posts</a>
+            <a href="/about">About</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>machine learning + visualization + connectomics</h1>
+
+  <div class="entry">
+    <p><img src="/gfx/rainbow_brain.png" alt="Rainbow Brain" title="Rainbow Brain" class="frontimg" /> <img src="/gfx/chip_brain.png" alt="Chip Brain" title="Chip Brain" class="frontimg" /></p>
+
+<p>In connectomics, we create a map of the mammalian brain at nano-scale. For this, we acquire image stacks of rat brain using electron microscopy. These images are so high resolution that individual neurons (nerve cells) and their connections (synapses) are visible. <!-- more --> Machine learning algorithms then classify cell structures and connections in these extremely large (terabytes or petabytes) images since manual processing is impossible.</p>
+
+<p><img src="/gfx/cells.jpg" alt="Neurons in Rat Brain" title="Neurons in Rat Brain" />
+<small><br />A slice of rat brain</small></p>
+
+<video autoplay="" loop="loop" style="object-fit:fill; float:right; margin-right:14px;" class="frontimg" title="Circuit board flight"><source src="/gfx/3dconnectomics.mp4" type="video/mp4" /></video>
+<p>The ultimate goals are to understand the wiring of the brain, to cure mental and neurological diseases, and also to derive new artificial intelligence methods. These goals are still far away and the next two milestones are a fully processed 100 micron cube and then the extension to a 1 milimeter cube of brain tissue. The video on the right shows selected neurons in a 100 micron cube.</p>
+
+<p><small>
+[1] A. Suissa-Peleg, D. Haehn, S. Knowles-Barley, V. Kaynig, T.R. Jones, A. Wilson, R. Schalek, J.W. Lichtman, H. Pfister: <a href="https://www.cambridge.org/core/journals/microscopy-and-microanalysis/article/div-classtitleautomatic-neural-reconstruction-from-petavoxel-of-electron-microscopy-datadiv/44219CFD1C9F1DE998BF8746F9F4C703">Automatic Neural Reconstruction from Petavoxel of Electron Microscopy Data</a>, Microscopy and Microanalysis, 2016.<br />
+[2] R. Schalek, D. Lee, N. Kasthuri, A. Suissa-Peleg, T.R. Jones, V. Kaynig, D. Haehn, H. Pfister, D. Cox, J.W. Lichtman: <a href="https://www.cambridge.org/core/journals/microscopy-and-microanalysis/article/div-classtitlespan-classboldimaging-a-1-mmspanspan-classsupspan-classbold3spanspanspan-classboldvolume-of-rat-cortex-using-a-multibeam-semspandiv/CF83F558CF849A0E64A09BDA4EA74550">Imaging a 1 mm 3 Volume of Rat Cortex Using a MultiBeam SEM</a>, Microscopy and Microanalysis, 2016.
+</small></p>
+
+<h2 id="proofreading">proofreading</h2>
+
+<p>The automatic classification of cells and connections is far from perfect. Humans are needed to double-check the results. This task is called proofreading. In 2014, we published <a href="http://rhoana.org/dojo/">Dojo</a>, an interactive proofreading software.</p>
+
+<p><img src="/gfx/dojo.jpg" alt="Interactive Proofreading using Dojo" title="Interactive Proofreading using Dojo" />
+<small><br />The Dojo proofreading software to fix automatic labelings</small></p>
+
+<p>Dojo enables proofreading for completely untrained people, recruited from the street. The data and results from the published user study are available as <a href="http://github.com/haehn/proofreading/">The Proofreading Benchmark</a>.</p>
+
+<video autoplay="" loop="loop" style="object-fit:fill; float:left; margin-right:14px;" class="frontimg" title="Circuit board flight"><source src="/gfx/guidedproofreading_small.mp4" type="video/mp4" /></video>
+<p>We found that the majority of time during interactive proofreading is spent looking for errors.</p>
+
+<p>To reduce this, we developed the <a href="http://github.com/VCG/guidedproofreading/">Guided Proofreading</a> system. Artifical intelligence suggests potential errors and corrections to a user and speeds up the proofreading task. Our results show that our trained classifier is also able to perform proofreading automatically - up to a certain threshold (and better than using Dojo :D). The video on the left shows the Guided Proofreading user interface in action, reducing proofreading to simple yes/no decisions.</p>
+
+<p><small>
+[3] D. Haehn, S. Knowles-Barley, M. Roberts, J. Beyer, N. Kasthuri, J.W. Lichtman, H. Pfister: <a href="http://ieeexplore.ieee.org/abstract/document/6875931/">Design and evaluation of interactive proofreading tools for connectomics</a>, IEEE transactions on visualization and computer graphics, 2014.<br />
+[4] D. Haehn, V. Kaynig, J. Tompkin, J.W. Lichtman, H. Pfister: <a href="http://COMINGSOON">Guided Proofreading of Automatic Segmentations for Connectomics</a>, CoRR, 2017.
+</small></p>
+
+<h2 id="visualization">visualization</h2>
+
+<p>Brain data is beautiful - not only at nano-scale. In 2012, we developed <a href="http://goXTK.com">XTK</a>, the first web-based visualization framework for medical imaging data such as MRI scans.</p>
+
+<p><img src="/gfx/mybrain.jpg" alt="My Brain visualized using XTK" title="My Brain visualized using XTK" />
+<small><br />A glimpse into my brain rendered from an MRI scan using XTK</small></p>
+
+<p><a href="http://slicedrop.com">Slice:Drop</a> is a web-based viewer for many medical imaging formats. It is based on XTK and used by clinicians, researchers, and patients every day. The software visualizes data without requiring any server uploads.</p>
+
+<p><img src="/gfx/slicedrop2.png" alt="The Slice:Drop viewer" title="The Slice:Drop viewer" />
+<small><br />The Slice:Drop viewer supports different visualizations</small></p>
+
+<p>MRI data, as visualized by <a href="http://goXTK.com">XTK</a> and <a href="http://slicedrop.com">Slice:Drop</a>, is much smaller than connectomics data. To visualize brains at nano-scale, we developed the <a href="http://github.com/rhoana/mb">MBeam viewer</a> for the <a href="https://www.zeiss.com/microscopy/int/products/scanning-electron-microscopes/multisem.html">ZEISS MultiSEM 505 microscope</a>. Using this viewer, neuroscientists are able to view high resolution images immediately after acquisition.</p>
+
+<p><img src="/gfx/multisem.jpg" alt="The ZEISS MultiSEM 505 microscope with Jeff Lichtman in front of it" title="The ZEISS MultiSEM 505 microscope with Jeff Lichtman in front of it" /> <img src="/gfx/mbeam.png" alt="The MBeam viewer" title="The MBeam viewer" />
+<small><br />The ZEISS MultiSEM 505 microscope (with <a href="http://lichtmanlab.fas.harvard.edu/">Jeff Lichtman</a> in front of it) and the MBeam viewer</small></p>
+
+<p><img src="/gfx/butterfly_small.png" alt="Butterfly" title="Butterfly" class="right-image" /> From a software engineering standpoint, the MBeam viewer and Dojo provide overlapping functionality. In particular, the logic to cut-out parts of data for transfer and visualization is implemented in both products.</p>
+
+<p>Therefor, we now develop <a href="http://github.com/rhoana/butterfly/">Butterfly</a>, a system for scalable data management and visualization, which unifies logic and visualization as separate modules. Using Butterfly, it is possible to rapidly develop new interactive visualizations of large scientific datasets.</p>
+
+<p><small>
+[5] D. Haehn, N. Rannou, B. Ahtam, E. Grant, R. Pienaar: <a href="http://www.frontiersin.org/10.3389/conf.fninf.2014.08.00101/event_abstract">Neuroimaging in the browser using the X Toolkit</a>, Frontiers in Neuroinformatics, 2014.<br />
+[6] D. Haehn, N. Rannou, E. Grant, R. Pienaar: <a href="http://dl.acm.org/citation.cfm?id=2503645">Slice: drop: Collaborative medical imaging in the browser</a>, ACM SIGGRAPH Computer Animation Festival, 2013.
+</small></p>
+
+<h2 id="further-reading">further reading</h2>
+
+<p><a href="https://www.iarpa.gov/index.php/research-programs/microns">Machine Intelligence from Cortical Networks (MICrONS)</a></p>
+
+<p><a href="https://neurodata.io/">Terascale Neuroscience</a></p>
+
+<p><a href="https://github.com/FNNDSC/ami#readme">AMI.js: Medical Imaging JavaScript ToolKit</a></p>
+
+<p><a href="http://afruehstueck.github.io/TF.html">A Transfer Function Editor for Browsers</a></p>
+
+<p><a href="https://github.com/google/neuroglancer">Neuroglancer: a WebGL-based viewer for volumetric data</a></p>
+
+<p><a href="https://ironman5366.github.io/learn-blog/">Machine Learning for humans</a></p>
+
+<p><a href="http://vcg.seas.harvard.edu/">The Visual Computing Group @ Harvard</a></p>
+
+  </div>
+
+  <div class="date">
+    Written on March  2, 2017
+  </div>
+
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <table>
+            <tr>
+              <td colspan="2" align="left">da isser ja<br><br></td>
+            </tr>
+            <tr>
+              <td rowspan="2" align="left"><img src="/gfx/danielhaehn.png"/ width="100"></td>
+              <td align="left">DANIEL HAEHN<br>machine learning + visualization + connectomics<br>phd student @ harvard</td>
+            </tr>
+            <tr>
+              <td id="icons" align="left">
+                <a href="https://twitter.com/danielhaehn" target="_blank"><span class="icon-twitter tooltip"><span class="tooltiptext">Twitter</span></span></a>
+                <a href="https://scholar.google.com/citations?user=HGvsO6oAAAAJ&hl=en" target="_blank"><span class="icon-book tooltip"><span class="tooltiptext">Google Scholar</span></span></a>
+                <a href="https://www.linkedin.com/in/haehn" target="_blank"><span class="icon-linkedin2 tooltip"><span class="tooltiptext">LinkedIn</span></span></a>
+                <a href="https://github.com/haehn" target="_blank"><span class="icon-github tooltip"><span class="tooltiptext">GitHub</span></span></a>
+                <a href="mailto:LASTNAME@ieee.org" target="_blank"><span class="icon-email tooltip"><span class="tooltiptext">E-Mail</span></span></a>
+              </td>
+            </tr>
+          </table>
+          
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+  </body>
+</html>

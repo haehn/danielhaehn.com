@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- 
+
+         \\
+          \\_   \\
+           (')   \\_
+   jgs    / )=.- -(')
+        o( )o( )_-\_
+
+ http://danielhaehn.com
+ 
+ email me!   h a e h n <AT> i e e e . o r g
+
+ PZ.
+
+ -->
+<html>
+<head>
+<meta charset='utf-8'>
+<meta name='keywords'
+	content='Daniel Haehn, XTK, SliceDrop, WebGL, Visualization, Medical Imaging, Human-Computer interaction'>
+<meta name='description' content='The personal website of Daniel Haehn'>
+<meta name='author' content='Daniel Haehn'>
+<meta name='robots' content='FOLLOW,INDEX'>
+<title>DANIELHAEHN.COM</title>
+<link type='text/css' rel='stylesheet' href='css/main.css' />
+<script type='text/javascript' src='js/xtk.js'></script>
+<script type='text/javascript' src='js/animation.js'></script>
+<script type='text/javascript' src='js/dstack.js'></script>
+<script type='text/javascript'>
+  window.onload = function() {
+
+    // create the DSTACK
+    var dstack = new DStack('stack');
+    
+    // .. and the XTK animation
+    animation();
+    
+  }
+</script>
+<script type="text/javascript">
+  // google analytics
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-39083462-1']);
+  _gaq.push(['_setDomainName', 'danielhaehn.com']);
+  _gaq.push(['_trackPageview']);
+  
+  (function() {
+
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+        : 'http://www') +
+        '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+
+<body>
+	<div id='navbar'>
+		<div id='r' class='topcorner'></div>
+		<div id='nowebgl' class='topcorner hidden'>
+			<img src='gfx/nowebgl.png' alt='No WebGL -> Static cubes'>
+		</div>
+		<img id='title' src='gfx/danielhaehn.png' alt='DANIELHAEHN.COM'>
+	</div>
+	<div id='content'>
+		<img src='gfx/daniel.jpg' class='roundimage'
+			style='float: left; width: 89px;' alt='My cheek'>
+		<div id='intro' style='margin-left: 20px; width: 360px; float: left;'>
+			Hi! My name is <span class='highlight'>Daniel Haehn</span> and I am a
+			computer guy with a passion for <span class='highlight'>open
+				source technologies</span> and <span class='highlight'>open science
+				methodologies</span>. I have a strong interest in <span class='highlight'>visualization</span>,
+			<span class='highlight'>medical imaging</span> and <span
+				class='highlight'>human-computer interaction</span>. <br> <br>
+			Currently, I am a <span class='highlight'>
+				PhD student</span> at <span class='highlight'>Harvard University</span>.<br> <br> <a
+				href='https://twitter.com/danielhaehn' target='_blank'><img
+				class='
+				socialicon' src='gfx/twitter.png' alt='Twitter'></a> <a
+				href='http://www.linkedin.com/in/haehn' target='_blank'><img
+				class=' socialicon' src='gfx/linkedin.png' alt='LinkedIn'></a> <a
+				href='https://github.com/haehn' target='_blank'><img
+				class='
+				socialicon' src='gfx/github.png' alt='GitHub'></a> <a
+				href='mailto:LASTNAME@ieee.org' target='_blank'><img
+				class=' socialicon' src='gfx/mail.png' alt='Email'></a>
+		</div>
+		<div id='dates'
+			style='display:none;margin-left: 70px; width: 200px; float: right; font-size: 11px;'>
+			Upcoming events
+			<ul>
+        <!-- <li>Realtime Live! @ <a href='http://s2013.siggraph.org/' target='_blank'>SIGGRAPH</a></li> -->
+        <!-- <li>BRAINHACK EDT @ <a href='http://brainhack.org/brainhack-edt/' target='_blank'>MIT</a></li> -->
+        <!-- <li>SciVis @ <a href='http://ieeevis.org/' target='_blank'>IEEE Vis</a></li> -->
+			</ul>
+		</div>
+		<div id='stack' style='position: absolute; left: 300px; top: 140px;'>
+			<div style='width: 515px; height: 348px;' class='stackelement'>
+				<img src='gfx/staytuned.png' class='stackimage' alt='STAYTUNED'>
+			</div>
+			<div style='width: 520px; height: 353px;' class='stackelement'>
+				<img src='gfx/coronary.png' class='stackimage' alt='SLICER.VMTK.ORG'>
+				<a href='http://oldsite.vmtk.org/Main/VmtkIn3DSlicer' target='_blank'
+					onclick='DStack.stopEvent(arguments[0]);'
+					style='height: 40px; width: 160px; bottom: 12px; right: 32px;'
+					class='stacklink'></a>
+			</div>
+			<div style='width: 510px; height: 343px;' class='stackelement'>
+				<img src='gfx/slicedrop.png' class='stackimage' alt='SLICEDROP.COM'>
+				<a href='http://slicedrop.com' target='_blank'
+					onclick='DStack.stopEvent(arguments[0]);'
+					style='height: 40px; width: 150px; top: 0px; right: 0px;'
+					class='stacklink'></a>
+			</div>
+			<div style='width: 500px; height: 333px;' class='stackelement'>
+				<img src='gfx/xtk.png' class='stackimage' alt='GOXTK.COM'> <a
+					href='http://goxtk.com' target='_blank'
+					onclick='DStack.stopEvent(arguments[0]);'
+					style='height: 40px; width: 160px; bottom: 17px; left: 165px;'
+					class='stacklink'></a>
+			</div>
+      <div style='width: 491px; height: 369px;' class='stackelement'>
+        <img src='gfx/dojo.png' class='stackimage' alt='DOJO'> <a
+          href='http://rhoana.org/dojo/' target='_blank'
+          onclick='DStack.stopEvent(arguments[0]);'
+          style='height: 40px; width: 160px; bottom: 17px; left: 300px;'
+          class='stacklink'></a>
+      </div>      
+		</div>
+	</div>
+</body>
+</html>

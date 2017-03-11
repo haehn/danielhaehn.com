@@ -1,0 +1,103 @@
+body {
+	padding: 0px;
+	margin: 0px;
+	/* 	
+		background from
+		 http://designerfied.com/wp-content/themes/dfeazy/fullpage-bg/bg-04.png
+		and slightly modified
+  */
+	background-image: url("../gfx/bg.png");
+	color: #a0a3a7;
+	font: normal normal 14px/18px "HelveticaNeue-Light",
+		"Helvetica Neue Light", "Helvetica Neue", Helvetica, sans-serif;
+	text-align: justify;
+}
+
+ul {
+	list-style-type: square;
+	padding-left: 20px;
+	margin: 0px;
+}
+
+a {
+	color: #0cf;
+	text-decoration: none;
+	border:none;
+}
+
+#navbar {
+	height: 40px;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+#title {
+	margin-top: 16px;
+	margin-left: -20px;
+}
+
+.topcorner {
+	float: left;
+	width: 155px;
+	height: 120px;
+	margin-top: -20px;
+	margin-left: -10px;
+}
+
+.hidden {
+	display: none;
+}
+
+.highlight {
+	color: #0cf;
+}
+
+.roundimage {
+	-webkit-border-radius: 30em;
+	-moz-border-radius: 30em;
+	border-radius: 30em;
+	border: 2px solid whitesmoke;
+	vertical-align: middle;
+}
+
+#content {
+	margin-left: 130px;
+	position: absolute;
+	margin-top: 20px;
+}
+
+.socialicon {
+	opacity: 0.1;
+	margin-left: 2px;
+}
+
+.socialicon:hover {
+	opacity: 0.3;
+}
+
+.stackelement {
+	background: rgba(0, 0, 0, 1.0);
+	border: 2px solid whitesmoke;
+	cursor: ne-resize;
+}
+
+.stackelement:hover {
+	background: rgba(0, 0, 0, 1);
+}
+
+.stackimage {
+	opacity: 1.0;
+}
+
+.stackimage:hover {
+	opacity: 1.0;
+}
+
+.stacklink {
+	position:absolute;
+}
+
+.stacklink:hover {
+	opacity: 0.1;
+	background-color: lightblue;
+	cursor: pointer;
+}

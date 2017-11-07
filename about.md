@@ -17,4 +17,4 @@ I ![love]({{ site.baseurl }}/gfx/heart.png "love") studying the brain, living in
 
 
 
-Here is my [resume]({{site.baseurl}}/resume.pdf) :)
+Here is my [CV]({{site.baseurl}}/CV.pdf) :)

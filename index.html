@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!-- 
+
+         \\
+          \\_   \\
+           (')   \\_
+   jgs    / )=.- -(')
+        o( )o( )_-\_
+
+ http://danielhaehn.com
+ 
+ email me!   h a e h n <AT> i e e e . o r g
+
+ PZ.
+
+ -->
+<html>
+  <head>
+    <title>DANIELHAEHN.com</title>
+    <link rel="stylesheet" type="text/css" href="css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/tooltips.css" />
+
+    <script type='text/javascript' src='js/jquery.js'></script>
+    <script type='text/javascript' src='js/moment.js'></script>
+
+    <script type='text/javascript' src='js/main.js'></script>
+    <script type='text/javascript' src='js/bibtex.js'></script>
+    
+    <bibtex src='pub.bib'></bibtex>
+  </head>
+  <body>
+ 
+    <div id='container'>
+
+      <div id='left'>
+        <div id='me_container'>
+          <div id='me_cube' title='Click me!'>
+            <figure class='front active'><img src='gfx/me1.jpg'></figure>
+            <figure class='inactive right'><img src="gfx/me2.jpg"></figure>    
+            <figure class='inactive back'><img style='transform:rotateX(180deg)' src='gfx/me3.jpg'></figure>
+            <figure class='inactive left'><img src='gfx/me4.jpg'></figure>
+          </div>
+        </div>
+
+        <div id='me_info'>
+          <span class='biggerwhite'>DANIEL HAEHN<br></span>
+          PHD STUDENT @ HARVARD<br>
+          +1.617.701.ROOT<br><br>
+          <div class='icons gray'>
+              <a href="https://twitter.com/danielhaehn" target="_blank"><span class="icon-twitter tooltip"><span class="tooltiptext">Twitter</span></span></a>
+              <a href="https://scholar.google.com/citations?user=HGvsO6oAAAAJ&hl=en" target="_blank"><span class="icon-book tooltip"><span class="tooltiptext">Google Scholar</span></span></a>
+              <a href="https://www.linkedin.com/in/haehn" target="_blank"><span class="icon-linkedin2 tooltip"><span class="tooltiptext">LinkedIn</span></span></a>
+              <a href="https://github.com/haehn" target="_blank"><span class="icon-github tooltip"><span class="tooltiptext">GitHub</span></span></a>
+              <a href="mailto:LASTNAME@ieee.org" target="_blank"><span class="icon-email tooltip"><span class="tooltiptext">E-Mail</span></span></a> 
+          </div>
+        </div>
+      </div>
+
+      <div id='right'>
+
+        <p>Hi, I am a <a href='research_story.pdf' target='_blank'>connectomics and visualization researcher</a> who investigates how neurobiology and data science can help advance the understanding of visual cortex inspired machine learning.</p>
+
+        <p>I also love <a href='linux_twins.jpg' target=_blank>my twins</a>, <a href='http://www.hcs.harvard.edu/~boxing/' target=_blank>boxing</a>, <a href='https://www.openhub.net/accounts/haehn' target=_blank>open science</a>, and <a href='https://www.tealsk12.org/' target=_blank>#CS4ALL</a>.</p>
+        <p>And, here is my <a href='CV.pdf' target=_blank>CV</a>.</p>
+
+        <div class='margin50'>
+          <span class=''>PUBLICATIONS</span>
+
+          <div class="bibtex_template">
+            <table class='pubtable'>
+              <tr>
+                <td class='padding10' style='width:150px' valign='top'><a class='bibtexVar' href='papers/+BIBTEXKEY+.pdf' target='_blank' extra='BIBTEXKEY'><img class='bibtexVar thumbnail' src='papers/+BIBTEXKEY+.png' width=150 height=150 extra="BIBTEXKEY"></a></td>
+                <td class='small' valign='top'>
+                  <span class='small gray author'><span class="first_initial"></span> <span class="von"></span><span class="last"></span><span class="junior"></span></span><br>
+                  <a class='bibtexVar' target='_blank' href='papers/+BIBTEXKEY+.pdf' extra='BIBTEXKEY'><span class='white title'></span></a><br>
+                  <span class='small lightgray journal'></span><span class='small lightgray booktitle'></span>, <span class='small lightgray year'></span><br>
+                  <span class='small gray'>
+                    <a class='bibtexVar' target='_blank' href='papers/+BIBTEXKEY+.pdf' extra='BIBTEXKEY'>Paper</a> |
+
+                    <span class='bib_optional bibtexVar' extra='SUPPLEMENTAL' href='+SUPPLEMENTAL+'><a class='bibtexVar' extra='SUPPLEMENTAL' href='+SUPPLEMENTAL+' target='_blank'>Supplemental</a> | </span>
+
+                    <span class='bib_optional bibtexVar' extra='WEBSITE' href='+WEBSITE+'><a class='bibtexVar' extra='WEBSITE' href='+WEBSITE+' target='_blank'>Website</a> | </span>       
+
+                    <span class='bib_optional bibtexVar' extra='VIDEO' href='+VIDEO+'><a class='bibtexVar' extra='VIDEO' href='+VIDEO+' target='_blank'>Video</a> | </span>        
+
+                    <span class='bib_optional bibtexVar' extra='CODE' href='+CODE+'><a class='bibtexVar' extra='CODE' href='+CODE+' target='_blank'>Code</a> | </span>                    
+                     
+                    <span class='bib_optional bibtexVar' extra='DATA' href='+DATA+'><a class='bibtexVar' extra='DATA' href='+DATA+' target='_blank'>Data</a> | </span>                    
+
+                    <span class='bib_optional bibtexVar' extra='POSTER' href='+POSTER+'><a class='bibtexVar' extra='POSTER' href='+POSTER+' target='_blank'>Poster</a> | </span>                                          
+
+                    <a class="bibtexVar" role="button" data-toggle="collapse" data-taget="#bib+BIBTEXKEY+" href="#bib+BIBTEXKEY+" onclick="$('#'+this.href.split('#')[1]).toggle(); return false;" extra="BIBTEXKEY">Bibtex</a>
+                  </span> 
+                  <div class="bibtexVar collapse white small" style='display:none;width:450px;' id="bib+BIBTEXKEY+" extra="BIBTEXKEY">
+                    <pre style="overflow:auto"><span class="bibtexraw noread"></span></pre>
+                  </div>                   
+                </td>                                
+              </tr>  
+            </table>      
+          </div>
+
+          <div id='bibtex_display'></div>
+
+
+        </div>
+
+        <br><br><br><br><br><br><span id='bockwurst'>LANG LEBE DIE BOCKWURST!</span><br><br><br>
+        
+      </div>	
+
+    </div>
+ 
+  </body>
+ </html>

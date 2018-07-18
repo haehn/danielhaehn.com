@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+
+<title>Web-based Visualization of Scientific Data (From MRI to Microscopy)</title>
+
+<meta name="description"
+	content="Web-based Visualization of Scientific Data (From MRI to Microscopy)">
+<meta name="author" content="Daniel Haehn">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style"
+	content="black-translucent" />
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="css/reveal.min.css">
+<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<script>
+  document.write('<link rel="stylesheet" href="css/print/' +
+      (window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper') +
+      '.css" type="text/css" media="print">');
+</script>
+
+<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+<link rel="stylesheet" href="css/main.css">
+<script src='js/xtk_edge.js' type='text/javascript'></script>
+<script src='js/xtk_xdat.gui.js' type='text/javascript'></script>
+
+</head>
+
+<body>
+
+	<div class="reveal">
+
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section>
+				<h1>Web-based Visualization of Scientific Data</h1>
+				<!-- <p>
+					<br>
+				</p> -->
+				<p>
+					<img src="gfx/title.png"> <br>
+				</p>
+				<p>Daniel Haehn</p>
+			</section>
+			<section>
+				<h2>Daniel Haehn</h2>
+				<div style='float: left'>
+					<img src='gfx/daniel.png' style='vertical-align: top'>
+					<ul style='margin-left: 100px; margin-top: 50px;'>
+						<li>PhD Student in Computer Science,<br>Harvard University (Hanspeter Pfister)</li><br>
+						<li>Studied Medical Computer Science (M.S.),<br>Heidelberg University, Germany</li>
+					</ul>
+				</div>
+				<!-- <span style="float: left; width: 500px;"><img
+					src="gfx/bch.png"
+					style="margin-left: 250px; float: left; border: none; background: none; box-shadow: none;"><br><a href='http://childrenshospital.org/FNNDSC' style='margin-left: 180px;'>FNNDSC</a></span> -->
+<!-- 				<span style="float: right;"><img src="gfx/slicedrop.png"
+					style="border: none; background: none; box-shadow: none;"><br>
+					<a href='http://slicedrop.com'>http://slicedrop.com</a></span> -->
+
+			</section>
+			<section>
+			  <h2>Daniel Haehn (2)</h2>
+			  <ul style='margin-left: 100px; margin-top: 50px;'>
+				  <li>Signal- and Image Processing background</li><br>
+				  <li>Medical Imaging / Radiology</li>
+				  <ul style='margin-left: 100px; margin-top: 10px;'>
+				  	<li>UPenn</li>
+				  	<li>Brigham and Women's Hospital</li>
+				  	<li>Boston Children's Hospital</li>
+				  </ul>
+			  </ul>
+<!-- 					<span style="float: left; width: 500px;"><img
+					src="gfx/bch.png"
+					style="margin-left: 500px; float: left; border: none; background: none; box-shadow: none;"></span>			   -->
+					<span style="margin-left:350px;float: left;"><img src="gfx/slicer.png"
+						style="border: none; background: none; box-shadow: none;"><br>
+						<a href='http://slicer.org'>http://slicer.org</a></span>		
+					<span style="float: right;margin-top:6px"><img src="gfx/slicedrop.png"
+					style="border: none; background: none; box-shadow: none;"><br>
+					<a href='http://slicedrop.com'>http://slicedrop.com</a></span>									
+			</section>
+
+			<section>
+				<h2>Daniel Haehn (3)</h2>
+				<ul style='margin-left: 100px; margin-top: 50px;'>
+				  <li>2011 Back to Web Development</li>
+				  <ul style='margin-left: 100px; margin-top: 10px;'>
+				  <li>Mainly Visualization</li><br>
+				  </ul>
+				  <li>Everything Open Source</li>
+				</ul>
+			</section>
+
+			<section>
+			<h2>Web-based visualization</h2>
+				<ul style='margin-left: 100px; margin-top: 50px;'>
+					<li>JavaScript</li><br>
+					<li>Rendering on the Client</li><br>
+					<li>HTML5 Canvas for 2D and 3D (WebGL)</li>
+				</ul>
+					<span style="margin-left:500px;margin-top:20px;float: left;"><img src="gfx/html5.png"
+						style="border: none; background: none; box-shadow: none;"><br>
+						</span>		
+					<span style="float: right;margin-top:50px"><img src="gfx/webgl.png"
+					style="border: none; background: none; box-shadow: none;"><br>
+					</span>							
+			</section>
+
+			<section>
+				<h2>Canvas 2D</h2>
+				<div class='fragment roll-in' id='x-slices'
+						style='margin-left: 330px;width: 300px; height: 300px;'></div>			
+			</section>
+
+			<section>
+				<h2>WebGL?</h2>
+				<div class='fragment roll-in' id='x-teaser'
+					style='width: 100%; height: 100%; min-height: 600px; min-width: 800px;'>
+				</div>
+			</section>
+
+			<section>
+				<h2>Challenges</h2>
+				<ul style='margin-left: 100px; margin-top: 50px;'>
+					<li>Browser Compatibility<span class='fragment roll-in'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:D</span></li><br>
+					<li>Performance</li><br>
+					<li>Limitations</li><br>
+				</ul>
+			</section>
+
+			<section>
+			  <h2>Advantages</h2>
+			  <ul style='margin-left: 100px; margin-top: 50px;'>
+			    <li>No Installation</li><br>
+			    <li>Up-to-date</li><br>
+			    <li>Reachability</li>
+			  </ul>
+			</section>
+
+			<section>
+			<h2>3D Slicer and others</h2>
+				<img style='' src='gfx/3dslicer.png'> <img class='fragment'
+					style='position: absolute; left: 0px; top: 150px;'
+					src='gfx/freeview.png'> <img class='fragment'
+					style='position: absolute; right: 0px; top: 50px;'
+					src='gfx/osirix.png'> <img class='fragment'
+					style='position: absolute; right: 0px; top: 50px;'
+					src='gfx/trackvis.png'>			
+			</section>
+
+			<section>
+				<h2>Slice:Drop</h2>
+				<img src='gfx/slicedrop_shot.png'><br> <a
+					href='http://slicedrop.com' target=_blank>http://slicedrop.com</a>
+			</section>
+
+			<section>
+				<h2>XTK</h2>
+        <img src='gfx/xtk.png'>
+        <a href='http://goXTK.com' target='_blank'>http://goXTK.com</a>
+			</section>
+
+			<section>
+				<h2>Connectome</h2>
+				<img src='gfx/connectome_data.jpg'>
+        <ul style='margin-left: 100px; margin-top: 50px;'>
+          <li>Large Electron Microscopy Data (nanoscale, TB, PB)</li>
+          <li>Automatically Annotated</li>
+          <li>Manual Proofreading required (~1.5 corrections per cell required)</li>
+        </ul>        
+			</section>
+
+			<section>
+			  <h2>Connectome (2)</h2>
+        Standalone Proofreading Tool<br>
+			  <img src='gfx/mojo.png'><br>
+        <a href='http://www.rhoana.org/' target='_blank'>http://www.rhoana.org/</a>
+			</section>
+
+			<section>
+				<h2>Connectome (3)</h2>
+        First Approach: IIP Image Server + OpenSeaDragon<br>
+				<img src='gfx/openseadragon.png' width=300><br>
+        <a href='http://monster.krash.net/dojo/_legacy/frontend/zstack_hack.html' target='_blank'>http://monster.krash.net/dojo/_legacy/frontend/zstack_hack.html</a>
+			</section>
+
+			<section>
+			  <h2>Connectome (4)</h2>
+			  Second Approach: Custom Image Server + OpenSeaDragon<br>
+        <img src='gfx/dojo_old.png' width=300><br>
+        <a href='http://monster.krash.net:1338/dojo/' target='_blank'>http://monster.krash.net:1338/dojo/</a>
+			</section>
+
+      <section>
+        <h2>Connectome (5)</h2>
+        Final Approach: Custom Image Server + Custom Viewer<br>
+        <img src='gfx/dojo_new.png' width=300><br>
+        <a href='http://monster.krash.net:1337/dojo/' target='_blank'>http://monster.krash.net:1337/dojo/</a>
+      </section>
+
+			<section>
+				<section>
+					<h2>demos</h2>
+				</section>
+				<section>
+					<h2>demos</h2>
+					<h3>knee atlas</h3>
+					<img src='gfx/kneeatlas.png'><br> <a
+						href='http://demos.goxtk.com/knee_atlas/' target=_blank>http://demos.goxtk.com/knee_atlas/</a>
+				</section>
+				<section>
+					<h2>demos</h2>
+					<h3>brain atlas</h3>
+					<img src='gfx/brainatlas.png'><br> <a
+						href='http://demos.goxtk.com/brain_atlas/' target=_blank>http://demos.goxtk.com/brain_atlas/</a>
+				</section>
+				<section>
+					<h2>demos</h2>
+					<h3>Semantic Movies</h3>
+					<img src='gfx/semanticbrain.png'><br> <a
+						href='http://gallantlab.org/semanticmovies/' target=_blank>http://gallantlab.org/semanticmovies/</a>
+					<span
+						style='display:none;font-size: 12px; position: absolute; bottom: -20px; right: 0px;'>
+						Huth, Nishimoto, Vu and Gallant (2012), "A continuous semantic
+						space describes the representation of thousands of object and
+						action categories across the human brain", Neuron 2012 </span>
+				</section>
+				<section>
+					<h2>demos</h2>
+					<h3>stackdrop</h3>
+					<img src='gfx/stackdrop.png'><br> <a
+						href='http://stackdrop.org' target=_blank>http://stackdrop.org</a>
+				</section>
+				<section>
+					<h2>demos</h2>
+					<h3>fetal mri</h3>
+					<img src='gfx/fetalmriorg.png'><br> <a
+						href='http://fetalmri.org' target=_blank>http://fetalmri.org</a>
+				</section>
+				<section>
+					<h2>demos</h2>
+					<h3>3d slicer webGl export</h3>
+					<img src='gfx/webglexport.png'><br> <a
+						href='https://github.com/xtk/SlicerWebGLExport' target=_blank>https://github.com/xtk/SlicerWebGLExport</a>
+				</section>
+			</section>
+			
+			<section>
+				<h1>thank you</h1>
+				<a href='http://danielhaehn.com/p/mit2014' target=_blank>http://danielhaehn.com/p/mit2014</a>
+			</section>
+		</div>
+
+
+	</div>
+
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.min.js"></script>
+
+	<script>
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      overview: false,
+      rollingLinks: false,
+      
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+      
+      // Optional libraries used to extend on reveal.js
+      dependencies: [{
+        src: 'lib/js/classList.js',
+        condition: function() {
+
+          return !document.body.classList;
+        }
+      }, {
+        //         src : 'plugin/markdown/showdown.js',
+        //         condition : function() {
+        //           return !!document.querySelector('[data-markdown]');
+        //         }
+        //       }, {
+        //         src : 'plugin/markdown/markdown.js',
+        //         condition : function() {
+        //           return !!document.querySelector('[data-markdown]');
+        //         }
+        //       }, {
+        src: 'plugin/highlight/highlight.js',
+        async: true,
+        callback: function() {
+
+          hljs.initHighlightingOnLoad();
+        }
+      //       }, {
+      //         src : 'plugin/zoom-js/zoom.js',
+      //         async : true,
+      //         condition : function() {
+      //           return !!document.body.classList;
+      //         }
+      //       }, {
+      //         src : 'plugin/notes/notes.js',
+      //         async : true,
+      //         condition : function() {
+      //           return !!document.body.classList;
+      //         }
+      }
+      // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+      // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+    });
+    
+    Xrenderer = null;
+    Xrenderer2 = null;
+    Xgui = null;
+    
+    function showTeaser() {
+
+      Xrenderer = new X.renderer3D();
+      Xrenderer.container = 'x-teaser';
+      Xrenderer.init();
+      
+      var v = new X.volume();
+      v.file = 'data/10mo.nrrd';
+      v.volumeRendering = true;
+      v.lowerThreshold = 100;
+      v.opacity = 0.3;
+      
+      Xrenderer.add(v);
+      
+      Xrenderer.camera.position = [0, 0, 350];
+      Xrenderer.camera.up = [0, -1, 0];
+      Xrenderer.render();
+      
+      Xrenderer.onShowtime = function() {
+
+        Xgui = new dat.GUI();
+        var volumegui = Xgui.addFolder('Volume');
+        volumegui.add(v, 'volumeRendering');
+        volumegui.add(v, 'opacity', 0, 1);
+        volumegui.add(v, 'lowerThreshold', v.min, v.max);
+        volumegui.add(v, 'upperThreshold', v.min, v.max);
+        volumegui.add(v, 'indexX', 0, v.dimensions[0] - 1);
+        volumegui.add(v, 'indexY', 0, v.dimensions[1] - 1);
+        volumegui.add(v, 'indexZ', 0, v.dimensions[2] - 1);
+        volumegui.open();
+        
+      }
+
+    }
+
+    function showSlices() {
+
+      Xrenderer = new X.renderer2D();
+      Xrenderer.container = 'x-slices';
+      Xrenderer.orientation = 'Z';
+      Xrenderer.init();
+      Xrenderer.rotate();
+      Xrenderer.rotate();
+      
+
+      var v = new X.volume();
+      v.file = 'data/slices.nii.gz';
+      v.reslicing = false;
+      
+
+      Xrenderer.add(v);
+      
+      Xrenderer.render();
+      
+      Xrenderer.onShowtime = function() {
+
+        v.windowHigh = 735;
+      }
+
+
+    }
+
+    function showFetal() {
+
+      Xrenderer = new X.renderer2D();
+      Xrenderer.container = 'x-fetal1';
+      Xrenderer.orientation = 'Z';
+      Xrenderer.init();
+      //Xrenderer.rotate();
+      //Xrenderer.rotate();
+      
+      var v = new X.volume();
+      v.file = 'data/fetal_cropped.nii.gz';
+      v.reslicing = false;
+      
+      Xrenderer.add(v);
+      
+      Xrenderer.render();
+      
+      Xrenderer.onShowtime = function() {
+
+        v.windowHigh = 1900;
+      }
+
+      Xrenderer2 = new X.renderer2D();
+      Xrenderer2.container = 'x-fetal2';
+      Xrenderer2.orientation = 'Z';
+      Xrenderer2.init();
+      //Xrenderer.rotate();
+      //Xrenderer.rotate();
+      
+      var v2 = new X.volume();
+      v2.file = 'data/fetal_atlas.nii.gz';
+      v2.reslicing = false;
+      
+      Xrenderer2.add(v2);
+      
+      Xrenderer2.render();
+      
+      Xrenderer2.onShowtime = function() {
+
+        v2.windowLow = 190;
+      }
+
+
+
+    }
+    
+    function showModels() {
+      
+
+      Xrenderer = new X.renderer3D();
+      Xrenderer.container = 'x-3d';
+      Xrenderer.init();
+      
+      var m1 = new X.mesh();
+      m1.file = 'data/Model_42_42.vtk';
+      m1.color = [107/255, 163/255, 179/255];
+      
+      var m2 = new X.mesh();
+      m2.file = 'data/Model_47_47.vtk';
+      m2.color = [158/255, 114/255, 155/255];
+      
+      var m3 = new X.mesh();
+      m3.file = 'data/Model_48_48.vtk';
+      m3.color = [193/255, 180/255, 129/255];
+      
+      var m4 = new X.mesh();
+      m4.file = 'data/Model_173_173.vtk';
+      m4.color = [206/255, 180/255,162/255];
+            
+      var m5 = new X.mesh();
+      m5.file = 'data/Model_174_174.vtk';   
+      m5.color = [184/255, 156/255, 134/255];
+      
+      Xrenderer.add(m1);
+      Xrenderer.add(m2);
+      Xrenderer.add(m3);
+      Xrenderer.add(m4);
+      Xrenderer.add(m5);
+      
+      Xrenderer.camera.up = [0,0,1];
+      Xrenderer.camera.position = [-250,0,0];
+      
+      Xrenderer.render();
+      
+    }
+
+
+
+    function hideWebGL() {
+
+      if (Xrenderer) {
+        
+        Xrenderer.destroy();
+        
+        Xrenderer = null;
+        
+      }
+      
+      if (Xrenderer2) {
+        
+        Xrenderer2.destroy();
+        
+        Xrenderer2 = null;
+        
+      }
+      
+      if (Xgui) {
+        
+        Xgui.destroy();
+        
+        Xgui = null;
+        
+      }
+      
+    }
+
+    // callbacks
+    Reveal.addEventListener('slidechanged', function(event) {
+
+      // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+      
+      if (Xrenderer) {
+        hideWebGL();
+      }
+      
+    });
+    
+    Reveal.addEventListener('fragmentshown', function(event) {
+
+      // event.fragment = the fragment DOM element
+      if (event.fragment.id == 'x-teaser') {
+        showTeaser();
+      } else if (event.fragment.id == 'x-slices') {
+        showSlices();
+      } else if (event.fragment.id == 'x-fetal') {
+        showFetal();
+      } else if (event.fragment.id == 'x-3d') {
+        showModels();
+      }
+      
+    });
+  </script>
+
+</body>
+</html>

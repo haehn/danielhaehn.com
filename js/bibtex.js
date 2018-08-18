@@ -577,6 +577,28 @@ function BibtexDisplay() {
             $.each(this.attributes, function(i, attrib) {
                 var value = attrib.value;
                 value = value.replace(regEx, entry[key]);
+                
+                if ((key == 'VIDEO' || key == 'FASTFORWARD') && attrib.name == 'src') {
+                    // we need to replace the URLs to allow video embedding
+
+                    if (value.indexOf('vimeo') != -1) {
+
+                        var video_id = value.split('/');
+                        video_id = video_id[video_id.length - 1];
+
+                        value = 'https://player.vimeo.com/video/' + video_id;
+
+                    } else if (value.indexOf('youtube') != -1) {
+
+                        var video_id = value.split('=');
+                        video_id = video_id[video_id.length - 1];
+
+                        value = 'https://www.youtube.com/embed/' + video_id;
+
+                    }
+
+                }
+
                 attrib.value = value;
             });
         });

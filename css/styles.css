@@ -296,3 +296,15 @@ a:hover {
 .bibtexVar[href='undefined'] {
     display: none;
 }
+
+[data-innerText]::after {
+  content: attr(data-innerText);
+}
+
+.file_icon {
+    filter: grayscale(100%);
+}
+
+.file_icon:hover {
+    filter: grayscale(0%);
+}

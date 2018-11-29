@@ -1,0 +1,74 @@
+%
+% 2014
+%
+@article{haehn2014design,
+  title={Design and Evaluation of Interactive Proofreading Tools for Connectomics},
+  author={\myname{Haehn, Daniel} and Knowles-Barley, Seymour and Roberts, Mike and Beyer, Johanna and Kasthuri, Narayanan and Lichtman, Jeff W. and Pfister, Hanspeter},
+  abstract={Proofreading refers to the manual correction of automatic segmentations of image data. In connectomics, electron microscopy data is acquired at nanometer-scale resolution and results in very large image volumes of brain tissue that require fully automatic segmentation algorithms to identify cell boundaries. However, these algorithms require hundreds of corrections per cubic micron of tissue. Even though this task is time consuming, it is fairly easy for humans to perform corrections through splitting, merging, and adjusting segments during proofreading. In this paper we present the design and implementation of Mojo, a fully-featured single-user desktop application for proofreading, and Dojo, a multi-user web-based application for collaborative proofreading. We evaluate the accuracy and speed of Mojo, Dojo, and Raveler, a proofreading tool from Janelia Farm, through a quantitative user study. We designed a between-subjects experiment and asked non-experts to proofread neurons in a publicly available connectomics dataset. Our results show a significant improvement of corrections using web-based Dojo even in comparison to fully manual expert segmentation, when given the same amount of time. In addition, all participants using Dojo reported better usability. We discuss our findings and provide an analysis of requirements for designing visual proofreading software.},
+  journal={IEEE Transactions on Visualization and Computer Graphics (IEEE VIS)},
+  volume={20},
+  number={12},
+  pages={2466--2475},
+  year={2014},
+  publisher={IEEE},
+  website={http://rhoana.org/dojo/},
+  code={http://github.com/rhoana/dojo/},
+  data={https://github.com/haehn/proofreading},
+  video={https://vimeo.com/102949056}
+}
+
+
+%
+% 2017
+%
+@article{haehn2017scalable,
+  title={Scalable Interactive Visualization for Connectomics},
+  author={\myname{Haehn, Daniel} and Hoffer, John and Matejek, Brian and Suissa-Peleg, Adi and Al-Awami, Ali K and Kamentsky, Lee and Gonda, Felix and Meng, Eagon and Zhang, William and Schalek, Richard and Wilson, Alyssa and Parag, Toufiq and Beyer, Johanna and Kaynig, Verena and Jones, Thouis R. and Tompkin, James and Hadwiger, Markus and Lichtman, Jeff W. and Pfister, Hanspeter},
+  journal={MDPI Informatics},
+  abstract={Connectomics has recently begun to image brain tissue at nanometer resolution, which produces petabytes of data. This data must be aligned, labeled, proofread, and formed into graphs, and each step of this process requires visualization for human verification. As such, we present the BUTTERFLY middleware, a scalable platform that can handle massive data for interactive visualization in connectomics. Our platform outputs image and geometry data suitable for hardware-accelerated rendering, and abstracts low-level data wrangling to enable faster development of new visualizations. We demonstrate scalability and extendability with a series of open source Web-based applications for every step of the typical connectomics workflow: data management and storage, informative queries, 2D and 3D visualizations, interactive editing, and graph-based analysis. We report design choices for all developed applications and describe typical scenarios of isolated and combined use in everyday connectomics research. In addition, we measure and optimize rendering throughput—from storage to display—in quantitative experiments. Finally, we share insights, experiences, and recommendations for creating an open source data management and interactive visualization platform for connectomics.},
+  volume={4},
+  number={3},
+  pages={29},
+  year={2017},
+  organization={Multidisciplinary Digital Publishing Institute},
+  code={https://github.com/Rhoana/butterfly},
+  video={https://vimeo.com/280509756}
+}
+
+
+@InProceedings{haehn2018guided,
+    title={Guided Proofreading of Automatic Segmentations for Connectomics},
+    author={\myname{Haehn, Daniel} and Kaynig, Verena and Tompkin, James and Lichtman, Jeff W. and Pfister, Hanspeter},
+    abstract={Automatic cell image segmentation methods in connectomics produce merge and split errors, which require correction through proofreading. Previous research has identified the visual search for these errors as the bottleneck in interactive proofreading. To aid error correction, we develop two classifiers that automatically recommend candidate merges and splits to the user. These classifiers use a convolutional neural network (CNN) that has been trained with errors in automatic segmentations against expert-labeled ground truth. Our classifiers detect potentially-erroneous regions by considering a large context region around a segmentation boundary. Corrections can then be performed by a user with yes/no decisions, which reduces variation of information 7.5x faster than previous proofreading methods. We also present a fully-automatic mode that uses a probability threshold to make merge/split decisions. Extensive experiments using the automatic approach and comparing performance of novice and expert users demonstrate that our method performs favorably against state-of-the-art proofreading methods on different connectomics datasets.},
+    booktitle = {IEEE Computer Vision and Pattern Recognition (CVPR)},
+    month = {June},
+    year = {2018},
+    supplemental={http://danielhaehn.com/papers/haehn2018guided_supplemental.pdf},
+    code={http://rhoana.org/guidedproofreading/},
+    data={https://github.com/haehn/proofreading},
+    video={https://vimeo.com/280507933},
+    poster={http://danielhaehn.com/papers/haehn2018guided_poster.pdf}
+}
+
+
+%
+% 2018
+%
+@article{haehn2018evaluating,
+  title={Evaluating 'Graphical Perception' with CNNs},
+  author={\myname{Haehn, Daniel} and Tompkin, James and Pfister, Hanspeter},
+  journal={IEEE Transactions on Visualization and Computer Graphics (IEEE VIS)},
+  abstract={Convolutional neural networks can successfully perform many computer vision tasks on images. For visualization, how do CNNs perform when applied to graphical perception tasks? We investigate this question by reproducing Cleveland and McGill’s seminal 1984 experiments, which measured human perception efficiency of different visual encodings and defined elementary perceptual tasks for visualization. We measure the graphical perceptual capabilities of four network architectures on five different visualization tasks and compare to existing and new human performance baselines. While under limited circumstances CNNs are able to meet or outperform human task performance, we find that CNNs are not currently a good model for human graphical perception. We present the results of these experiments to foster the understanding of how CNNs succeed and fail when applied to data visualizations.},
+  volume={to appear},
+  number={X},
+  pages={X--X},
+  year={2018},
+  month={October},
+  publisher={IEEE},
+  supplemental={http://danielhaehn.com/papers/haehn2018evaluating_supplemental.pdf},
+  code={http://rhoana.org/perception/},
+  data={http://rhoana.org/perception/},
+  video={https://vimeo.com/280506639},
+  fastforward={https://vimeo.com/285106317},
+  poster={http://danielhaehn.com/papers/haehn2018evaluating_poster.pdf}
+}

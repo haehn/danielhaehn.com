@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- 
+
+                                   X
+                                   XX
+                          X        XXX
+                          XX       XXXX
+                          XXX      XXXX
+                          XXXX     XXXX
+                          XXXXX    XXXX
+                           XXXXX   XXXX
+                            XXXXX  XXXX
+                             XXXX  XXXX
+                              XXX  XXX
+                               XX  XX
+                              XXXXXXXXXX
+                             XXXXXXXXOXXXX
+                             XXXXXXXXXXXXXX
+                             XXXXXXXXXXXXXX
+                             XXXXXXXXXXXXX
+                              XXXXXXXXXX
+                              XXXXXXXXX
+                             XXXXXXXXXX
+                           XXXXXXXXXXXX
+                         XXXXXXXXXXXXXX
+                       XXXXXXXXXXXXXXXXX
+                     XXXXXXXXXXXXXXXXXXX
+                   XXXXXXXXXXXXXXXXXXXXX
+                 XXXXXXXXXXXXXXXXXXXXXXX
+               XXXXXXXXXXXXXXXXXXXXXXXXX
+              XXXXXXXXXXXXXXXXXXXXXXXXX
+             XXXXXXXXXXXXXXXXXXXXXXXXX
+            XXXXXXXXXXXXXXXXXXXXXXXXX
+            XXXXXXXXXXXXXXXXXXXXXXXXXX
+   XXXXX    XXXXXXXXXXXXXXXXXXXXXXXXXXX
+ XXXXXXXXX  XXXXXXXXXXXXXXXXXXXXXX XXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    XXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX      XXXXX
+ XXXXXXXXX  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+   XXXXX      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+ https://danielhaehn.com
+ 
+ email me!   d <AT> e y - i . o r g
+
+ PZ.
+
+ -->
+<html>
+  <head>
+    <title>DANIELHAEHN.com</title>
+    <link rel="stylesheet" type="text/css" href="../css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/tooltips.css" />
+
+    <script type='text/javascript' src='../js/jquery.js'></script>
+    <script type='text/javascript' src='../js/moment.js'></script>
+
+    <script type='text/javascript' src='../js/main.js'></script>
+    <script type='text/javascript' src='../js/bibtex.js'></script>
+    
+    <bibtex src='phdpub.bib'></bibtex>
+
+    <style>
+    
+    body {
+        background: #fff;
+        color: black;
+        font-family: oswald;
+    }
+
+    a {
+        color: hotpink;
+        text-decoration: none;
+        cursor: hand;
+    }
+
+    a:hover {
+        color: black;
+    }
+    
+    .thumbnail {
+        filter: grayscale(0%);
+    } 
+
+    .lightgray {
+        color: gray;
+    }
+
+    .gray {
+        color: gray;
+    }
+
+    .white {
+        color: black;
+    }
+
+    .pubtable {
+        width: 660px;
+        padding-right: 10px;
+        border-right: none;
+        font-size: 1.5em;
+    }
+
+    .pubtable:hover {
+        border-right: none;
+        /*background: hotpink;*/
+    }
+
+    .abstract {
+        width: 640px;
+        text-align: justify;
+        margin-bottom: 30px;
+    }
+
+    </style>
+  </head>
+  <body>
+   
+
+    <span style='margin:20px'>&lt; <a href='https://danielhaehn.com'>DANIELHAEHN.COM</a></span>
+
+
+    <center>
+    <div id='container'>
+
+        PhD Thesis Defense by Daniel Haehn at Harvard University
+        <h1 style='margin-top:10px'>Analyzing Brain Connectivity and Computing Machine Perception</h1>
+
+        <div class='abstract'>
+        Artificial intelligence is loosely inspired by neuroscientific discoveries. However, existing methods are fragile and do not generalize well. In contrast, the brain allows humans to reliably recognize, extrapolate, and classify enormous amounts of stimuli--seemingly without effort. This difference in performance is likely the result of limited architectural correspondences between neurobiology and machine learning. 
+
+        With advances in computer science, my goal is to reduce the gap between natural and artificial intelligence: First, with bottom-up investigations for how visual computing methods can aid brain connectivity analysis, and second, exploring top-down how perceptual studies can increase the comprehension of machine learning models.
+        </div>
+
+        <div class="bibtex_template">
+                <table class='pubtable'>
+                  <tr>
+                    <td class='padding10' style='width:100px' valign='top'><a class='bibtexVar' href='../papers/?+BIBTEXKEY+' extra='BIBTEXKEY'><img class='bibtexVar thumbnail' src='../papers/+BIBTEXKEY+.png' width=100 height=100 extra="BIBTEXKEY"></a></td>
+                    <td class='small' valign='top'><br>
+                      <!-- <span class='small gray author'><span class="first_initial"></span> <span class="von"></span><span class="last"></span><span class="junior"></span></span><br> -->
+                      <a class='bibtexVar' href='../papers/?+BIBTEXKEY+' extra='BIBTEXKEY'><span class='white title'></span></a><br>
+                      <span class='small lightgray journal'></span><span class='small lightgray booktitle'></span>, <span class='small lightgray year'></span><br>
+                      </span>         
+                    </td>                                
+                  </tr>  
+                </table>      
+              </div>
+    
+              <div id='bibtex_display'></div>
+
+    </div>
+ 
+  </body>
+ </html>

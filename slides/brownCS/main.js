@@ -9,7 +9,7 @@ Reveal.addEventListener( 'slidechanged', function( event ) {
     //     console.log(xtk0frame);
     //     xtk0frame.contentWindow.set_nice_view();
     // } else 
-    if (event.indexh == 3) {
+    if (event.indexh == 2) {
         console.log('destroyed xtk0.');
         xtk0frame = document.getElementById('xtk0');
         xtk0frame.contentWindow.REN3D.destroy();
@@ -17,3 +17,15 @@ Reveal.addEventListener( 'slidechanged', function( event ) {
 
 
 } );
+
+window.onkeydown = function(e) {
+
+    console.log(e)
+
+    if (e.keyCode == '38') {
+        Reveal.right();
+    } else if (e.keyCode == '40') {
+        Reveal.left();
+    }
+
+}

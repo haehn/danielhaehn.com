@@ -3,6 +3,7 @@ title: Brown CS
 revealOptions:
     viewDistance: 1
     transition: 'slide'
+    keyboard: true
 ---
 
 Note: Good Afternoon!<br><br>We do not fully understand the brain and we... machine learning methods
@@ -59,7 +60,7 @@ Note: ...and we end up with image slices that get aligned to volumes.<br><br>Now
 
 <img src='segmentation/labels.png' border=0 style='height:512.99px;border:none;'>
 
-Note: We do this automatically and there are a variety of different methods<br><br>U-Nets and watershed, over floodfilling networks, affinity-based approaches, Seere Lab
+Note: We do this automatically and there are a variety of different methods<br><br>U-Nets and watershed, over floodfilling networks, affinity-based approaches, Seere Lab<br><br>but the automatic segmentations are not perfect
 
 ---
 
@@ -71,29 +72,35 @@ Note: let's take a closer look and zoom in
 
 <img src='segmentation/zoom2.png' border=0 style='height:512.99px;border:none;'>
 
-Note: 
+Note: because there are nice errors here
 
 ---
 
 <img src='segmentation/zoom3errors.png' border=0 style='height:512.99px;border:none;'>
 
-Note: 
+Note: please focus on these labels and the regions marked with arrows
 
 ---
 
 <img src='segmentation/zoom4errors_membranes.png' border=0 style='height:512.99px;border:none;'>
 
-Note: 
+Note: these are two cells and the membranes are shown here.<br><br>the labeling should look different
 
 ---
 
 <img src='segmentation/zoom5labels.png' border=0 style='height:512.99px;border:none;'>
 
-<span class='myimg fragment fade-in' data-fragment-index="2" style='color:red; position: absolute;top:450px;left:470px'>Wrong</span>
+<span class='myimg fragment fade-in' data-fragment-index="1" style='color:red; position: absolute;top:450px;left:470px'>Wrong</span>
 
-<span class='myimg fragment fade-in' data-fragment-index="3" style='color:MediumSeaGreen; position: absolute;top:450px;left:660px;'>Correct</span>
+<span class='myimg fragment fade-in' data-fragment-index="2" style='color:MediumSeaGreen; position: absolute;top:450px;left:660px;'>Correct</span>
 
-Note: 
+Note: like that...<br><br>(click 2x) How do we get from the wrong labeling on the left to the correct labeling on the right?
+
+---
+
+<img src='segmentation/human.png' border=0 style='border:none;'>
+
+Note: And the answer is proofreading by humans.
 
 ---
 

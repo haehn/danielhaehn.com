@@ -18,14 +18,49 @@ Reveal.addEventListener( 'slidechanged', function( event ) {
 
 } );
 
-window.onkeydown = function(e) {
+window.onload = function() {
 
-    console.log(e)
+    // we need to re-configure Reveal...
 
+    var oldc = Reveal.getConfig();
+
+    oldc.keyboard = true;
+    oldc.keyboardCondition = checkValidKey;
+
+    Reveal.configure(oldc);
+
+    console.log('new config in place.')
+
+}
+
+function checkValidKey(e) {
+
+    var validkeys = [83, 70, 66];
+
+    if (validkeys.includes(e.keyCode)) {
+        return true;
+    }
+
+    return false;
+}
+
+window.onkeyup = function(e) {
+    // console.log(e.keyCode)
     if (e.keyCode == '38') {
-        Reveal.right();
+
+        // if (Reveal.availableFragments().next) {
+            console.log('up pressed')
+        //     Reveal.nextFragment();
+        // } else {
+            Reveal.navigateRight();
+        // }
+
     } else if (e.keyCode == '40') {
-        Reveal.left();
+
+        console.log('down pressed')
+
+            Reveal.navigateLeft();
+
     }
 
 }

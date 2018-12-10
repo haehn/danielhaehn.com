@@ -35,7 +35,7 @@ window.onload = function() {
 
 function checkValidKey(e) {
 
-    var validkeys = [83, 70, 66];
+    var validkeys = [27, 83, 70, 66];
 
     if (validkeys.includes(e.keyCode)) {
         return true;

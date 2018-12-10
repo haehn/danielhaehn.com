@@ -144,7 +144,7 @@ Note: Citizen science<br><br>for less complex data and only split errors<br><br>
 
 <iframe id='gp0' style='position:fixed; top:0px; left:0px; width:100%; height:100%;' data-src='http://localhost:1337/dojo/'></iframe>
 
-<span style='position:absolute;z-index:1000;font-size:20px;top:700px;left:100px;width:650px'>D. Haehn, S. Knowles-Barley, M. Roberts, J. Beyer, N. Kasthuri, J.W. Lichtman, and H. Pfister. <b>Design and Evaluation of Interactive Proofreading Tools for Connectomics.</b> <i>IEEE Transactions on Visualization and Computer Graphics (IEEE SciVis)</i>, 2014.</span>
+<span style='position:absolute;z-index:1000;font-size:20px;top:600px;left:200px;width:650px'>D. Haehn, S. Knowles-Barley, M. Roberts, J. Beyer, N. Kasthuri, J.W. Lichtman, and H. Pfister. <b>Design and Evaluation of Interactive Proofreading Tools for Connectomics.</b> <i>IEEE Transactions on Visualization and Computer Graphics (IEEE SciVis)</i>, 2014.</span>
 
 Note: Dojo Live Demo... slices<br>3D<br>merge<br>split<br><br>quantitative user study
 

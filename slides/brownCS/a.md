@@ -5,6 +5,7 @@ revealOptions:
     transition: 'slide'
     keyboard: true
 ---
+<!-- (c) Daniel Haehn, https://danielhaehn.com, contact me for questions! -->
 
 Note: Good Afternoon!<br><br>We do not fully understand the brain and we... machine learning methods
 <br><br>but i think we can all agree that the brain is superior to artificial intelligence.<br><br>For instance, CNNs work extremely well on certain CV tasks, but the ability to generalize, reason, or understand is somewhat limited.<br><br>So how can we change that?
@@ -184,6 +185,8 @@ Note: by Janelia, runs originally in Raveler and suggests errors to the user bas
 <iframe id='gp0' style='position:fixed; top:0px; left:0px; width:100%; height:100%;' data-src='http://140.247.107.121:21000/'></iframe>
 
 <span style='position:absolute;z-index:1000;font-size:20px;top:400px;left:100px;width:700px'>D. Haehn, V. Kaynig, J. Tompkin, J.W. Lichtman, H. Pfister. <b>Guided Proofreading of Automatic Segmentations for Connectomics.</b> <i>IEEE Computer Vision and Pattern Recognition (CVPR)</i>, 2018.</span>
+
+<!-- (nolearn) d@viper:~/Projects/gp_TEST/ui (master@e896-)$>./ui.py 21000 /tmp/343242 GP -->
 
 Note: The Guided Proofreading system<br><br>this way, we can reduce the correction time by a factor of 7.5times<br><br>CVPR 2018<br><br>so how do we suggest the errors? we train a convolutional neural network
 

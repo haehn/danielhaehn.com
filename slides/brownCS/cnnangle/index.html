@@ -64,7 +64,8 @@
             click2 = [x,y];
           } else if (!click3) {
             
-            click1 = click2 = click3 = null;
+            // click1 = click2 = click3 = null;
+            click3 = [x,y];
 
           }
 
@@ -96,6 +97,7 @@
             ground_truth = Math.round(ground_truth);
 
 
+          } else if (click3) {
 
             // dy1 = click1[1] - click2[1];
             // dx1 = click1[0] - click2[0];
@@ -109,6 +111,8 @@
 
             // now we can directly measure
             compute_angle();
+
+            click1 = click2 = click3 = null;
 
           }
 

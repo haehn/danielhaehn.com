@@ -7,19 +7,13 @@ revealOptions:
 ---
 <!-- (c) Daniel Haehn, https://danielhaehn.com, contact me for questions! -->
 
-Note: Good Afternoon!<br><br>We do not fully understand the brain and we... machine learning methods
-<br><br>but i think we can all agree that the brain is superior to artificial intelligence.<br><br>For instance, CNNs work extremely well on certain CV tasks, but the ability to generalize, reason, or understand is somewhat limited.<br><br>So how can we change that?
+Note: Good Afternoon!<br><br>We do not fully understand the brain and machine learning methods
+<br><br>brain is superior to artificial int.<br><br>For instance, CNNs work extremely well, but can't generalize, reason, or understand is somewhat limited.<br><br>And the brain can do that<br><br>That's why we should try to understand it better
 ---
 
 <iframe id='xtk0' style='position:fixed; top:0px; left:0px; width:100%; height:100%;' data-src='kasthuri3d/'></iframe>
 
-Note: I am big fan of micro-scale connectomics. There, we look at high-res images that show individual neurons.<br>spiny dendrites and the long axons<br>manually annotated, took months. part of very small less 50 micron volume.<br>over 80 billion neurons in a human, we need automatic processing.
-
----
-
-<iframe id='3dxp0' style='position:fixed; top:0px; left:0px; width:100%; height:100%;' data-src='100microns/'></iframe>
-
-Note: 20 largest neurons in a 100 micron volume of tissue.<br>automatically segmented<br>just the images are 2 terabytes<br>imagine a dense segmentation.. it is hard<br>let's look again at some manual segmentation
+Note: I am big fan of micro-scale connectomics.<br><br>In a few seconds NEURONS will pop up<br>traced in high-res images<br>spiny dendrites and the long axons<br>manually annotated, took months.<br>subset of 3 cylinders
 
 ---
 
@@ -27,7 +21,13 @@ Note: 20 largest neurons in a 100 micron volume of tissue.<br>automatically segm
   <source src="cylindervideo/video.mp4" type="video/mp4">
 </video>
 
-Note: note the variety of shapes that were manually segmented..<br><br>we don't even know how many neuron types really exist yet<br><br>so doing this automatically is hard!
+Note: This is the goal<br><br>note the variety of shapes that were manually segmented..<br><br>we don't even know how many neuron types really exist yet<br><br>we need autom processing but it is hard!
+
+---
+
+<iframe id='3dxp0' style='position:fixed; top:0px; left:0px; width:100%; height:100%;' data-src='100microns/'></iframe>
+
+Note: 20 largest neurons in a 100 micron volume of tissue.<br>automatically segmented<br>just the images are 2 terabytes<br>imagine a dense segmentation.. it is hard<br>let's look again at some manual segmentation
 
 ---
 
@@ -144,7 +144,7 @@ Note: Citizen science<br><br>for less complex data and only split errors<br><br>
 
 <iframe id='gp0' style='position:fixed; top:0px; left:0px; width:100%; height:100%;' data-src='http://localhost:1337/dojo/'></iframe>
 
-<span style='position:absolute;z-index:1000;font-size:20px;top:700px;left:100px;width:650px'>D. Haehn, S. Knowles-Barley, M. Roberts, J. Beyer, N. Kasthuri, J.W. Lichtman, and H. Pfister. <b>Design and Evaluation of Interactive Proofreading Tools for Connectomics.</b> <i>IEEE Transactions on Visualization and Computer Graphics (IEEE SciVis)</i>, 2014.</span>
+<span style='position:absolute;z-index:1000;font-size:20px;top:600px;left:150px;width:650px'>D. Haehn, S. Knowles-Barley, M. Roberts, J. Beyer, N. Kasthuri, J.W. Lichtman, and H. Pfister. <b>Design and Evaluation of Interactive Proofreading Tools for Connectomics.</b> <i>IEEE Transactions on Visualization and Computer Graphics (IEEE SciVis)</i>, 2014.</span>
 
 Note: Dojo Live Demo... slices<br>3D<br>merge<br>split<br><br>quantitative user study
 

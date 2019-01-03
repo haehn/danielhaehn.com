@@ -341,3 +341,18 @@ a:hover {
 .file_icon:hover {
     filter: grayscale(0%);
 }
+
+/* DOCUMENTS */
+.document {
+  margin-top: 50px;
+}
+
+.document_thumb {
+  margin-left: 20px;
+  border: solid thin hotpink;
+  vertical-align: middle;
+}
+
+.document_title {
+  margin-left: 20px;
+}

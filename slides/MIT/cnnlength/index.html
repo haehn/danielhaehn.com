@@ -1,0 +1,296 @@
+<html>
+
+  <head>
+    <script src="tf.min.js"> </script>
+
+    <script>
+
+      // load our models
+      async function load_models() {
+
+        model1 = await tf.loadModel('01/model.json');
+        // model2 = await tf.loadModel('02/model.json');
+        // model3 = await tf.loadModel('03/model.json');
+        // model4 = await tf.loadModel('04/model.json');
+
+      };
+
+
+
+      // painting of angles
+      // click for start
+      // move
+      // click again for end
+      var canvas, ctx, old_line, click1, click2 = null;
+      function setup_canvas(_canvas, _canvas2) {
+
+        canvas = _canvas;
+        ctx = canvas.getContext('2d');
+        ctx2 = _canvas2.getContext('2d');
+
+
+        canvas.addEventListener('mousemove', function(e) {
+          onmouse('move', e)
+        });
+        canvas.addEventListener('mousedown', function(e) {
+          onmouse('down', e)
+        });
+        canvas.addEventListener('mouseup', function(e) {
+          onmouse('up', e)
+        });
+        canvas.addEventListener('mouseout', function(e) {
+          onmouse('out', e)
+        });
+
+      };
+
+      function onmouse(what, e) {
+
+        var x = e.clientX - canvas.offsetLeft;
+        var y = e.clientY - canvas.offsetTop;
+
+        if (what == 'out') {
+
+          click1 = click2  = null;
+
+        }
+
+        if (what == 'up') {
+
+          if (!click1) {
+            click1 = [x,y];
+            console.log('clicked1',x,y);
+          } else if (!click2) {
+            click2 = [x,y];
+            console.log('clicked2', x,y);
+          }
+
+        } else if (what == 'move') {
+
+          if (!click2 && click1) {
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx2.clearRect(0, 0, canvas.width, canvas.height);
+
+            // draw line
+            draw(ctx, click1[0], click1[1], click1[0], y, 'black', 1);
+            draw(ctx2, click1[0], click1[1], click1[0], y, 'black', 10);
+
+
+          } else if (click2) {
+          // } else if (click2) {
+
+          //   ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+          //   // draw line 1
+          //   draw(click1[0], click1[1], click1[0], click2[1], 'black');
+            // draw line 2
+            // draw(click1[0], click1[1], x, y, 'black');
+
+            ground_truth = y - click1[1];
+
+
+            // dy1 = click1[1] - click2[1];
+            // dx1 = click1[0] - click2[0];
+            // dy2 = click1[1] - y;
+            // dx2 = click1[0] - x;
+            // d = dx1*dx2 + dy1*dy2;   // dot product of the 2 vectors
+            // l2 = (dx1*dx1+dy1*dy1)*(dx2*dx2+dy2*dy2) // product of the squared lengths
+
+            // ground_truth = Math.acos(d/Math.sqrt(l2));
+            // ground_truth *= 180 / Math.PI;
+
+            // now we can directly measure
+            compute_length(ctx, '', ground_truth);
+            compute_length(ctx2, '2', ground_truth);
+
+            click1 = click2 = null;
+
+          }
+
+        }
+ 
+      };
+
+      function draw(ctx, x,y,x2,y2, style, linewidth) {
+          ctx.beginPath();
+          ctx.moveTo(x, y);
+          ctx.lineTo(x2, y2);
+          ctx.strokeStyle = style;
+          ctx.lineWidth = linewidth;
+          ctx.stroke();
+
+          // ctx.save();
+          // ctx.globalCompositeOperation = 'destination-in';
+          // var radius = 20;
+          // // var x = click1[0];
+          // // var y = click1[1];
+          // ctx.beginPath();
+          // ctx.arc(x, y, radius, 0, 2 * Math.PI, false);
+          // ctx.fill();
+          // ctx.restore();
+
+          // ctx.closePath();
+      };
+
+
+
+      //
+      // network stuff
+      //
+      function compute_length(ctx, which, ground_truth) {
+
+        img = ctx.getImageData(0,0,100,100);
+
+        // rasterize without anti-aliasing
+        for (var i = 0; i < img.data.length; i += 4) {
+          if (img.data[i+3] != 0) {
+            img.data[i] = 1;
+            img.data[i+1] = 1;
+            img.data[i+2] = 1;
+            img.data[i+3] = 255;
+          }
+        }
+
+        img = tf.fromPixels(img);
+
+
+        document.getElementById('gt_result'+which).innerHTML = 'Groundtruth: ' + ground_truth + '';        
+
+        // predict
+        p = model1.predict(img.reshape([1, 100, 100, 3]));
+
+        p_res = Math.round(p.dataSync()[0]*60)
+
+        document.getElementById('cnn_result'+which).innerHTML = 'CNN: '  + p_res + '';
+
+        document.getElementById('err_result'+which).innerHTML = 'Error: '  + (Math.abs(p_res-ground_truth)/60.0).toFixed(3) + '';
+
+
+      };
+
+
+
+
+      // initialize everything
+      function init() {
+
+        load_models();
+        setup_canvas(document.getElementById('drawthingie'), document.getElementById('drawthingie2'));
+
+      };
+      window.onload = init;
+
+    </script>
+    <style>
+
+      body {
+        
+       font-family: 'Barlow Condensed', sans-serif;
+       color: white;
+      }
+
+      #drawthingie {
+        image-rendering: optimizeSpeed;             /* Older versions of FF          */
+        image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
+        image-rendering: -webkit-optimize-contrast; /* Safari                        */
+        image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
+        image-rendering: pixelated;                 /* Awesome future-browsers       */
+        -ms-interpolation-mode: nearest-neighbor;   /* IE     */
+
+        border:1px solid black; background-color: white;
+
+        position: absolute;
+        top: 10px;
+        left: 50px;
+
+      }
+
+      #gt_result {
+        position: absolute;
+        top: 140px;
+        left: 50px;
+
+      }
+
+      #cnn_result {
+        margin-top: 10px;
+        position: absolute;
+        top: 110px;
+        left: 50px;        
+      }
+
+
+      #err_result {
+        
+        position: absolute;
+        top: 160px;
+        left: 50px;       
+        margin-top: 10px;
+        color:red;
+      
+      }            
+
+
+      #drawthingie2 {
+        
+        position: absolute;
+        top: 10px;
+        left: 180px;
+
+        image-rendering: optimizeSpeed;             /* Older versions of FF          */
+        image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
+        image-rendering: -webkit-optimize-contrast; /* Safari                        */
+        image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
+        image-rendering: pixelated;                 /* Awesome future-browsers       */
+        -ms-interpolation-mode: nearest-neighbor;   /* IE     */
+
+        border:1px solid black; background-color: white;
+
+      }
+
+      #gt_result2 {
+        position: absolute;
+        top: 140px;
+        left: 180px;       
+        
+      }
+
+      #cnn_result2 {
+        
+        position: absolute;
+        top: 110px;
+        left: 180px;       
+        margin-top: 10px;
+        
+      }
+
+      #err_result2 {
+        
+        position: absolute;
+        top: 160px;
+        left: 180px;       
+        margin-top: 10px;
+        color:red;
+        
+      }      
+
+    </style>
+  </head>
+
+  <body style='background-color: black;'>
+  <!-- <center> -->
+    <canvas id='drawthingie' width=100 height=100></canvas>
+    <div id='cnn_result'></div>
+    <div id='gt_result'></div>
+    <div id='err_result'></div>
+
+    <canvas id='drawthingie2' width=100 height=100></canvas>
+    <div id='cnn_result2'></div>
+    <div id='gt_result2'></div>
+    <div id='err_result2'></div>
+
+  <!-- </center> -->
+  </body>
+
+</html>

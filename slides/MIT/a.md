@@ -8,6 +8,14 @@ revealOptions:
 <!-- (c) Daniel Haehn, https://danielhaehn.com, contact me for questions! -->
 
 ---
+<img src='welcome/satra_and_me_2012.png' class='myimg'>
+
+Note: 2012, at the INCF Neuroinformatics conference<br><br>web-based visualization framework for medical imaging<br><br>Satra is clearly not impressed with my work<br><br>hopefully today you will be, satra
+---
+<img src='welcome/defense_invitation.png' style='width:500px;' class='myimg'>
+
+Note: I asked Satra if I should wear a suit today<br><br>in the same outfit, i will defend my phd at the beginning of april<br><br>some of these slides will be included<br><br>today i want to start with a video
+---
 <video width="50%" height="50%" autoplay muted>
   <source src="messi_vs_robot/video.mp4" type="video/mp4">
 </video>
@@ -26,8 +34,20 @@ Note: Deep(er) Blue beats Kasparov in 1997<br><br>2015 and 2016 Alpha Go beats F
 
 ---
 
-Note: Good Afternoon!<br><br>We do not fully understand the brain and machine learning methods
-<br><br>brain is superior to artificial int.<br><br>For instance, CNNs work extremely well, but can't generalize, reason, or understand is somewhat limited.<br><br>And the brain can do that<br><br>That's why we should try to understand it better
+<img src='robot_beats_human/superhuman_connectomics.png' class='myimg fragment fade-in' data-fragment-index="1" style='position:relative;left:-50px;width:400px;z-index:0'>
+
+<img src='robot_beats_human/superhuman_poker.png' class='myimg fragment fade-in' data-fragment-index="2" style='position:relative;top:10px;width:400px;right:-50px;z-index:0'>
+
+Note: we can also see recent research papers reporting superhuman AI performance<br><br>Lee and others in 2017<br><br>and the work by Brown and Sandholm on Superhuman AI for poker in 2018
+
+---
+
+<img src='ai_limitations/schoolbus.jpg' class='myimg fragment fade-in' data-fragment-index="1" style='position:relative;left:-50px;width:600px;z-index:0'>
+
+
+---
+
+
 ---
 
 <iframe id='xtk0' style='position:fixed; top:0px; left:0px; width:100%; height:100%;' data-src='kasthuri3d/'></iframe>
@@ -46,13 +66,13 @@ Note: This is the goal<br><br>note the variety of shapes that were manually segm
 
 <iframe id='3dxp0' style='position:fixed; top:0px; left:0px; width:100%; height:100%;' data-src='100microns/'></iframe>
 
-Note: 20 largest neurons in a 100 micron volume of tissue.<br>automatically segmented<br>just the images are 2 terabytes<br>imagine a dense segmentation.. it is hard<br>let's look again at some manual segmentation
+Note: 20 largest neurons in a 100 micron volume of tissue.<br>automatically segmented<br>just the images are 2 terabytes<br>imagine a dense segmentation.. it is hard<br>let's look again at some automatic segmentation
 
 ---
 
 <img src='hairball/label2.png'  border=0 style='border:none;'>
 
-Note: our algorithm thought that this is one single neuron.. we call it the hairball.<br><br>but how do we even get the data in the first place?
+Note: our algorithm thought that this is one single neuron.. we call it the hairball.<br><br>segmentation in connectomics is hard<br><br>but how do we even get the data in the first place?
 
 ---
 
@@ -316,8 +336,8 @@ Thank you!
 
 <img src='thankyou/octocat.png' style='width:200px'><br><br>
 
-<a href='https://danielhaehn.com/slides/brownCS'>danielhaehn.com/slides/brownCS</a><br><br>
-<small><a href='http://ratemytalk.com/MMPRL8'>RateMyTalk.com/MMPRL8</a></small>
+<a href='https://danielhaehn.com/slides/MIT'>danielhaehn.com/slides/MIT</a><br><br>
+<small><a href='http://ratemytalk.com/9HV29M'>RateMyTalk.com/9HV29M</a></small>
 
 Notes: Done and done
 

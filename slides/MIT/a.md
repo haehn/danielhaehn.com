@@ -527,10 +527,41 @@ Note: we ran all network configurations with fixed parameters<br><br>monte carlo
 ---
 
 
+<img src='cleveland_mcgill/results/elementary_plots/plots.001.png' class='myimg' style='position:fixed;top:100px;left:0px;z-index:0;'>
 
+<img src='cleveland_mcgill/results/elementary_plots/plots.002.png' class='myimg fragment fade-in' data-fragment-index="2"  style='position:fixed;top:100px;left:0px;z-index:1;'>
 
+<img src='cleveland_mcgill/results/elementary_plots/plots.003.png' class='myimg fragment fade-in' data-fragment-index="3"  style='position:fixed;top:100px;left:0px;z-index:2;'>
+
+<img src='cleveland_mcgill/results/elementary_plots/plots.004.png' class='myimg fragment fade-in' data-fragment-index="4"  style='position:fixed;top:100px;left:0px;z-index:3;'>
+
+Note: error plot, the more left, the better<br><br>log scale, 2%, 10%, 50% error<br><br>human has around 10% error<br><br>vgg19 trained from scratch around 2%<br><br>and this is a pattern...<br><br>MLP interesting without convolutional filters
 
 ---
+
+<img src='cleveland_mcgill/results/elementary_plots/plots.005.png' class='myimg' style='position:fixed;top:100px;left:0px;z-index:0;'>
+
+<img src='cleveland_mcgill/results/elementary_plots/plots.006.png' class='myimg fragment fade-in' data-fragment-index="2"  style='position:fixed;top:100px;left:0px;z-index:1;'>
+
+<img src='cleveland_mcgill/results/elementary_plots/plots.007.png' class='myimg fragment fade-in' data-fragment-index="3"  style='position:fixed;top:100px;left:0px;z-index:2;'>
+
+Note: same for angle, VGG19 from scratch is very good
+
+---
+
+
+<img src='cleveland_mcgill/results/elementary_plots/plots.008.png' class='myimg' style='position:fixed;top:100px;left:0px;z-index:0;'>
+
+<img src='cleveland_mcgill/results/elementary_plots/plots.009.png' class='myimg fragment fade-in' data-fragment-index="2"  style='position:fixed;top:100px;left:0px;z-index:1;'>
+
+<img src='cleveland_mcgill/results/elementary_plots/plots.010.png' class='myimg fragment fade-in' data-fragment-index="3"  style='position:fixed;top:100px;left:0px;z-index:2;'>
+
+Note: and finally for length..
+
+---
+
+
+
 
 <img src='the_gap/perception.009.png' class='myimg' style='position:fixed;top:0px;left:0px;z-index:0'>
 

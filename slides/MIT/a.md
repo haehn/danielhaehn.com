@@ -8,7 +8,7 @@ revealOptions:
 <!-- (c) Daniel Haehn, https://danielhaehn.com, contact me for questions! -->
 
 ---
-<img src='welcome/satra_and_me_2012.png' class='myimg'>
+<img src='welcome/satra_and_me_2012.jpg' class='myimg'><br><span style='font-size:20px;position:absolute;left:30px'>INCF Neuroinformatics 2012</span>
 
 Note: 2012, at the INCF Neuroinformatics conference<br><br>web-based visualization framework for medical imaging<br><br>Satra is clearly not impressed with my work<br><br>hopefully today you will be, satra
 ---
@@ -18,13 +18,14 @@ Note: I asked Satra if I should wear a suit today<br><br>in the same outfit, i w
 ---
 <video width="50%" height="50%" autoplay muted>
   <source src="messi_vs_robot/video.mp4" type="video/mp4">
-</video>
+</video><br>
+<span style='font-size:20px'>Lex Fridman, MIT 6.S099 Artificial General Intelligence</span>
 
-Note: comparison not really fair<br><br>millions of years of human evolution and messi, one of the best soccer players in the world<br><br>versus 50 years or so of robotics research
+Note: messi at age 19 against getafe<br><br>comparison not really fair<br><br>millions of years of human evolution and messi, one of the best soccer players in the world<br><br>versus 50 years or so of robotics research
 
 ---
 
-<img src='robot_beats_human/kasparov.jpeg' class='myimg fragment fade-in' data-fragment-index="1" style='z-index:0'>
+<img src='robot_beats_human/kasparov.jpeg' class='myimg' style='z-index:0'>
 
 <img src='robot_beats_human/leesedol.png' class='myimg fragment fade-in' data-fragment-index="2" style='z-index:10; position: absolute; right:-50px;top:-100px'>
 
@@ -34,23 +35,49 @@ Note: Deep(er) Blue beats Kasparov in 1997<br><br>2015 and 2016 Alpha Go beats F
 
 ---
 
-<img src='robot_beats_human/superhuman_connectomics.png' class='myimg fragment fade-in' data-fragment-index="1" style='position:relative;left:-50px;width:400px;z-index:0'>
+<div style='position:relative;left:50px;width:500px;z-index:0'>
+<img src='robot_beats_human/superhuman_connectomics.png' class='myimg'><br><span style='font-size:20px;position:absolute;left:20px'>Lee et al., arXiv 2017</span>
+</div>
 
-<img src='robot_beats_human/superhuman_poker.png' class='myimg fragment fade-in' data-fragment-index="2" style='position:relative;top:10px;width:400px;right:-50px;z-index:0'>
+<div class='fragment fade-in' data-fragment-index="2" style='position:relative;top:30px;width:500px;right:-300px;z-index:0'>
+<img src='robot_beats_human/superhuman_poker.png' class='myimg' ><br><span style='font-size:20px;position:absolute;left:20px'>Brown and Sandholm, Science 2018</span>
+</div>
 
 Note: we can also see recent research papers reporting superhuman AI performance<br><br>Lee and others in 2017<br><br>and the work by Brown and Sandholm on Superhuman AI for poker in 2018
+<br><br>researchers also show limitations
+---
+
+<div style='position:relative;left:50px;width:500px;z-index:0'>
+<img src='ai_limitations/schoolbus.jpg' class='myimg'><br><span style='font-size:20px;position:absolute;left:20px'>Alcorn et al., arXiv 2018
+</div>
+
+<div class='fragment fade-in' data-fragment-index="2" style='position:relative;top:30px;width:200px;right:-300px;z-index:0'>
+<img src='ai_limitations/perception_errors.png' class='myimg' ><br><span style='font-size:20px;position:absolute;left:20px'>Our work at IEEE Vis 2018</span>
+</div>
+
+Note: alcorn's work strike with a pose, inception network<br><br>first row: measurement of a line, second row: estimating of position<br><br>
 
 ---
 
-<img src='ai_limitations/schoolbus.jpg' class='myimg fragment fade-in' data-fragment-index="1" style='position:relative;left:-50px;width:600px;z-index:0'>
+<img src='the_gap/perception.002.png' style='position:fixed;top:0px;left:0px;z-index:0'>
 
+<img src='the_gap/perception.003.png' class='myimg fragment fade-in' data-fragment-index="2" style='position:fixed;top:0px;left:0px;z-index:1'>
+
+<img src='the_gap/perception.004.png' class='myimg fragment fade-in' data-fragment-index="3" style='position:fixed;top:0px;left:0px;z-index:2'>
+
+<img src='the_gap/perception.005.png' class='myimg fragment fade-in' data-fragment-index="4" style='position:fixed;top:0px;left:0px;z-index:3'>
+
+<img src='the_gap/perception.006.png' class='myimg fragment fade-in' data-fragment-index="5" style='position:fixed;top:0px;left:0px;z-index:4'>
+
+<img src='the_gap/perception.007.png' class='myimg fragment fade-in' data-fragment-index="6" style='position:fixed;top:0px;left:0px;z-index:5'>
 
 ---
 
+<div style='position:fixed; top:150px; left:0px;width:50%;'>
+    <img src='the_gap/cajal.png' class='myimg'><br><span style='font-size:20px;position:absolute;left:20px'>Santiago Ramón y Cajal, 1933</span>
+</div>
 
----
-
-<iframe id='xtk0' style='position:fixed; top:0px; left:0px; width:100%; height:100%;' data-src='kasthuri3d/'></iframe>
+<iframe id='xtk0' style='position:fixed; top:0px; left:50%; width:50%; height:100%;' data-src='kasthuri3d/'></iframe>
 
 Note: I am big fan of micro-scale connectomics.<br><br>In a few seconds NEURONS will pop up<br>traced in high-res images<br>spiny dendrites and the long axons<br>manually annotated, took months.<br>subset of 3 cylinders
 
@@ -58,7 +85,7 @@ Note: I am big fan of micro-scale connectomics.<br><br>In a few seconds NEURONS 
 
 <video width="100%" height="100%" autoplay muted>
   <source src="cylindervideo/video.mp4" type="video/mp4">
-</video>
+</video><br><span style='font-size:20px;position:absolute;left:30px'>Kasthuri et al., Cell 2015</span>
 
 Note: This is the goal<br><br>note the variety of shapes that were manually segmented..<br><br>we don't even know how many neuron types really exist yet<br><br>we need autom processing but it is hard!
 
@@ -92,7 +119,7 @@ Note: well... we take mice, rats, or humans<br><br>cut out their brains or piece
 
 <video width="100%" height="100%" autoplay muted>
   <source src="animaltobrainscan/bobbyzoom.mp4" type="video/mp4">
-</video>
+</video><br><span style='font-size:20px;position:absolute;left:30px'>Kasthuri et al., Cell 2015</span>
 
 Note: ...and we end up with image slices that get aligned to volumes.<br><br>Now we need to find the cell membranes.
 
@@ -144,7 +171,7 @@ Note: And the answer is proofreading by humans.
 
 ---
 
-<span class='fragment fade-in' data-fragment-index="2" style='left:0px; top:-30px; position:absolute;'>Split Error</span>
+<span style='left:0px; top:-30px; position:absolute;'>Split Error</span>
 <span class='fragment fade-in' data-fragment-index="5" style='left:0px; top:170px;position:absolute;'>Merge Error</span>
 <svg width='100%' height='400' style='margin-left:50px'>
     <!-- Split Error -->
@@ -254,7 +281,7 @@ Note: here is a merge error<br><br>there should be a boundary according to groun
 ---
 
 Focused Proofreading vs. Guided Proofreading<br><br>
-<span class='fragment fade-in' data-fragment-index="2">20 Novices / 2 Experts</span>
+<span class='fragment fade-in' data-fragment-index="2">20 Novices / 4 Experts</span>
 <br><br>
 <span class='fragment fade-in' data-fragment-index="3">Same Dataset as before (400x400x10 voxels)
 </span>
@@ -296,17 +323,10 @@ Note: Segmentation methods will not be perfect / we will always be uncertain to 
 
 ---
 
-<span class='fragment fade-in' data-fragment-index="2">Machine Perception</span>
-<img class='fragment fade-in' data-fragment-index="2" style='width:200px;position: absolute;top: 80px;left: 170px;z-index: -2;' src='transition/stimuli.png'>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<img class='fragment fade-in' data-fragment-index="1" src='transition/neurons.png'>
-<span class='fragment fade-in' data-fragment-index="1" style='position:absolute;bottom:140px;right:200px;'>Neurobiology</span>
+<img src='the_gap/perception.007.png' class='myimg' style='position:fixed;top:0px;left:0px;z-index:0'>
+
+<img src='the_gap/perception.008.png' class='myimg fragment fade-in' data-fragment-index="2" style='position:fixed;top:0px;left:0px;z-index:1'>
+
 
 Note: I would like to now move from bottom-up neurobiology studies<br><br>to top-down machine perception research.<br><br>I will now talk about work we just presented at the IEEE Visualization conference in Berlin.<br><br>We test how CNNs are able to perceive simple graphical stimuli.
 
@@ -328,7 +348,204 @@ Note: Here we draw two lines.<br><br>left: thin line<br><br>right: thick one<br>
 
 ---
 
-<iframe id='perception0' style='position:fixed; top:0px; left:0px; width:100%; height:100%;' data-src='https://docs.google.com/presentation/d/e/2PACX-1vSd_XkQInllkTc_IUDVVI5H3WH4ntbl98uCZCedtV9qXzbwdQGjOytlvXGlJClPkHGquWFbFGdbTqUZ/embed?start=false&loop=false&delayms=60000'></iframe>
+<img src='cleveland_mcgill/paper.png'><br><span style='font-size:20px;position:absolute;left:60px'>Cleveland and McGill, Journal of the American Statistical Association 1984</span>
+
+
+Note: experiments of human perception when it comes to perceiving visualizations such as pie charts or bar charts
+
+---
+
+We replicate Cleveland and McGill's 1984 experiments<br><br>with Convolutional Neural Networks.
+
+Note: Instead of human perception, we study machine perception<br><br>
+by replicating Cleveland and McGill's 1984 experiments with<br><br>
+Convolutional Neural Networks
+
+---
+
+A computational model of human graphical perception would allow:<br><br>
+a) to score existing visualizations<br><br>
+b) to create new visualizations
+
+Note: And why are we doing this?<br><br>judge/score/evaluate existing<br><br>create new optimized visualizations automatically
+
+---
+
+<span style='font-size:60px'>Can CNNs model human graphical perception?</span>
+
+Note: Since CNNs are said to model the early layers of the visual cortex,<br><br>we ask
+
+---
+
+<img src='cleveland_mcgill/spoileralert.jpg' class='myimg' style='position:fixed;top:0px;left:0px;z-index:0'>
+
+<img src='cleveland_mcgill/spoileralert_no.png' class='myimg fragment fade-in' data-fragment-index="2"  style='position:fixed;top:0px;left:0px;z-index:1'>
+
+Note: and the answer is No!<br><br>In any case...
+
+---
+
+<div style='width:400px;float:left'>
+<img src='cleveland_mcgill/related_work/clevr.png'><br><span style='font-size:20px;position:relative;top:-25px'>Johnson et al., CVPR 2017</span>
+</div>
+
+<div style='width:350px;float:left;margin-left:40px;margin-top:10px'>
+<img src='cleveland_mcgill/related_work/not_so_clevr.png'><br><span style='font-size:20px;position:relative;top:-25px'>Ricci et al., ICML 2018</span>
+</div>
+
+<div style='width:400px;float:left;margin:100px; position:relative; top:-100px'>
+<img src='cleveland_mcgill/related_work/dvqa.png'><br><span style='font-size:20px;position:relative;top:-25px'>Kafle et al., CVPR 2018</span>
+</div>
+
+<div style='width:350px;float:left;margin-top:30px; position:relative;'>
+<img src='cleveland_mcgill/related_work/nsvqa.png'><br><span style='font-size:20px;position:relative;top:-25px'>Yi et al., NIPS 2018</span>
+</div>
+
+<div style='position: fixed;width:100%;height:100%;z-index:2;background:rgba(0,0,0,0.8);' class='myimg fragment fade-in' data-fragment-index="1"><br><br><br><br>
+    Visual Question Answering<br><br>
+    Computational Visual Reasoning
+</div>
+
+Note: related recent work at the major conferences<br>and the buzz words are..
+
+---
+
+<img src='cleveland_mcgill/elementary_perceptual_tasks_inv.png'><br><span style='font-size:20px;position:relative;top:-25px'>Elementary Perceptual Tasks, Cleveland and McGill 1984</span>
+
+Note: In their paper, ClMcGill introduce the elementary perceptual tasks<br>
+these building blocks are perceived by humans when understanding visualizations such as bar charts and pie charts
+
+---
+
+<img src='cleveland_mcgill/stimuli1_inv.png'><br><span style='font-size:20px;position:absolute;left:-30px'>Cleveland and McGill 1984</span><span style='font-size:20px;position:absolute;right:300px'>Our generated stimuli</span>
+
+Note: position, direction, position 2
+
+---
+
+<img src='cleveland_mcgill/stimuli2_inv.png'><br><span style='font-size:20px;position:absolute;left:-30px'>Cleveland and McGill 1984</span><span style='font-size:20px;position:absolute;right:300px'>Our generated stimuli</span>
+
+Note: angle<br>length..<br>sooo we let CNNs regress these generated images with certain constraints
+
+---
+
+<img src='cleveland_mcgill/angle_inv.png' style='width:400px;float:left;margin-left:100px'>
+<span style='position:absolute;font-size:40px;margin-top:60px'>~78&deg;</span>
+<span style='position:absolute;font-size:65px;margin-top:120px'>0.87</span>
+
+
+Note: angles are always 0..90 degrees<br>this angle is roughly 78 degrees<br><br>mapped to 0..1 for 0..90 degrees, this yields 0.87
+
+---
+
+<img src='cleveland_mcgill/position_angle_inv.png'><br><span style='font-size:20px;position:relative;top:-25px'>Position-Angle Experiment, Cleveland and McGill 1984</span>
+
+Note: Position-Angle Experiment<br>comparing human perception of pie charts and bar charts
+
+---
+
+<img src='cleveland_mcgill/stimuli3_inv.png'><br><span style='font-size:20px;position:absolute;left:0px'>Cleveland and McGill 1984</span><span style='font-size:20px;position:absolute;right:300px'>Our generated stimuli</span>
+
+Note: now there are multiple values encoded in the stimuli<br><br>this means the regression task is more complex
+
+---
+
+
+<img src='cleveland_mcgill/piechart.png' class='myimg' style='position:fixed;top:100px;left:0px;z-index:0;width:400px'>
+
+<img src='cleveland_mcgill/piechart2.png' class='myimg fragment fade-in' data-fragment-index="2"  style='position:fixed;top:100px;left:0px;z-index:1;width:400px'>
+
+<img src='cleveland_mcgill/piechart3.png' class='myimg fragment fade-in' data-fragment-index="3"  style='position:fixed;top:100px;left:0px;z-index:2;width:400px'>
+
+<span class='fragment fade-in' data-fragment-index="4" style='position:absolute;font-size:65px;margin-top:120px'>[0.2, 0.14, 0.6, 0.8]</span>
+
+Note: identify the largest area in the pie chart<br><br>then, counter-clockwise, estimate the ratio of each other segment compared to the larger one<br><br>this vector of length 4 is our regression target here
+
+---
+
+<img src='cleveland_mcgill/position_length_inv.png'><br><span style='font-size:20px;position:relative;top:-25px'>Position-Length Experiment, Cleveland and McGill 1984</span>
+
+Note: Position-Length Experiment<br>comparing human perception for different types of barcharts
+
+---
+
+<img src='cleveland_mcgill/stimuli4_inv.png'><br><span style='font-size:20px;position:absolute;left:-30px'>Cleveland and McGill 1984</span><span style='font-size:20px;position:absolute;right:300px'>Our generated stimuli</span>
+
+Note: the third experiment is the position-length experiment
+
+---
+
+
+<img src='cleveland_mcgill/barchart.png' class='myimg' style='position:fixed;top:100px;left:0px;z-index:0;width:400px'>
+
+<img src='cleveland_mcgill/barchart2.png' class='myimg fragment fade-in' data-fragment-index="2"  style='position:fixed;top:100px;left:0px;z-index:1;width:400px'>
+
+<img src='cleveland_mcgill/barchart3.png' class='myimg fragment fade-in' data-fragment-index="3"  style='position:fixed;top:100px;left:0px;z-index:2;width:400px'>
+
+<span class='fragment fade-in' data-fragment-index="4" style='position:absolute;font-size:65px;margin-top:120px'>0.5</span>
+
+Note: more complex<br><br>find the two marked segments<br><br>identify the largest segment<br><br>then, compare the other marked segment to the larger one<br><br>regression target
+
+---
+
+<img src='cleveland_mcgill/position.png' class='myimg' style='position:fixed;top:100px;left:0px;z-index:0;width:400px'>
+
+<span class='fragment fade-in' data-fragment-index="4" style='position:absolute;font-size:45px;margin-top:-100px'>100x100 pixels<br><br>5% noise per pixel<br><br>"fuzzy binary" image</span>
+
+Note: so what about the networks?
+
+---
+
+<img src='cleveland_mcgill/neuralnetworks_inv.png'>
+
+<span class='fragment fade-in' data-fragment-index="2" style='position:relative;font-size:25px;left:-100px;top:-100px'>from scratch / pretrained</span>
+
+Note: four different network configurations<br><br>all of them use the MLP at the end<br><br>we test 3 different convolutional feature encoders<br><br>LeNet, VGG19, Xception<br><br>VGG19, Xception two versions
+
+---
+
+
+<div style='width:400px;float:left'>
+<img src='cleveland_mcgill/res1.png'>
+</div>
+
+<div style='width:350px;float:left;margin-left:40px;margin-top:30px'>
+<img src='cleveland_mcgill/res2.png'>
+</div>
+
+<div style='width:600px;float:left;margin:100px; position:relative; top:-100px'>
+<img src='cleveland_mcgill/res3.png'>
+</div>
+
+<div style='position: fixed;width:100%;height:100%;z-index:2;background:rgba(0,0,0,0.8);' class='myimg fragment fade-in' data-fragment-index="1"><br><br><br><br>
+    2500+ networks<br><br>
+    > 4.7 GPU years
+</div>
+
+Note: we ran all network configurations with fixed parameters<br><br>monte carlo cross validation with 12 runs per experiment
+
+---
+
+
+
+
+
+---
+
+<img src='the_gap/perception.009.png' class='myimg' style='position:fixed;top:0px;left:0px;z-index:0'>
+
+<img src='the_gap/perception.010.png' class='myimg fragment fade-in' data-fragment-index="2" style='position:fixed;top:0px;left:0px;z-index:1'>
+
+
+Note: So today I spoke about some advancements in regards to better understanding the brain and AI.<br><br>In reality, the gap between the two is very large<br><br>and we are just at the beginning in both fields.<br><br>
+massive research efforts are on the way and I am happy to contribute a little bit.<br><br>
+before I take questions, I would like to...
+
+---
+
+<img src='thankyou/collaborators.png'>
+
+Note: Thank you to all my collaborators!<br><br>This work would have not been possible<br><br>and I am looking forward to future work together
 
 ---
 
@@ -339,7 +556,7 @@ Thank you!
 <a href='https://danielhaehn.com/slides/MIT'>danielhaehn.com/slides/MIT</a><br><br>
 <small><a href='http://ratemytalk.com/9HV29M'>RateMyTalk.com/9HV29M</a></small>
 
-Notes: Done and done
+Note: Again, all my stuff is on github<br><br>the slides are on my website<br><br>and please rate my talk :)
 
 
 

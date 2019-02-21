@@ -9,7 +9,7 @@ Reveal.addEventListener( 'slidechanged', function( event ) {
     //     console.log(xtk0frame);
     //     xtk0frame.contentWindow.set_nice_view();
     // } else 
-    if (event.indexh == 2) {
+    if (event.indexh == 9) {
         console.log('destroyed xtk0.');
         xtk0frame = document.getElementById('xtk0');
         xtk0frame.contentWindow.REN3D.destroy();

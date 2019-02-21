@@ -570,6 +570,43 @@ Note: and finally for length..<br><br>Now we did also cross network experiments.
 
 Note: if we train on the length stimuli and really just vary the length<br><br>it works well on unseen testing data<br><br>but if we add slight variations such as movement in x and y, or thickness<br><br>the networks fail unless we include these variations in the training distribution
 
+---
+
+<img src='cleveland_mcgill/results/posangle/posangle.001.png' class='myimg' style='position:fixed;top:10px;left:0px;z-index:0;'>
+
+<img src='cleveland_mcgill/results/posangle/posangle.002.png' class='myimg fragment fade-in' data-fragment-index="2"  style='position:fixed;top:10px;left:0px;z-index:1;'>
+
+<img src='cleveland_mcgill/results/posangle/posangle.003.png' class='myimg fragment fade-in' data-fragment-index="3"  style='position:fixed;top:10px;left:0px;z-index:2;'>
+
+<img src='cleveland_mcgill/results/posangle/posangle.004.png' class='myimg fragment fade-in' data-fragment-index="4"  style='position:fixed;top:10px;left:0px;z-index:3;'>
+
+Note: now pie chart vs bar chart<br><br>humans perform better on bar charts<br><br>VGG19 pretty much the same<br><br>but all networks also prefer the bar chart<br><br>stat. significant<br><br>funny finding
+
+---
+
+
+<img src='cleveland_mcgill/results/poslength/poslength.001.png' class='myimg' style='position:fixed;top:10px;left:0px;z-index:0;'>
+
+<img src='cleveland_mcgill/results/poslength/poslength.002.png' class='myimg fragment fade-in' data-fragment-index="2"  style='position:fixed;top:10px;left:0px;z-index:1;'>
+
+<img src='cleveland_mcgill/results/poslength/poslength.003.png' class='myimg fragment fade-in' data-fragment-index="3"  style='position:fixed;top:10px;left:0px;z-index:2;'>
+
+
+
+Note: humans can do it<br><br>now we have two baselines (Heer and Bostock)<br><br>the two on the right are harder since no baseline measurements<br><br>vgg19 performs worse than humans on every one and much worse than in every experiment before<br><br>just too complex, too much parametrizations<br><br>what have we learned?
+
+---
+
+VGG19 can estimate simple graphical stimuli very well<br><br>
+<span class='fragment fade-in' data-fragment-index="2">All networks do not generalize well</span>
+<br><br>
+<span class='fragment fade-in' data-fragment-index="3">We need systems that can abstract and reason
+</span>
+<br><br>
+<span class='fragment fade-in' data-fragment-index="4" style='font-size:75px'>CNNs are not a good model for human graphical perception!</span>
+
+
+Note: out-of-distribution samples<br><br>will we ever achieve such systems?<br><br>
 
 ---
 

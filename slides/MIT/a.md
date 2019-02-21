@@ -556,12 +556,22 @@ Note: same for angle, VGG19 from scratch is very good
 
 <img src='cleveland_mcgill/results/elementary_plots/plots.010.png' class='myimg fragment fade-in' data-fragment-index="3"  style='position:fixed;top:100px;left:0px;z-index:2;'>
 
-Note: and finally for length..
+Note: and finally for length..<br><br>Now we did also cross network experiments...
 
 ---
 
+<img src='cleveland_mcgill/results/crossnetwork/crossnetwork.001.png' class='myimg' style='position:fixed;top:10px;left:0px;z-index:0;'>
+
+<img src='cleveland_mcgill/results/crossnetwork/crossnetwork.002.png' class='myimg fragment fade-in' data-fragment-index="2"  style='position:fixed;top:10px;left:0px;z-index:1;'>
+
+<img src='cleveland_mcgill/results/crossnetwork/crossnetwork.003.png' class='myimg fragment fade-in' data-fragment-index="3"  style='position:fixed;top:10px;left:0px;z-index:2;'>
+
+<img src='cleveland_mcgill/results/crossnetwork/crossnetwork.004.png' class='myimg fragment fade-in' data-fragment-index="4"  style='position:fixed;top:10px;left:0px;z-index:3;'>
+
+Note: if we train on the length stimuli and really just vary the length<br><br>it works well on unseen testing data<br><br>but if we add slight variations such as movement in x and y, or thickness<br><br>the networks fail unless we include these variations in the training distribution
 
 
+---
 
 <img src='the_gap/perception.009.png' class='myimg' style='position:fixed;top:0px;left:0px;z-index:0'>
 

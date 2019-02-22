@@ -7,21 +7,23 @@ revealOptions:
 ---
 <!-- (c) Daniel Haehn, https://danielhaehn.com, contact me for questions! -->
 
+Note: Thank you<br><br>Satra and I met a little over 7 years ago<br><br>worked together<br><br>
+
 ---
 <img src='welcome/satra_and_me_2012.jpg' class='myimg'><br><span style='font-size:20px;position:absolute;left:30px'>INCF Neuroinformatics 2012</span>
 
-Note: 2012, at the INCF Neuroinformatics conference<br><br>web-based visualization framework for medical imaging<br><br>Satra is clearly not impressed with my work<br><br>hopefully today you will be, satra
+Note: Neuroinformatics conference<br><br>Satra is clearly not impressed with my work<br><br>hopefully today you will be, satra
 ---
 <img src='welcome/defense_invitation.png' style='width:500px;' class='myimg'>
 
-Note: I asked Satra if I should wear a suit today<br><br>in the same outfit, i will defend my phd at the beginning of april<br><br>some of these slides will be included<br><br>today i want to start with a video
+Note: i will defend my phd at the beginning of april<br><br>there is a performance gap between the brain and artificial intelligence and we need to work from both ends to reduce it<br><br>start with a video showing this gap in the field of soccer
 ---
 <video width="50%" height="50%" autoplay muted>
   <source src="messi_vs_robot/video.mp4" type="video/mp4">
 </video><br>
 <span style='font-size:20px'>Lex Fridman, MIT 6.S099 Artificial General Intelligence</span>
 
-Note: messi at age 19 against getafe<br><br>comparison not really fair<br><br>millions of years of human evolution and messi, one of the best soccer players in the world<br><br>versus 50 years or so of robotics research
+Note: messi at age 19<br><br>a recent robot soccer worldcup in the bottom<br><br>competition between the machines and humans are exciting to us
 
 ---
 
@@ -31,7 +33,7 @@ Note: messi at age 19 against getafe<br><br>comparison not really fair<br><br>mi
 
 <img src='robot_beats_human/alphastar.png' class='myimg fragment fade-in' data-fragment-index="3" style='z-index:10; position: absolute; left:-150px;top:-10px'>
 
-Note: Deep(er) Blue beats Kasparov in 1997<br><br>2015 and 2016 Alpha Go beats Fan Hui and Lee Sedol, some of the best players of the board game Go<br><br>2019 AlphaStar beats an expert StarCraft player
+Note: Deep(er) Blue beats a chess champion in 1997<br><br>2015 and 2016 Alpha Go beats some of the best players of the board game Go<br><br>2019 AlphaStar beats an expert StarCraft player
 
 ---
 
@@ -43,7 +45,7 @@ Note: Deep(er) Blue beats Kasparov in 1997<br><br>2015 and 2016 Alpha Go beats F
 <img src='robot_beats_human/superhuman_poker.png' class='myimg' ><br><span style='font-size:20px;position:absolute;left:20px'>Brown and Sandholm, Science 2018</span>
 </div>
 
-Note: we can also see recent research papers reporting superhuman AI performance<br><br>Lee and others in 2017<br><br>and the work by Brown and Sandholm on Superhuman AI for poker in 2018
+Note: superhuman performance of automatic segmentation<br><br>or in poker<br><br>
 <br><br>researchers also show limitations
 ---
 
@@ -55,7 +57,7 @@ Note: we can also see recent research papers reporting superhuman AI performance
 <img src='ai_limitations/perception_errors.png' class='myimg' ><br><span style='font-size:20px;position:absolute;left:20px'>Our work at IEEE Vis 2018</span>
 </div>
 
-Note: alcorn's work strike with a pose, inception network<br><br>first row: measurement of a line, second row: estimating of position<br><br>
+Note: alcorn's work strike with a pose, inception network<br><br>later in my talk, i will discuss our work on graphical perception of machines<br><br>
 
 ---
 
@@ -71,15 +73,19 @@ Note: alcorn's work strike with a pose, inception network<br><br>first row: meas
 
 <img src='the_gap/perception.007.png' class='myimg fragment fade-in' data-fragment-index="6" style='position:fixed;top:0px;left:0px;z-index:5'>
 
+Note: so there is a performance gap between the brain and AI<br><br>I am big fan of micro-scale connectomics.
+
 ---
 
 <div style='position:fixed; top:150px; left:0px;width:50%;'>
     <img src='the_gap/cajal.png' class='myimg'><br><span style='font-size:20px;position:absolute;left:20px'>Santiago Ramón y Cajal, 1933</span>
 </div>
 
-<iframe id='xtk0' style='position:fixed; top:0px; left:50%; width:50%; height:100%;' data-src='kasthuri3d/'></iframe>
+<div style='position:fixed; top:150px; right:0px;width:50%;' class='fragment fade-in' data-fragment-index="2">
+    <img src='the_gap/neurons.png' class='myimg'><br><span style='font-size:20px;position:absolute;right:80px;margin-top:-20px;'>Connectomics Data</span>
+</div>
 
-Note: I am big fan of micro-scale connectomics.<br><br>In a few seconds NEURONS will pop up<br>traced in high-res images<br>spiny dendrites and the long axons<br>manually annotated, took months.<br>subset of 3 cylinders
+Note: drawings of cajal in 1933<br><br>
 
 ---
 
@@ -90,10 +96,11 @@ Note: I am big fan of micro-scale connectomics.<br><br>In a few seconds NEURONS 
 Note: This is the goal<br><br>note the variety of shapes that were manually segmented..<br><br>we don't even know how many neuron types really exist yet<br><br>we need autom processing but it is hard!
 
 ---
+<div style='position:fixed; top:150px; left:0px;width:100%;height:100%'>
+    <img src='100microns/anim.gif' class='myimg'>
+</div>
 
-<iframe id='3dxp0' style='position:fixed; top:0px; left:0px; width:100%; height:100%;' data-src='100microns/'></iframe>
-
-Note: 20 largest neurons in a 100 micron volume of tissue.<br>automatically segmented<br>just the images are 2 terabytes<br>imagine a dense segmentation.. it is hard<br>let's look again at some automatic segmentation
+Note: automatically segmented<br>just the images are 2 terabytes<br>imagine a dense segmentation.. it is hard<br>let's look again at some automatic segmentation
 
 ---
 

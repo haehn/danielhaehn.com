@@ -1,4 +1,17 @@
 %
+% 2019
+%
+@InProceedings{matejek2019biologically,
+    title={Biologically-Constrained Graphs for Global Connectomics Reconstruction},
+    author={Matejek, Brian and \myname{Haehn, Daniel} and Zhu, Haidong and Wei, Donglai and Parag, Toufiq and Pfister, Hanspeter},
+    abstract={Most current state-of-the-art connectome reconstruction pipelines have two major steps: initial pixel-based segmentation with affinity prediction and watershed transform, and refined segmentation by merging over-segmented regions. These methods rely only on local context and are typically agnostic to the underlying biology. Since a few merge errors can lead to several incorrectly merged neuronal processes, these algorithms are currently tuned towards over-segmentation producing an overburden of costly proofreading. We propose a third step for connectomics reconstruction pipelines to refine an over-segmentation using both local and global context with an emphasis on adhering to the underlying biology. We first extract a graph from an input segmentation where nodes correspond to segment labels and edges indicate potential split errors in the over-segmentation. In order to increase throughput and allow for large-scale reconstruction, we employ biologically inspired geometric constraints based on neuron morphology to reduce the number of nodes and edges. Next, two neural networks learn these neuronal shapes to further aid the graph construction process. Lastly, we reformulate the region merging problem as a graph partitioning one to leverage global context. We demonstrate the performance of our approach on four real-world connectomics datasets with an average variation of information improvement of 21.3%.},
+    booktitle = {IEEE Computer Vision and Pattern Recognition (CVPR)},
+    month = {June},
+    year = {2019},
+    code={https://github.com/bmatejek/ibex/}
+}
+
+%
 % 2018
 %
 @article{haehn2018evaluating,
@@ -6,9 +19,9 @@
   author={\myname{Haehn, Daniel} and Tompkin, James and Pfister, Hanspeter},
   journal={IEEE Transactions on Visualization and Computer Graphics (IEEE VIS)},
   abstract={Convolutional neural networks can successfully perform many computer vision tasks on images. For visualization, how do CNNs perform when applied to graphical perception tasks? We investigate this question by reproducing Cleveland and McGill’s seminal 1984 experiments, which measured human perception efficiency of different visual encodings and defined elementary perceptual tasks for visualization. We measure the graphical perceptual capabilities of four network architectures on five different visualization tasks and compare to existing and new human performance baselines. While under limited circumstances CNNs are able to meet or outperform human task performance, we find that CNNs are not currently a good model for human graphical perception. We present the results of these experiments to foster the understanding of how CNNs succeed and fail when applied to data visualizations.},
-  volume={to appear},
-  number={X},
-  pages={X--X},
+  volume={25},
+  pages={641--650},
+  number={1},
   year={2018},
   month={October},
   publisher={IEEE},
@@ -39,7 +52,7 @@
 %
 @article{haehn2017scalable,
   title={Scalable Interactive Visualization for Connectomics},
-  author={\myname{Haehn, Daniel} and Hoffer, John and Matejek, Brian and Suissa-Peleg, Adi and Al-Awami, Ali K and Kamentsky, Lee and Gonda, Felix and Meng, Eagon and Zhang, William and Schalek, Richard and Wilson, Alyssa and Parag, Toufiq and Beyer, Johanna and Kaynig, Verena and Jones, Thouis R. and Tompkin, James and Hadwiger, Markus and Lichtman, Jeff W. and Pfister, Hanspeter},
+  author={\myname{Haehn, Daniel} and Hoffer, John and Matejek, Brian and Suissa-Peleg, Adi and Al-Awami, Ali K. and Kamentsky, Lee and Gonda, Felix and Meng, Eagon and Zhang, William and Schalek, Richard and Wilson, Alyssa and Parag, Toufiq and Beyer, Johanna and Kaynig, Verena and Jones, Thouis R. and Tompkin, James and Hadwiger, Markus and Lichtman, Jeff W. and Pfister, Hanspeter},
   journal={MDPI Informatics},
   abstract={Connectomics has recently begun to image brain tissue at nanometer resolution, which produces petabytes of data. This data must be aligned, labeled, proofread, and formed into graphs, and each step of this process requires visualization for human verification. As such, we present the BUTTERFLY middleware, a scalable platform that can handle massive data for interactive visualization in connectomics. Our platform outputs image and geometry data suitable for hardware-accelerated rendering, and abstracts low-level data wrangling to enable faster development of new visualizations. We demonstrate scalability and extendability with a series of open source Web-based applications for every step of the typical connectomics workflow: data management and storage, informative queries, 2D and 3D visualizations, interactive editing, and graph-based analysis. We report design choices for all developed applications and describe typical scenarios of isolated and combined use in everyday connectomics research. In addition, we measure and optimize rendering throughput—from storage to display—in quantitative experiments. Finally, we share insights, experiences, and recommendations for creating an open source data management and interactive visualization platform for connectomics.},
   volume={4},
@@ -101,7 +114,7 @@
 
 @article{alawami2016neuroblocks,
   title={NeuroBlocks--Visual Tracking of Segmentation and Proofreading for Large Connectomics Projects},
-  author={Al-Awami, Ali K and Beyer, Johanna and \myname{Haehn, Daniel} and Kasthuri, Narayanan and Lichtman, Jeff W and Pfister, Hanspeter and Hadwiger, Markus},
+  author={Al-Awami, Ali K. and Beyer, Johanna and \myname{Haehn, Daniel} and Kasthuri, Narayanan and Lichtman, Jeff W. and Pfister, Hanspeter and Hadwiger, Markus},
   abstract={In the field of connectomics, neuroscientists acquire electron microscopy volumes at nanometer resolution in order to reconstruct a detailed wiring diagram of the neurons in the brain. The resulting image volumes, which often are hundreds of terabytes in size, need to be segmented to identify cell boundaries, synapses, and important cell organelles. However, the segmentation process of a single volume is very complex, time-intensive, and usually performed using a diverse set of tools and many users. To tackle the associated challenges, this paper presents NeuroBlocks, which is a novel visualization system for tracking the state, progress, and evolution of very large volumetric segmentation data in neuroscience. NeuroBlocks is a multi-user web-based application that seamlessly integrates the diverse set of tools that neuroscientists currently use for manual and semi-automatic segmentation, proofreading, visualization, and analysis. NeuroBlocks is the first system that integrates this heterogeneous tool set, providing crucial support for the management, provenance, accountability, and auditing of large-scale segmentations. We describe the design of NeuroBlocks, starting with an analysis of the domain-specific tasks, their inherent challenges, and our subsequent task abstraction and visual representation. We demonstrate the utility of our design based on two case studies that focus on different user roles and their respective requirements for performing and tracking the progress of segmentation and proofreading in a large real-world connectomics project.},
   journal={IEEE Transactions on Visualization and Computer Graphics (IEEE VIS)},
   volume={22},

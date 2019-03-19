@@ -1,0 +1,13 @@
+# MTL writer by Daniel Berger, Jan 2015
+newmtl Kasthuri15__0864_material
+  Ns 50.0000
+  Ni 1.5000
+  d 0.4000
+  Tr 0.0000
+  Tf 1.0000 1.0000 1.0000
+  illum 2
+  Ka 0.0000 0.0000 0.0000
+  Kd 0.5216 0.1098 0.5922
+  Ks 1.0000 1.0000 1.0000
+  Ke 0.0000 0.0000 0.0000
+

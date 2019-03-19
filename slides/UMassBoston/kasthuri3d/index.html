@@ -1,0 +1,94 @@
+<html>
+<head>
+  <style>
+    html, body { 
+      background-color:#000;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden !important;  
+    }
+
+    .xtk-progress-bar {
+      display: none;
+    }
+  </style>
+  <script type="text/javascript" src="xtk.js"></script>
+
+  <script type='text/javascript'>
+
+    window.onload = function() {
+
+      // create and initialize a 3D renderer
+      var r = new X.renderer3D();
+      r.init();
+      REN3D = r;
+      
+      var files = ['Kasthuri15__3195_Objects.Neurons.Dendrites.Spiny_Dendrites.RC_Oblique_Dendrites.Oblique_Dendrite_15.obj', 'Kasthuri15__3201_Objects.Neurons.Dendrites.Spiny_Dendrites.RC_Oblique_Dendrites.Oblique_Dendrite_21_AS.obj', 'Kasthuri15__3199_Objects.Neurons.Dendrites.Spiny_Dendrites.RC_Oblique_Dendrites.Oblique_Dendrite_19.obj', 'Kasthuri15__3198_Objects.Neurons.Dendrites.Spiny_Dendrites.RC_Oblique_Dendrites.Oblique_Dendrite_18.obj', 'Kasthuri15__3202_Objects.Neurons.Dendrites.Spiny_Dendrites.RC_Oblique_Dendrites.Oblique_Dendrite_22.obj', 'Kasthuri15__0865_Objects.Neurons.Axons.Excitatory_Axons.Daniels_Axons.D_Axon_2.obj', 'Kasthuri15__3197_Objects.Neurons.Dendrites.Spiny_Dendrites.RC_Oblique_Dendrites.Oblique_Dendrite_17.obj', 'Kasthuri15__0864_Objects.Neurons.Axons.Excitatory_Axons.Daniels_Axons.D_Axon_1.obj', 'Kasthuri15__3196_Objects.Neurons.Dendrites.Spiny_Dendrites.RC_Oblique_Dendrites.Oblique_Dendrite_16.obj', 'Kasthuri15__3200_Objects.Neurons.Dendrites.Spiny_Dendrites.RC_Oblique_Dendrites.Oblique_Dendrite_20.obj'];
+
+      // var files = ['Kasthuri15__3195_Objects.Neurons.Dendrites.Spiny_Dendrites.RC_Oblique_Dendrites.Oblique_Dendrite_15.obj'];
+
+      // from colorbewer2.org
+      var colors = ['rgb(166,206,227)','rgb(31,120,180)','rgb(178,223,138)','rgb(51,160,44)','rgb(251,154,153)','rgb(227,26,28)','rgb(253,191,111)','rgb(255,127,0)','rgb(202,178,214)','rgb(106,61,154)','rgb(255,255,153)','rgb(177,89,40)']
+
+      for (f in files) {
+
+        // create a cube
+        var m = new X.mesh();
+        m.file = 'data/'+files[f];
+
+        var c = colors[f];
+        c = c.replace('rgb(','').replace(')','').split(',');
+        c = [parseInt(c[0])/255, parseInt(c[1])/255, parseInt(c[2])/255];
+        m.color = c;
+
+        r.add(m); // add the cube to the renderer
+
+      }
+
+
+
+      
+
+      r.onShowtime = function() {
+        console.log('XTK loading completed.');
+        set_nice_view();
+      }
+
+      r.render(); // ..and render it
+
+      r.onRender = function() {
+        r.camera.rotate([1,0]);
+      }
+
+      // var interaction_ongoing = false;
+
+      // r.interactor.onMouseDown = function() {
+      //   console.log('yep')
+      //   interaction_ongoing = true;
+      // }      
+
+      // r.onRender = function() {
+
+      //   if (interaction_ongoing) return;
+
+      //   set_nice_view();
+
+      // }
+      
+    };
+
+    function set_nice_view() {
+      
+      REN3D.camera.view = new Float32Array([0.21447575092315674, -0.4503043293952942, -0.8667328357696533, 0, 0.8608989119529724, 0.5063118934631348, -0.0500180758535862, 0, 0.46136027574539185, -0.7354421019554138, 0.4962582290172577, 0, 0, 0, -20, 1]);
+
+    };
+
+
+
+
+  </script>
+</head>
+<body>
+</body>
+</html>

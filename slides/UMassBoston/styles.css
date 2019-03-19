@@ -1,0 +1,31 @@
+.reveal .slides {
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+#cnn0 {
+    // zoom: 3;
+    -moz-transform: scale(3);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(3);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(3);
+    -webkit-transform-origin: 0 0;
+}
+
+#cnn1 {
+    // zoom: 3;
+    -moz-transform: scale(3);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(3);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(3);
+    -webkit-transform-origin: 0 0;
+}
+
+.myimg {
+    margin: none;
+    box-shadow: none;
+    background: none;
+    border: none;
+
+}

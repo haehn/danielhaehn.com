@@ -96,6 +96,10 @@ Note: This is the goal<br><br>note the variety of shapes that were manually segm
     <img src='100microns/anim.gif' class='myimg'>
 </div>
 
+<video width="100%" height="100%" autoplay muted>
+  <source src="100microns/20largest.mp4" type="video/mp4">
+</video><br><span style='font-size:20px;position:absolute;left:30px'>Haehn et al., MDPI Informatics 2017</span>
+
 Note: automatically segmented<br>just the images are 2 terabytes<br>imagine a dense segmentation.. it is hard<br>let's look again at some automatic segmentation
 
 ---
@@ -193,21 +197,26 @@ Note: One way to correct these errors is interactively.
 
 ---
 
-<img src='related_work_dojo/raveler.png' border=0 style='border:none;height:400px'><br>Raveler
 
-Note: Raveler, Expert Tool by Janelia<br><br>room full of proofreaders
+<div style='width:400px;float:left'>
+<img src='related_work_dojo/raveler.png'><br><span style='font-size:20px;position:relative;top:-25px'>Janelia FlyEM: <b>Raveler</b>, 2013</span>
+</div>
 
----
+<div style='width:350px;float:left;margin-left:40px;margin-top:10px'>
+<img src='related_work_dojo/mojo.png'><br><span style='font-size:20px;position:relative;top:-25px'>Knowles-Barley et al.: <b>Mojo</b>, Neuroinformatics 2013</span>
+</div>
 
-<img src='related_work_dojo/mojo.png' border=0 style='border:none;height:400px'><br>Mojo
+<div style='width:400px;float:left;margin:100px; position:relative; top:-100px'>
+<img src='related_work_dojo/eyewire.png'><br><span style='font-size:20px;position:relative;top:-25px'>Kim et al.: <b>EyeWire</b>, Nature 2014</span>
+</div>
 
-Note: Mojo, in-house software<br><br>windows only
+<div style='position: fixed;width:100%;height:100%;z-index:2;background:rgba(0,0,0,0.8);' class='myimg fragment fade-in' data-fragment-index="1"><br><br><br><br>
+    Standalone Software<br><br>
+    Single-User<br><br>
+    Split Errors only
+</div>
 
----
-
-<img src='related_work_dojo/eyewire.png' border=0 style='border:none;height:400px'><br>Eyewire
-
-Note: Citizen science<br><br>for less complex data and only split errors<br><br>others are webknossos, or mozak
+Note: Several limitations
 
 ---
 
@@ -231,15 +240,16 @@ Note: between subjects user study<br><br>from all walks of life<br><br>proofread
 
 ---
 
-<img src='dojo_results/vi2.png' border=0 style='border:none;'>
+<img src='dojo_results/vi3.png' border=0 style='border:none;'>
 
 <span class='fragment fade-in' data-fragment-index="1" style='position:absolute;color:hotpink;top:440px;right:100px;'>Baseline</span>
 
 Note: We measure how well users correct the segmentations by comparing against the ground truth.<br><br>VI, the lower, the better<br><br>Users of Dojo were able to fix more errors<br><br>we think: no parameters with dojo, a better 3D viewer, and a minimal user interface helped.. BUT
 
 ---
+Interactive Proofreading is hard for novices!<br><br>
 
-The visual search for errors takes a long time!
+The search for errors takes a long time!
 
 Note: Average correction time with Dojo was 30 seconds.<br><br>what if we can present errors to the user automatically?<br><br>we were not the only ones thinking along these lines...
 

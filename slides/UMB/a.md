@@ -33,15 +33,20 @@ Note: Deep(er) Blue beats a chess champion in 1997<br><br>2015 and 2016 Alpha Go
 
 ---
 
-<div style='position:relative;left:50px;width:500px;z-index:0'>
+<div style='position:relative;left:10px;width:500px;z-index:0'>
 <img src='robot_beats_human/superhuman_connectomics.png' class='myimg'><br><span style='font-size:20px;position:absolute;left:20px'>Lee et al., arXiv 2017</span>
 </div>
 
-<div class='fragment fade-in' data-fragment-index="2" style='position:relative;top:30px;width:500px;right:-300px;z-index:0'>
-<img src='robot_beats_human/superhuman_poker.png' class='myimg' ><br><span style='font-size:20px;position:absolute;left:20px'>Brown and Sandholm, Science 2018</span>
+<div class='fragment fade-in' data-fragment-index="1" style='position:relative;top:10px;width:500px;right:-200px;z-index:0'>
+    <span style='font-size:20px;top:-40px;position:absolute;right:0px'>He et al., ICCV 2015</span>
+<img src='robot_beats_human/superhuman_imagenet.png' class='myimg' >
 </div>
 
-Note: superhuman performance of automatic segmentation<br><br>or in poker<br><br>
+<div class='fragment fade-in' data-fragment-index="2" style='position:relative;top:30px;width:500px;right:-300px;z-index:0'>
+<img src='robot_beats_human/superhuman_poker.png' class='myimg' ><br><span style='font-size:20px;position:absolute;left:-240px;top:180px'>Brown and Sandholm, Science 2018</span>
+</div>
+
+Note: superhuman performance of algorithms in image processing<br><br>or in poker<br><br>
 <br><br>researchers also show limitations
 ---
 
@@ -69,7 +74,28 @@ Note: alcorn's work strike with a pose, inception network<br><br>later in my tal
 
 <img src='the_gap/perception.007.png' class='myimg fragment fade-in' data-fragment-index="6" style='position:fixed;top:0px;left:0px;z-index:5'>
 
-Note: so there is a performance gap between the brain and AI<br><br>I am big fan of micro-scale connectomics.
+Note: so there is a performance gap between the brain and AI<br><br>work in both fields to reduce the gap<br><br>to better understand the brain, we need to look at brain connectivity
+
+---
+
+<div style='float:left'>
+<img src='connectomics/mybrain.png' style='position:fixed;top:0px;left:0px;z-index:0;width:300px'>
+<img src='connectomics/mybrain3d.png' style='position:fixed;top:100px;left:280px;z-index:1;width:200px'>
+<img src='connectomics/macroscale.png' style='position:fixed;top:350px;left:100px;z-index:0;width:300px'>
+<br>
+MRI
+</div>
+
+<div style='position: fixed;width:100%;height:100%;top:0px;left:0px;z-index:2;background:rgba(0,0,0,0.7);' class='myimg fragment fade-in' data-fragment-index="1"><br><br><br><br>
+<img src='connectomics/em.png' style='position:fixed;top:100px;right:100px;z-index:3;width:600px' class='myimg fragment fade-in' data-fragment-index="2">
+<img src='connectomics/neurons.png' style='position:fixed;top:100px;right:100px;z-index:4;width:600px' class='myimg fragment fade-in' data-fragment-index="3">
+<span style='position:absolute;bottom:100px;right:120px' class="fragment fade-in" data-fragment-index="2">Electron Microscopy</span>
+<span style='position:absolute;top:50px;right:320px' class="fragment fade-in" data-fragment-index="4">Connectomics</span>
+</div>
+
+
+Note: and for macro-scale connectivity analysis, we can use structural and functional MRI data<br><br>my brain<br><br>area level<br><br>to really look at the brain.. micro-scale<br><br>
+green overlay<br><br>neurons and their synaptic connections (discipline is called connectomics, 100 billion neurons with trillions of connections)<br><br>now neurons in 3D look like trees
 
 ---
 
@@ -89,13 +115,14 @@ Note: drawings of cajal in 1933<br><br>
   <source src="cylindervideo/video.mp4" type="video/mp4">
 </video><br><span style='font-size:20px;position:absolute;left:30px'>Kasthuri et al., Cell 2015</span>
 
-Note: This is the goal<br><br>note the variety of shapes that were manually segmented..<br><br>we don't even know how many neuron types really exist yet<br><br>we need autom processing but it is hard!
+Note: This is the goal<br><br>dense reconstruction<br><br>note the variety of shapes that were manually segmented..
 
 ---
-<div style='position:fixed; top:150px; left:0px;width:100%;height:100%'>
-    <img src='100microns/anim.gif' class='myimg'>
-</div>
+<img src='100microns/20largest.png' class='myimg'>
 
+Note: this is a 100 micron cube of tissue (4x the blue rectangle)<br><br>2 Terabytes of data<br><br>we need autom processing
+
+---
 <video width="100%" height="100%" autoplay muted>
   <source src="100microns/20largest.mp4" type="video/mp4">
 </video><br><span style='font-size:20px;position:absolute;left:30px'>Haehn et al., MDPI Informatics 2017</span>
@@ -110,7 +137,7 @@ Note: our algorithm thought that this is one single neuron.. we call it the hair
 
 ---
 
-<img src='animaltobrainscan/mouse.png' class='myimg fragment fade-in' data-fragment-index="1" style='width:100px;position:absolute;left:100px;'>
+<img src='animaltobrainscan/mouse.png' class='myimg' style='width:100px;position:absolute;left:100px;'>
 <img src='animaltobrainscan/rat.png' class='myimg fragment fade-in' data-fragment-index="2" style='width:200px;position:absolute;left:140px;'>
 <img src='animaltobrainscan/human.png' class='myimg fragment fade-in' data-fragment-index="3" style='width:200px;margin-left:-250px;margin-top:-30px'>
 
@@ -134,7 +161,7 @@ Note: ...and we end up with image slices that get aligned to volumes.<br><br>Now
 
 <img src='segmentation/labels.png' border=0 style='height:512.99px;border:none;'>
 
-Note: We do this automatically and there are a variety of different methods<br><br>U-Nets and watershed, over floodfilling networks, affinity-based approaches, Seere Lab<br><br>but the automatic segmentations are not perfect
+Note: We do this automatically and there are a variety of different methods<br><br>big players like the allen brain institute or even google are involved<br><br>but the automatic segmentations are not perfect
 
 ---
 
@@ -211,10 +238,11 @@ Note: One way to correct these errors is interactively.
 </div>
 
 <div style='position: fixed;width:100%;height:100%;z-index:2;background:rgba(0,0,0,0.8);' class='myimg fragment fade-in' data-fragment-index="1"><br><br><br><br>
-    Standalone Software<br><br>
-    Single-User<br><br>
-    Split Errors only
+
 </div>
+
+<img src='related_work_dojo/overview.png' style='position:fixed;top:100px;left:0px;z-index:3' class='myimg fragment fade-in' data-fragment-index="1">
+<img src='related_work_dojo/overview2.png' style='position:fixed;top:100px;left:0px;z-index: 4' class='myimg fragment fade-in' data-fragment-index="2">
 
 Note: Several limitations
 
@@ -284,7 +312,7 @@ Note: The Guided Proofreading system<br><br>this way, we can reduce the correcti
 
 ---
 
-<img src='gp/cnn.png' border=0 style='border:none;height:400px'>
+<img src='gp/cnn.png' border=0 style='border:none;'>
 
 Note: we train a pretty traditional classifier with<br><br>4 conv layers<br><br>to detect split errors only!<br><br>let's take a closer look at the inputs
 
@@ -513,9 +541,22 @@ Note: the third experiment is the position-length experiment
 
 <img src='cleveland_mcgill/barchart2.png' class='myimg fragment fade-in' data-fragment-index="2"  style='position:fixed;top:100px;left:0px;z-index:1;width:400px'>
 
-<img src='cleveland_mcgill/barchart3.png' class='myimg fragment fade-in' data-fragment-index="3"  style='position:fixed;top:100px;left:0px;z-index:2;width:400px'>
+<div style='position: fixed;width:100%;height:20%;top:0px;z-index:100;background:rgba(0,0,0,0.7);' class='myimg fragment fade-in' data-fragment-index="3">
+</div>
 
-<span class='fragment fade-in' data-fragment-index="4" style='position:absolute;font-size:65px;margin-top:120px'>0.5</span>
+
+<div style='position: fixed;width:50px;height:100%;top:20%;z-index:100;background:rgba(0,0,0,0.7);' class='myimg fragment fade-in' data-fragment-index="3">
+</div>
+
+<div style='position: fixed;width:175px;height:100%;top:20%;left:80px;z-index:100;background:rgba(0,0,0,0.7);' class='myimg fragment fade-in' data-fragment-index="3">
+</div>
+
+<div style='position: fixed;width:150px;height:100%;top:20%;left:290px;z-index:100;background:rgba(0,0,0,0.7);' class='myimg fragment fade-in' data-fragment-index="3">
+</div>
+
+<img src='cleveland_mcgill/barchart3.png' class='myimg fragment fade-in' data-fragment-index="4"  style='position:fixed;top:100px;left:0px;z-index:2;width:400px'>
+
+<span class='fragment fade-in' data-fragment-index="5" style='position:absolute;font-size:65px;margin-top:120px'>0.5</span>
 
 Note: more complex<br><br>find the two marked segments<br><br>identify the largest segment<br><br>then, compare the other marked segment to the larger one<br><br>regression target
 
@@ -558,7 +599,7 @@ Note: four different network configurations<br><br>all of them use the MLP at th
 Note: we ran all network configurations with fixed parameters<br><br>monte carlo cross validation with 12 runs per experiment
 
 ---
-<span class='fragment fade-in' data-fragment-index="1">Networks vs. Humans</span>
+<span>Networks vs. Humans</span>
 <br><br>
 <span class='fragment fade-in' data-fragment-index="2" style='font-size:16px'>Data from MTurk, Cleveland and McGill 1984, Heer and Bostock 2010</span>
 <br><br>
@@ -694,11 +735,21 @@ Note: Thank you to all my collaborators!<br><br>This work would have not been po
 
 ---
 
+<iframe id='gp0' style='position:fixed; top:0px; left:0px; width:100%; height:100%;' data-src='umb/'></iframe>
+
+<span style='position:absolute;z-index:1000;font-size:20px;top:480px;left:100px;width:700px'>D. Haehn, N. Rannou, B. Ahtam, P.E. Grant, R. Pienaar. <b>Neuroimaging in the Browser using the X Toolkit</b> <i>Frontiers in Neuroinformatics</i>, 2012.</span>
+
+<!-- (nolearn) d@viper:~/Projects/gp_TEST/ui (master@e896-)$>./ui.py 21000 /tmp/343242 GP -->
+
+Note: Perfect opportunity to re-surrect the XTK framework I developed in 2012.<br><br>allows to render on the web in 3D with little code<br><br>fully-interactive
+
+---
+
 Thank you!
 
 <img src='thankyou/octocat.png' style='width:200px'><br><br>
 
-<a href='https://danielhaehn.com/slides/UmassBoston'>danielhaehn.com/slides/UmassBoston</a><br><br>
+<a href='https://danielhaehn.com/slides/UMB'>danielhaehn.com/slides/UMB</a><br><br>
 <small><a href='http://ratemytalk.com/5Z22KV'>RateMyTalk.com/5Z22KV</a></small>
 
 Note: Again, all my stuff is on github<br><br>the slides are on my website<br><br>and please rate my talk :)

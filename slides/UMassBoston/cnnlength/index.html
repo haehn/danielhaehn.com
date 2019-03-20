@@ -164,8 +164,8 @@
 
         document.getElementById('cnn_result'+which).innerHTML = 'CNN: '  + p_res + '';
 
-        document.getElementById('err_result'+which).innerHTML = 'Error: '  + (Math.abs(p_res-ground_truth)/60.0).toFixed(3) + '';
-
+        // document.getElementById('err_result'+which).innerHTML = 'Error: '  + (Math.abs(p_res-ground_truth)/60.0).toFixed(3) + '';
+        document.getElementById('err_result'+which).innerHTML = 'Error: '  + Math.abs(p_res-ground_truth) + '';
 
       };
 

@@ -240,6 +240,19 @@ Note: between subjects user study<br><br>from all walks of life<br><br>proofread
 
 ---
 
+<img src='vi/VI.001.png' style='position:fixed;top:0px;left:0px;z-index:0'>
+
+<img src='vi/VI.002.png' class='myimg fragment fade-in' data-fragment-index="2" style='position:fixed;top:0px;left:0px;z-index:1'>
+
+<img src='vi/VI.003.png' class='myimg fragment fade-in' data-fragment-index="3" style='position:fixed;top:0px;left:0px;z-index:2'>
+
+<img src='vi/VI.004.png' class='myimg fragment fade-in' data-fragment-index="4" style='position:fixed;top:0px;left:0px;z-index:3'>
+
+Note: so there is a performance gap between the brain and AI<br><br>I am big fan of micro-scale connectomics.
+
+
+---
+
 <img src='dojo_results/vi3.png' border=0 style='border:none;'>
 
 <span class='fragment fade-in' data-fragment-index="1" style='position:absolute;color:hotpink;top:440px;right:100px;'>Baseline</span>
@@ -308,9 +321,11 @@ Note: another user study<br><br>again novices from the street<br><br>same datase
 
 ---
 
-<img src='gp_results/vi.png' border=0 style='border:none;'>
+<img src='gp_results/vi.png' border=0 style='border:none;position:fixed;top:150px;left:0px;z-index:0'>
 
-<span class='fragment fade-in' data-fragment-index="1" style='position:absolute;color:hotpink;top:150px;right:65px;'>Baseline</span>
+<span class='fragment fade-in' data-fragment-index="1" style='position:absolute;color:hotpink;top:-50px;left:480px;'>Baseline</span>
+
+<img src='gp_results/vi2.png' class='fragment fade-in' data-fragment-index="3" border=0 style='border:none;position:fixed;top:150px;left:0px;z-index:2'>
 
 Note: again VI: the lower, the better, on the x-axis is the corrections over time<br><br>novices almost as good as experts<br><br>baseline is the input segmentation<br><br>since we used the same data as before, we can also compare against interactive proofreading with dojo
 
@@ -326,7 +341,7 @@ Note: All novices here.<br><br>Dojo is fully interactive and GP is just so much 
 
 <span class='fragment fade-in' data-fragment-index="1">Proofreading will always be necessary</span>
 <br><br>
-<span class='fragment fade-in' data-fragment-index="2">Humans will be the bottleneck</span>
+<span class='fragment fade-in' data-fragment-index="2">Human labor will be the bottleneck</span>
 <br><br>
 <span class='fragment fade-in' data-fragment-index="3">Minimizing manual work is the goal</span>
 <br><br>
@@ -345,6 +360,26 @@ Note: I would like to now move from bottom-up neurobiology studies<br><br>to top
 
 ---
 
+<img src='cleveland_mcgill/paper.png'><br><span style='font-size:20px;position:absolute;left:60px'>Cleveland and McGill, Journal of the American Statistical Association 1984</span>
+
+<div style='position: fixed;width:100%;height:100%;z-index:2;background:rgba(0,0,0,0.8);top:0px;' class='myimg fragment fade-in' data-fragment-index="1"><br><br><br><br>
+
+<img src='cleveland_mcgill/just_angle_and_line.png' class='myimg fragment fade-in' data-fragment-index="2" style='position:fixed;top:200px;left:200px;z-index:1'>
+
+</div>
+
+Note: we do that by studying experiments of human perception by Cleveland..
+
+---
+
+We replicate Cleveland and McGill's 1984 experiments<br><br>with Convolutional Neural Networks.
+
+Note: Instead of human perception, we study machine perception<br><br>
+by replicating Cleveland and McGill's 1984 experiments with<br><br>
+Convolutional Neural Networks
+
+---
+
 <iframe id='cnn0' style='position:fixed; top:0px; left:0px; width:100%; height:100%;' data-src='cnnangle/'></iframe>
 
 <span style='position:absolute;z-index:1000;font-size:20px;top:400px;left:100px;width:700px'>D. Haehn, J. Tompkin, H. Pfister. <b>Evaluating 'Graphical Perception' with CNNs.</b> <i>IEEE Transactions on Visualization and Computer Graphics (IEEE Vis)</i>, 2018.</span>
@@ -358,21 +393,6 @@ Note: For instance, here I can draw an angle.<br><br>and the VGG19 network estim
 <span style='position:absolute;z-index:1000;font-size:20px;top:400px;left:100px;width:700px'>D. Haehn, J. Tompkin, H. Pfister. <b>Evaluating 'Graphical Perception' with CNNs.</b> <i>IEEE Transactions on Visualization and Computer Graphics (IEEE Vis)</i>, 2018.</span>
 
 Note: Here we draw two lines.<br><br>left: thin line<br><br>right: thick one<br><br>the network estimates the length
-
----
-
-<img src='cleveland_mcgill/paper.png'><br><span style='font-size:20px;position:absolute;left:60px'>Cleveland and McGill, Journal of the American Statistical Association 1984</span>
-
-
-Note: experiments of human perception when it comes to perceiving visualizations such as pie charts or bar charts
-
----
-
-We replicate Cleveland and McGill's 1984 experiments<br><br>with Convolutional Neural Networks.
-
-Note: Instead of human perception, we study machine perception<br><br>
-by replicating Cleveland and McGill's 1984 experiments with<br><br>
-Convolutional Neural Networks
 
 ---
 
@@ -443,8 +463,8 @@ Note: angle<br>length..<br>sooo we let CNNs regress these generated images with 
 ---
 
 <img src='cleveland_mcgill/angle_inv.png' style='width:400px;float:left;margin-left:100px'>
-<span style='position:absolute;font-size:40px;margin-top:60px'>~78&deg;</span>
-<span style='position:absolute;font-size:65px;margin-top:120px'>0.87</span>
+<span style='position:absolute;font-size:40px;margin-top:60px'>~77&deg;</span>
+<span style='position:absolute;font-size:65px;margin-top:120px'>0.856</span>
 
 
 Note: angles are always 0..90 degrees<br>this angle is roughly 78 degrees<br><br>mapped to 0..1 for 0..90 degrees, this yields 0.87
@@ -538,6 +558,12 @@ Note: four different network configurations<br><br>all of them use the MLP at th
 Note: we ran all network configurations with fixed parameters<br><br>monte carlo cross validation with 12 runs per experiment
 
 ---
+<span class='fragment fade-in' data-fragment-index="1">Networks vs. Humans</span>
+<br><br>
+<span class='fragment fade-in' data-fragment-index="2" style='font-size:16px'>Data from MTurk, Cleveland and McGill 1984, Heer and Bostock 2010</span>
+<br><br>
+
+---
 
 
 <img src='cleveland_mcgill/results/elementary_plots/plots.001.png' class='myimg' style='position:fixed;top:100px;left:0px;z-index:0;'>
@@ -623,13 +649,17 @@ Note: out-of-distribution samples<br><br>will we ever achieve such systems?<br><
 
 ---
 
+Future Work
+
+---
+
 <img src='the_gap/perception.009.png' class='myimg' style='position:fixed;top:0px;left:0px;z-index:0'>
 
 <img src='the_gap/perception.010.png' class='myimg fragment fade-in' data-fragment-index="2" style='position:fixed;top:0px;left:0px;z-index:1'>
 
 
 Note: So today I spoke about some advancements in regards to better understanding the brain and AI.<br><br>In reality, the gap between the two is very large<br><br>and we are just at the beginning in both fields.<br><br>
-massive research efforts are on the way and I am happy to contribute a little bit.<br><br>
+massive research efforts are on the way and I am happy to contribute my share.<br><br>
 before I take questions, I would like to...
 
 ---
@@ -668,8 +698,8 @@ Thank you!
 
 <img src='thankyou/octocat.png' style='width:200px'><br><br>
 
-<a href='https://danielhaehn.com/slides/MIT'>danielhaehn.com/slides/UmassBoston</a><br><br>
-<small><a href='http://ratemytalk.com/9HV29M'>RateMyTalk.com/5Z22KV</a></small>
+<a href='https://danielhaehn.com/slides/UmassBoston'>danielhaehn.com/slides/UmassBoston</a><br><br>
+<small><a href='http://ratemytalk.com/5Z22KV'>RateMyTalk.com/5Z22KV</a></small>
 
 Note: Again, all my stuff is on github<br><br>the slides are on my website<br><br>and please rate my talk :)
 

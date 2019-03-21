@@ -297,7 +297,7 @@ Note: Average correction time with Dojo was 30 seconds.<br><br>what if we can pr
 
 <img src='relatedwork_gp/fp.png' border=0 style='border:none;height:400px'><br>Plaza et al.: Focused Proofreading, Springer 2015
 
-<div style='position: absolute;top:0px;width:100%;height:100%;z-index:2;background:rgba(0,0,0,0.8);' class='myimg fragment fade-in' data-fragment-index="1"><br><br><br><br>Random Forest<br><br>Only Split Errors
+<div style='position: absolute;top:0px;width:100%;height:100%;z-index:2;background:rgba(0,0,0,0.8);' class='myimg fragment fade-in' data-fragment-index="1"><br><br>Single-User<br><br>Random Forest<br><br>Only Split Errors
 
 </div>
 
@@ -306,18 +306,15 @@ Note: runs originally in Raveler and suggests errors to the user based on probab
 
 ---
 
-<video width="50%" height="50%" autoplay muted>
-  <source src="gp/video.mov" type="video/mov">
-</video>
-<span style='position:absolute;z-index:1000;font-size:20px;top:400px;left:100px;width:700px'>D. Haehn, V. Kaynig, J. Tompkin, J.W. Lichtman, H. Pfister. <b>Guided Proofreading of Automatic Segmentations for Connectomics.</b> <i>IEEE Computer Vision and Pattern Recognition (CVPR)</i>, 2018.</span>
-
-Note: 
-
----
+<!-- <video width="100%" height="100%" autoplay muted>
+  <source src="gp/video.mp4" type="video/mp4">
+</video> -->
 
 <iframe id='gp0' style='position:fixed; top:0px; left:0px; width:100%; height:100%;' data-src='http://140.247.107.121:21000/'></iframe>
 
 <span style='position:absolute;z-index:1000;font-size:20px;top:400px;left:100px;width:700px'>D. Haehn, V. Kaynig, J. Tompkin, J.W. Lichtman, H. Pfister. <b>Guided Proofreading of Automatic Segmentations for Connectomics.</b> <i>IEEE Computer Vision and Pattern Recognition (CVPR)</i>, 2018.</span>
+
+
 
 <!-- (nolearn) d@viper:~/Projects/gp_TEST/ui (master@e896-)$>./ui.py 21000 /tmp/343242 GP -->
 
@@ -380,7 +377,7 @@ Note: All novices here.<br><br>Dojo is fully interactive and GP is just so much 
 
 ---
 
-<span class='fragment fade-in' data-fragment-index="1">Proofreading will always be necessary</span>
+<span>Proofreading will always be necessary</span>
 <br><br>
 <span class='fragment fade-in' data-fragment-index="2">Human labor will be the bottleneck</span>
 <br><br>
@@ -392,7 +389,7 @@ Note: Segmentation methods will not be perfect / we will always be uncertain to 
 
 ---
 
-<span class='fragment fade-in' data-fragment-index="1">Active Learning</span>
+<span>Active Learning</span>
 <br><br>
 <span class='fragment fade-in' data-fragment-index="2">New Visualizations (AR/VR)</span>
 <span class='fragment fade-in' data-fragment-index="2"><img src='future_proofreading/arvr.png' style='position:absolute;width:250px;top:100px;right:0px;'></span><br><br>

@@ -7,19 +7,19 @@ revealOptions:
 ---
 <!-- (c) Daniel Haehn, https://danielhaehn.com, contact me for questions! -->
 
-Note: Thank you<br><br>today, i am going to speak about 3 projects from my phd research
+Note: Good morning!<br><br>sooo.. this is my second time visiting <br><br>i am going to speak about 3 projects from my phd research
 
 ---
 <img src='welcome/defense_invitation.png' style='width:500px;' class='myimg'>
 
-Note: i will defend my phd at the beginning of april<br><br>there is a performance gap between the brain and artificial intelligence and we need to work from both ends to reduce it<br><br>start with a video showing this gap in the field of soccer
+Note: i will defend my phd at the beginning of april<br><br>To summarize my defense: there is a performance gap between the brain and artificial intelligence and we need to work from both ends to reduce it<br><br>Today, I would like to start with a video showing this gap in the game of soccer
 ---
 <video width="50%" height="50%" autoplay muted>
   <source src="messi_vs_robot/video.mp4" type="video/mp4">
 </video><br>
 <span style='font-size:20px'>Lex Fridman, MIT 6.S099 Artificial General Intelligence</span>
 
-Note: messi at age 19<br><br>a recent robot soccer worldcup in the bottom<br><br>competition between the machines and humans are exciting to us
+Note: messi at age 19<br><br>a state-of-the-art soccer robot in the bottom<br><br>competition between machines and humans are exciting to us
 
 ---
 
@@ -29,8 +29,7 @@ Note: messi at age 19<br><br>a recent robot soccer worldcup in the bottom<br><br
 
 <img src='robot_beats_human/alphastar.png' class='myimg fragment fade-in' data-fragment-index="3" style='z-index:10; position: absolute; left:-150px;top:-10px'>
 
-Note: Deep(er) Blue beats a chess champion in 1997<br><br>2015 and 2016 Alpha Go beats some of the best players of the board game Go<br><br>2019 AlphaStar beats an expert StarCraft player
-
+Note: Deep Blue beats a chess champion in 1997<br><br>Alpha Go wins against some of the best players of the board game Go in 2015/16<br><br>And earlier this year, AlphaStar beats a professional player of the videogame StarCraft<br><br>and researchers confirm this tendency.. there are publications...
 ---
 
 <div style='position:relative;left:10px;width:500px;z-index:0'>
@@ -46,8 +45,8 @@ Note: Deep(er) Blue beats a chess champion in 1997<br><br>2015 and 2016 Alpha Go
 <img src='robot_beats_human/superhuman_poker.png' class='myimg' ><br><span style='font-size:20px;position:absolute;left:-240px;top:180px'>Brown and Sandholm, Science 2018</span>
 </div>
 
-Note: superhuman performance of algorithms in image processing<br><br>or in poker<br><br>
-<br><br>researchers also show limitations
+Note: stating superhuman performance of algorithms in image processing<br><br>or in poker<br><br>
+<br><br>but researchers also show limitations
 ---
 
 <div style='position:relative;left:50px;width:500px;z-index:0'>
@@ -58,7 +57,7 @@ Note: superhuman performance of algorithms in image processing<br><br>or in poke
 <img src='ai_limitations/perception_errors.png' class='myimg' ><br><span style='font-size:20px;position:absolute;left:20px'>Our work at IEEE Vis 2018</span>
 </div>
 
-Note: alcorn's work strike with a pose, inception network<br><br>later in my talk, i will discuss our work on graphical perception of machines<br><br>
+Note: alcorn's work strike with a pose, where a network can identify a school bus in the left image perfectly<br><br>later in my talk, i will discuss our work on graphical perception of machines<br><br>
 
 ---
 
@@ -94,8 +93,8 @@ MRI
 </div>
 
 
-Note: and for macro-scale connectivity analysis, we can use structural and functional MRI data<br><br>my brain<br><br>area level<br><br>to really look at the brain.. micro-scale<br><br>
-green overlay<br><br>neurons and their synaptic connections (discipline is called connectomics, 100 billion neurons with trillions of connections)<br><br>now neurons in 3D look like trees
+Note: and for macro-scale connectivity analysis, we can use structural and functional MRI data<br><br>my brain<br><br>we can see which regions of the brain connect..<br><br>area level<br><br>to really look at the brain.. micro-scale<br><br>
+green overlay<br><br>neurons and their synaptic connections (discipline is called connectomics)<br><br>in our brain are 100 billion neurons with trillions of connections)<br><br>datasets are massive<br><br>now neurons in 3D look like trees
 
 ---
 
@@ -107,7 +106,7 @@ green overlay<br><br>neurons and their synaptic connections (discipline is calle
     <img src='the_gap/neurons.png' class='myimg'><br><span style='font-size:20px;position:absolute;right:80px;margin-top:-20px;'>Connectomics Data</span>
 </div>
 
-Note: drawings of cajal in 1933<br><br>
+Note: drawings of cajal in 1933 with great details<br><br>on the right, we see processed connectomics data showing similar structures<br><br>knowing that this is real data is astonishing
 
 ---
 
@@ -115,7 +114,7 @@ Note: drawings of cajal in 1933<br><br>
   <source src="cylindervideo/video.mp4" type="video/mp4">
 </video><br><span style='font-size:20px;position:absolute;left:30px'>Kasthuri et al., Cell 2015</span>
 
-Note: This is the goal<br><br>dense reconstruction<br><br>note the variety of shapes that were manually segmented..
+Note: This is the goal<br><br>dense reconstruction<br><br>manual segmentation<br><br>note the variety of shapes<br><br>tiny area of the brain, 6 months
 
 ---
 <img src='100microns/20largest.png' class='myimg'>
@@ -127,13 +126,13 @@ Note: this is a 100 micron cube of tissue (4x the blue rectangle)<br><br>2 Terab
   <source src="100microns/20largest.mp4" type="video/mp4">
 </video><br><span style='font-size:20px;position:absolute;left:30px'>Haehn et al., MDPI Informatics 2017</span>
 
-Note: automatically segmented<br>just the images are 2 terabytes<br>imagine a dense segmentation.. it is hard<br>let's look again at some automatic segmentation
+Note: top 20 largest neurons in the block<br><br>see the variety in contrast across slices<br><br>creating a dense segmentation is hard..<br>while these neurons look pretty good, let's look again at some automatic segmentation
 
 ---
 
 <img src='hairball/label2.png'  border=0 style='border:none;'>
 
-Note: our algorithm thought that this is one single neuron.. we call it the hairball.<br><br>segmentation in connectomics is hard<br><br>but how do we even get the data in the first place?
+Note: our algorithm thought that this is one single neuron.. it is a huge merge error<br><br>we call it the hairball.<br><br>but how do we even get the data in the first place?
 
 ---
 
@@ -147,7 +146,7 @@ Note: our algorithm thought that this is one single neuron.. we call it the hair
 
 <img src='animaltobrainscan/em.png' class='myimg fragment fade-in' data-fragment-index="6" style='position:absolute;max-height:none;width:200px;top:200px;left:650px'>
 
-Note: well... we take mice, rats, or humans<br><br>cut out their brains or pieces of it<br><br>slice it extremely thinly<br><br>...and scan it with an electron microscope<br><br>this happens in 2D!
+Note: well... we take mice, rats, or humans<br><br>cut out their brains or pieces of it<br><br>slice it extremely thinly<br><br>...and scan it with an electron microscope<br><br>this happens in 2D - slice by slice!
 
 ---
 
@@ -161,7 +160,7 @@ Note: ...and we end up with image slices that get aligned to volumes.<br><br>Now
 
 <img src='segmentation/labels.png' border=0 style='height:512.99px;border:none;'>
 
-Note: We do this automatically and there are a variety of different methods<br><br>big players like the allen brain institute or even google are involved<br><br>but the automatic segmentations are not perfect
+Note: We do this automatically and there are a variety of different methods<br><br>big players like the allen brain institute or even google are involved<br><br>but in any case, the automatic segmentations are not perfect
 
 ---
 
@@ -185,7 +184,7 @@ Note: please focus on these labels and the regions marked with arrows
 
 <img src='segmentation/zoom4errors_membranes.png' border=0 style='height:512.99px;border:none;'>
 
-Note: these are two cells and the membranes are shown here.<br><br>the labeling should look different
+Note: there are really two cells with these two membranes.<br><br>the labeling should look different
 
 ---
 
@@ -201,7 +200,7 @@ Note: like that...<br><br>(click 2x) How do we get from the wrong labeling on th
 
 <img src='segmentation/human.png' border=0 style='border:none;'>
 
-Note: And the answer is proofreading by humans.
+Note: And the answer is proofreading by humans.<br><br>there are two types of errors in the automatic labelings
 
 ---
 
@@ -244,7 +243,7 @@ Note: One way to correct these errors is interactively.
 <img src='related_work_dojo/overview.png' style='position:fixed;top:100px;left:0px;z-index:3' class='myimg fragment fade-in' data-fragment-index="1">
 <img src='related_work_dojo/overview2.png' style='position:fixed;top:100px;left:0px;z-index: 4' class='myimg fragment fade-in' data-fragment-index="2">
 
-Note: Several limitations
+Note: existing tools<br><br>Raveler, Mojo, EyeWire<br><br>limitations<br><br>we created Dojo
 
 ---
 
@@ -252,7 +251,7 @@ Note: Several limitations
 
 <span style='position:absolute;z-index:1000;font-size:20px;top:600px;left:150px;width:650px'>D. Haehn, S. Knowles-Barley, M. Roberts, J. Beyer, N. Kasthuri, J.W. Lichtman, and H. Pfister. <b>Design and Evaluation of Interactive Proofreading Tools for Connectomics.</b> <i>IEEE Transactions on Visualization and Computer Graphics (IEEE SciVis)</i>, 2014.</span>
 
-Note: Dojo Live Demo... slices<br>3D<br>merge<br>split<br><br>quantitative user study
+Note: Dojo Live Demo... <br><br>to evaluate we created a quantitative user study
 
 ---
 
@@ -264,7 +263,7 @@ Raveler vs. Mojo vs. Dojo<br><br>
 <br><br>
 <span class='fragment fade-in' data-fragment-index="4">Fixed Timeframe (30 minutes)</span>
 
-Note: between subjects user study<br><br>from all walks of life<br><br>proofread a representative dataset in a fixed time frame of 30 minutes<br><br>and surprise: most people made the initial segmentation worse!!
+Note: between subjects user study<br><br>from all walks of life<br><br>proofread a representative dataset in a fixed time frame of 30 minutes<br><br>to evaluate..
 
 ---
 
@@ -276,7 +275,7 @@ Note: between subjects user study<br><br>from all walks of life<br><br>proofread
 
 <img src='vi/VI.004.png' class='myimg fragment fade-in' data-fragment-index="4" style='position:fixed;top:0px;left:0px;z-index:3'>
 
-Note: so there is a performance gap between the brain and AI<br><br>I am big fan of micro-scale connectomics.
+Note: we compare the proofread data of each participant to an expert manual segmentation<br><br>overlap is good, and no-overlap is bad<br><br>variation of information score (VI)<br><br>and surprise: most people made the initial segmentation worse!!<br><br>here are the results
 
 
 ---
@@ -285,7 +284,7 @@ Note: so there is a performance gap between the brain and AI<br><br>I am big fan
 
 <span class='fragment fade-in' data-fragment-index="1" style='position:absolute;color:hotpink;top:440px;right:100px;'>Baseline</span>
 
-Note: We measure how well users correct the segmentations by comparing against the ground truth.<br><br>VI, the lower, the better<br><br>Users of Dojo were able to fix more errors<br><br>we think: no parameters with dojo, a better 3D viewer, and a minimal user interface helped.. BUT
+Note: VI, the lower, the better<br><br>Users of Dojo were able to fix more errors<br><br>we think: no parameters with dojo, a better 3D viewer, and a minimal user interface helped.. BUT
 
 ---
 Interactive Proofreading is hard for novices!<br><br>
@@ -296,9 +295,23 @@ Note: Average correction time with Dojo was 30 seconds.<br><br>what if we can pr
 
 ---
 
-<img src='relatedwork_gp/fp.png' border=0 style='border:none;height:400px'><br>Focused Proofreading
+<img src='relatedwork_gp/fp.png' border=0 style='border:none;height:400px'><br>Plaza et al.: Focused Proofreading, Springer 2015
 
-Note: by Janelia, runs originally in Raveler and suggests errors to the user based on probabilities of a random forest classifier<br><br>we thought whether we can do that better
+<div style='position: absolute;top:0px;width:100%;height:100%;z-index:2;background:rgba(0,0,0,0.8);' class='myimg fragment fade-in' data-fragment-index="1"><br><br><br><br>Random Forest<br><br>Only Split Errors
+
+</div>
+
+
+Note: runs originally in Raveler and suggests errors to the user based on probabilities of a random forest classifier<br><br>we thought, we can do that better
+
+---
+
+<video width="50%" height="50%" autoplay muted>
+  <source src="gp/video.mov" type="video/mov">
+</video>
+<span style='position:absolute;z-index:1000;font-size:20px;top:400px;left:100px;width:700px'>D. Haehn, V. Kaynig, J. Tompkin, J.W. Lichtman, H. Pfister. <b>Guided Proofreading of Automatic Segmentations for Connectomics.</b> <i>IEEE Computer Vision and Pattern Recognition (CVPR)</i>, 2018.</span>
+
+Note: 
 
 ---
 
@@ -375,7 +388,17 @@ Note: All novices here.<br><br>Dojo is fully interactive and GP is just so much 
 <br><br>
 <span class='fragment fade-in' data-fragment-index="4"><img src='future_proofreading/brian.png' style='width:250px;margin-bottom:30px;margin-right:50px;'><img src='future_proofreading/zudi.png' style='width:250px'></span>
 
-Note: Segmentation methods will not be perfect / we will always be uncertain to a degree because of the huge variability<br><br>before proofreading, lets find ways of automatically improving the segmentation<br><br>two methods under review<br><br>Dojo and Guided Proofreading open science (code/results/data) online
+Note: Segmentation methods will not be perfect / we will always be uncertain to a degree because of the huge variability<br><br>before proofreading, lets find ways of automatically improving the segmentation<br><br>two methods under review<br><br>confirm or deny in bulk
+
+---
+
+<span class='fragment fade-in' data-fragment-index="1">Active Learning</span>
+<br><br>
+<span class='fragment fade-in' data-fragment-index="2">New Visualizations (AR/VR)</span>
+<span class='fragment fade-in' data-fragment-index="2"><img src='future_proofreading/arvr.png' style='position:absolute;width:250px;top:100px;right:0px;'></span><br><br>
+<span class='fragment fade-in' data-fragment-index="3">Educational Platform</span>
+
+Note: During proofreading we can feed in the error corrections to the algorithms<br><br>
 
 ---
 
@@ -384,7 +407,7 @@ Note: Segmentation methods will not be perfect / we will always be uncertain to 
 <img src='the_gap/perception.008.png' class='myimg fragment fade-in' data-fragment-index="2" style='position:fixed;top:0px;left:0px;z-index:1'>
 
 
-Note: I would like to now move from bottom-up neurobiology studies<br><br>to top-down machine perception research.<br><br>I will now talk about work we just presented at the IEEE Visualization conference in Berlin.<br><br>We test how CNNs are able to perceive simple graphical stimuli.
+Note: I would like to now move from bottom-up neurobiology studies<br><br>to top-down machine perception research.<br><br>This work I just presented at the IEEE Visualization conference in Berlin.<br><br>We test how CNNs are able to perceive simple graphical stimuli.
 
 ---
 
@@ -396,7 +419,7 @@ Note: I would like to now move from bottom-up neurobiology studies<br><br>to top
 
 </div>
 
-Note: we do that by studying experiments of human perception by Cleveland..
+Note: we do that by studying experiments of human perception by Cleveland..<br><br>for example, they investigate how humans can measure lines and angles.
 
 ---
 
@@ -480,7 +503,7 @@ these building blocks are perceived by humans when understanding visualizations 
 
 <img src='cleveland_mcgill/stimuli1_inv.png'><br><span style='font-size:20px;position:absolute;left:-30px'>Cleveland and McGill 1984</span><span style='font-size:20px;position:absolute;right:300px'>Our generated stimuli</span>
 
-Note: position, direction, position 2
+Note: what we do is...<br><br>position, direction, position 2
 
 ---
 
@@ -690,7 +713,12 @@ Note: out-of-distribution samples<br><br>will we ever achieve such systems?<br><
 
 ---
 
-Future Work
+Try other architectures (Capsule Networks)<br><br>
+<span class='fragment fade-in' data-fragment-index="2">Cleveland and McGill's 1985 Experiments</span>
+<br><br>
+<img src='cleveland_mcgill/4angles.png' class='fragment fade-in' data-fragment-index="2"><br><br>
+<span class='fragment fade-in' data-fragment-index="3">Color, Gestalt, Illusions
+</span>
 
 ---
 
@@ -707,11 +735,13 @@ before I take questions, I would like to...
 
 <img src='thankyou/collaborators.png'>
 
-Note: Thank you to all my collaborators!<br><br>This work would have not been possible<br><br>and I am looking forward to future work together
+Note: Thank you to all my collaborators!<br><br>This work would have not been possible<br><br>and I am looking forward to future work together<br><br>I know I am privileged and fortunate to have these opportunities.<br><br>And I am currently creating an inclusive community for related projects
 
 ---
 
 <img src='BostonGFX/BostonGFX.001.png'>
+
+Note: Boston Graphics, spelled GFX
 
 ---
 
@@ -725,13 +755,19 @@ Note: Thank you to all my collaborators!<br><br>This work would have not been po
 
 <img src='BostonGFX/BostonGFX.004.png'>
 
+Note: I want to include the research areas...
+
 ---
 
 <img src='BostonGFX/BostonGFX.005.png'>
 
+Note: I have collaborators and close personal contacts in a variety of different local and national institutions...<br><br>I want to open this network to everybody who is interested
+
 ---
 
 <img src='BostonGFX/BostonGFX.006.png'>
+
+Note: and maybe I can do this under the UMass umbrella...
 
 ---
 
@@ -752,7 +788,7 @@ Thank you!
 <a href='https://danielhaehn.com/slides/UMB'>danielhaehn.com/slides/UMB</a><br><br>
 <small><a href='http://ratemytalk.com/5Z22KV'>RateMyTalk.com/5Z22KV</a></small>
 
-Note: Again, all my stuff is on github<br><br>the slides are on my website<br><br>and please rate my talk :)
+Note: All presented projects are open source and open science<br><br>the slides are on my website<br><br>Thank you very much and please rate my talk :)
 
 
 

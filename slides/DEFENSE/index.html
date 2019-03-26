@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://localhost:8181/a.md#/ -->
+<html lang="en" class=" js no-mobile desktop no-ie chrome chrome73 root-section w-2501 gt-240 gt-320 gt-480 gt-640 gt-768 gt-800 gt-1024 gt-1280 gt-1440 gt-1680 gt-1920 no-portrait landscape gradient rgba opacity textshadow multiplebgs boxshadow borderimage borderradius cssreflections csstransforms csstransitions no-touch no-retina fontface domloaded" id="a-page"><script>(function main() {
+    // Create enabled event
+    function fireEnabledEvent() {
+        // If gli exists, then we are already present and shouldn't do anything
+        if (!window.gli) {
+            setTimeout(function () {
+                var enabledEvent = document.createEvent("Event");
+                enabledEvent.initEvent("WebGLEnabledEvent", true, true);
+                document.dispatchEvent(enabledEvent);
+            }, 0);
+        } else {
+            //console.log("WebGL Inspector already embedded on the page - disabling extension");
+        }
+    };
+
+    // Grab the path root from the extension
+    document.addEventListener("WebGLInspectorReadyEvent", function (e) {
+        var pathElement = document.getElementById("__webglpathroot");
+        if (window["gliloader"]) {
+            gliloader.pathRoot = pathElement.innerText;
+        } else {
+            // TODO: more?
+            window.gliCssUrl = pathElement.innerText + "gli.all.css";
+        }
+    }, false);
+
+    // Rewrite getContext to snoop for webgl
+    var originalGetContext = HTMLCanvasElement.prototype.getContext;
+    if (!HTMLCanvasElement.prototype.getContextRaw) {
+        HTMLCanvasElement.prototype.getContextRaw = originalGetContext;
+    }
+    HTMLCanvasElement.prototype.getContext = function () {
+        var ignoreCanvas = this.internalInspectorSurface;
+        if (ignoreCanvas) {
+            return originalGetContext.apply(this, arguments);
+        }
+
+        var result = originalGetContext.apply(this, arguments);
+        if (result == null) {
+            return null;
+        }
+
+        var contextNames = ["moz-webgl", "webkit-3d", "experimental-webgl", "webgl", "3d"];
+        var requestingWebGL = contextNames.indexOf(arguments[0]) != -1;
+        if (requestingWebGL) {
+            // Page is requesting a WebGL context!
+            fireEnabledEvent(this);
+
+            // If we are injected, inspect this context
+            if (window.gli) {
+                if (gli.host.inspectContext) {
+                    // TODO: pull options from extension
+                    result = gli.host.inspectContext(this, result);
+                    // NOTE: execute in a timeout so that if the dom is not yet
+                    // loaded this won't error out.
+                    window.setTimeout(function() {
+                        var hostUI = new gli.host.HostUI(result);
+                        result.hostUI = hostUI; // just so we can access it later for debugging
+                    }, 0);
+                }
+            }
+        }
+
+        return result;
+    };
+})();</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>UMass Boston</title>
+    <link rel="stylesheet" href="./index_files/reveal.css">
+    <link rel="stylesheet" href="./index_files/theme.css" id="theme">
+    <link rel="stylesheet" href="./index_files/zenburn.css">
+    <link rel="stylesheet" href="./index_files/paper.css" type="text/css" media="print">
+    <link rel="stylesheet" href="./index_files/styles.css"><script type="text/javascript" src="./index_files/marked.js"></script><script type="text/javascript" src="./index_files/markdown.js"></script><script type="text/javascript" src="./index_files/highlight.js"></script><script type="text/javascript" src="./index_files/zoom.js"></script><script type="text/javascript" src="./index_files/notes.js"></script><script type="text/javascript" src="./index_files/math.js"></script>
+
+  <script type="text/javascript" src="./index_files/MathJax.js"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax_LineBox {display: table!important}
+.MathJax_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Blank; src: url('about:blank')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+  <body style="transition: -webkit-transform 0.8s ease 0s;"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+    <div class="reveal center has-horizontal-slides ready slide" role="application" data-transition-speed="default" data-background-transition="fade">
+      <div class="slides" style="width: 960px; height: 700px; zoom: 1.28229;"><section data-markdown="" data-markdown-parsed="true" class="present" style="top: 330px; display: block;"><!-- (c) Daniel Haehn, https://danielhaehn.com, contact me for questions! -->
+<aside class="notes"><p>Good morning!<br><br>sooo.. this is my second time visiting <br><br>i am going to speak about 3 projects from my phd research</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/defense_invitation.png" style="width:500px;" class="myimg"></p>
+<aside class="notes"><p>i will defend my phd at the beginning of april<br><br>To summarize my defense: there is a performance gap between the brain and artificial intelligence and we need to work from both ends to reduce it<br><br>Today, I would like to start with a video showing this gap in the game of soccer</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><video width="50%" height="50%" autoplay="" muted="">
+  <source src="messi_vs_robot/video.mp4" type="video/mp4">
+</video><br>
+<span style="font-size:20px">Lex Fridman, MIT 6.S099 Artificial General Intelligence</span></p>
+<aside class="notes"><p>messi at age 19<br><br>a state-of-the-art soccer robot in the bottom<br><br>competition between machines and humans are exciting to us</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/kasparov.jpeg" class="myimg" style="z-index:0"></p>
+<p><img src="./index_files/leesedol.png" class="myimg fragment fade-in" data-fragment-index="0" style="z-index:10; position: absolute; right:-50px;top:-100px"></p>
+<p><img src="./index_files/alphastar.png" class="myimg fragment fade-in" data-fragment-index="1" style="z-index:10; position: absolute; left:-150px;top:-10px"></p>
+<aside class="notes"><p>Deep Blue beats a chess champion in 1997<br><br>Alpha Go wins against some of the best players of the board game Go in 2015/16<br><br>And earlier this year, AlphaStar beats a professional player of the videogame StarCraft<br><br>and researchers confirm this tendency.. there are publications...</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div style="position:relative;left:10px;width:500px;z-index:0">
+<img src="./index_files/superhuman_connectomics.png" class="myimg"><br><span style="font-size:20px;position:absolute;left:20px">Lee et al., arXiv 2017</span>
+</div>
+
+<div class="fragment fade-in" data-fragment-index="0" style="position:relative;top:10px;width:500px;right:-200px;z-index:0">
+    <span style="font-size:20px;top:-40px;position:absolute;right:0px">He et al., ICCV 2015</span>
+<img src="./index_files/superhuman_imagenet.png" class="myimg">
+</div>
+
+<div class="fragment fade-in" data-fragment-index="1" style="position:relative;top:30px;width:500px;right:-300px;z-index:0">
+<img src="./index_files/superhuman_poker.png" class="myimg"><br><span style="font-size:20px;position:absolute;left:-240px;top:180px">Brown and Sandholm, Science 2018</span>
+</div>
+
+<aside class="notes"><p>stating superhuman performance of algorithms in image processing<br><br>or in poker<br><br>
+<br><br>but researchers also show limitations</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div style="position:relative;left:50px;width:500px;z-index:0">
+<img src="./index_files/schoolbus.jpg" class="myimg"><br><span style="font-size:20px;position:absolute;left:20px">Alcorn et al., arXiv 2018
+</span></div>
+
+<div class="fragment fade-in" data-fragment-index="0" style="position:relative;top:30px;width:200px;right:-300px;z-index:0">
+<img src="./index_files/perception_errors.png" class="myimg"><br><span style="font-size:20px;position:absolute;left:20px">Our work at IEEE Vis 2018</span>
+</div>
+
+<aside class="notes"><p>alcorn's work strike with a pose, where a network can identify a school bus in the left image perfectly<br><br>later in my talk, i will discuss our work on graphical perception of machines<br><br></p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/perception.002.png" style="position:fixed;top:0px;left:0px;z-index:0"></p>
+<p><img src="./index_files/perception.003.png" class="myimg fragment fade-in" data-fragment-index="0" style="position:fixed;top:0px;left:0px;z-index:1"></p>
+<p><img src="./index_files/perception.004.png" class="myimg fragment fade-in" data-fragment-index="1" style="position:fixed;top:0px;left:0px;z-index:2"></p>
+<p><img src="./index_files/perception.005.png" class="myimg fragment fade-in" data-fragment-index="2" style="position:fixed;top:0px;left:0px;z-index:3"></p>
+<p><img src="./index_files/perception.006.png" class="myimg fragment fade-in" data-fragment-index="3" style="position:fixed;top:0px;left:0px;z-index:4"></p>
+<p><img src="./index_files/perception.007.png" class="myimg fragment fade-in" data-fragment-index="4" style="position:fixed;top:0px;left:0px;z-index:5"></p>
+<aside class="notes"><p>so there is a performance gap between the brain and AI<br><br>work in both fields to reduce the gap<br><br>to better understand the brain, we need to look at brain connectivity</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div style="float:left">
+<img src="./index_files/mybrain.png" style="position:fixed;top:0px;left:0px;z-index:0;width:300px">
+<img src="./index_files/mybrain3d.png" style="position:fixed;top:100px;left:280px;z-index:1;width:200px">
+<img src="./index_files/macroscale.png" style="position:fixed;top:350px;left:100px;z-index:0;width:300px">
+<br>
+MRI
+</div>
+
+<div style="position: fixed;width:100%;height:100%;top:0px;left:0px;z-index:2;background:rgba(0,0,0,0.7);" class="myimg fragment fade-in" data-fragment-index="0"><br><br><br><br>
+<img src="./index_files/em.png" style="position:fixed;top:100px;right:100px;z-index:3;width:600px" class="myimg fragment fade-in" data-fragment-index="1">
+<img src="./index_files/neurons.png" style="position:fixed;top:100px;right:100px;z-index:4;width:600px" class="myimg fragment fade-in" data-fragment-index="2">
+<span style="position:absolute;bottom:100px;right:120px" class="fragment fade-in" data-fragment-index="1">Electron Microscopy</span>
+<span style="position:absolute;top:50px;right:320px" class="fragment fade-in" data-fragment-index="3">Connectomics</span>
+</div>
+
+
+<aside class="notes"><p>and for macro-scale connectivity analysis, we can use structural and functional MRI data<br><br>my brain<br><br>we can see which regions of the brain connect..<br><br>area level<br><br>to really look at the brain.. micro-scale<br><br>
+green overlay<br><br>neurons and their synaptic connections (discipline is called connectomics)<br><br>in our brain are 100 billion neurons with trillions of connections)<br><br>datasets are massive<br><br>now neurons in 3D look like trees</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div style="position:fixed; top:150px; left:0px;width:50%;">
+    <img src="./index_files/cajal.png" class="myimg"><br><span style="font-size:20px;position:absolute;left:20px">Santiago Ramón y Cajal, 1933</span>
+</div>
+
+<div style="position:fixed; top:150px; right:0px;width:50%;" class="fragment fade-in" data-fragment-index="0">
+    <img src="./index_files/neurons(1).png" class="myimg"><br><span style="font-size:20px;position:absolute;right:80px;margin-top:-20px;">Connectomics Data</span>
+</div>
+
+<aside class="notes"><p>drawings of cajal in 1933 with great details<br><br>on the right, we see processed connectomics data showing similar structures<br><br>knowing that this is real data is astonishing</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><video width="100%" height="100%" autoplay="" muted="">
+  <source src="cylindervideo/video.mp4" type="video/mp4">
+</video><br><span style="font-size:20px;position:absolute;left:30px">Kasthuri et al., Cell 2015</span></p>
+<aside class="notes"><p>This is the goal<br><br>dense reconstruction<br><br>manual segmentation<br><br>note the variety of shapes<br><br>tiny area of the brain, 6 months</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/20largest.png" class="myimg"></p>
+<aside class="notes"><p>this is a 100 micron cube of tissue (4x the blue rectangle)<br><br>2 Terabytes of data<br><br>we need autom processing</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><video width="100%" height="100%" autoplay="" muted="">
+  <source src="100microns/20largest.mp4" type="video/mp4">
+</video><br><span style="font-size:20px;position:absolute;left:30px">Haehn et al., MDPI Informatics 2017</span></p>
+<aside class="notes"><p>top 20 largest neurons in the block<br><br>see the variety in contrast across slices<br><br>creating a dense segmentation is hard..<br>while these neurons look pretty good, let's look again at some automatic segmentation</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/label2.png" border="0" style="border:none;"></p>
+<aside class="notes"><p>our algorithm thought that this is one single neuron.. it is a huge merge error<br><br>we call it the hairball.<br><br>but how do we even get the data in the first place?</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/mouse.png" class="myimg" style="width:100px;position:absolute;left:100px;">
+<img src="./index_files/rat.png" class="myimg fragment fade-in" data-fragment-index="0" style="width:200px;position:absolute;left:140px;">
+<img src="./index_files/human.png" class="myimg fragment fade-in" data-fragment-index="1" style="width:200px;margin-left:-250px;margin-top:-30px"></p>
+<p><img src="./index_files/brains.png" class="myimg fragment fade-in" data-fragment-index="2" style="width:200px;position:absolute;top:30px;right:100px"></p>
+<p><img src="./index_files/slices.jpeg" class="myimg fragment fade-in" data-fragment-index="3" style="width:300px;position:absolute;top:250px;left:170px"></p>
+<p><img src="./index_files/em(1).png" class="myimg fragment fade-in" data-fragment-index="4" style="position:absolute;max-height:none;width:200px;top:200px;left:650px"></p>
+<aside class="notes"><p>well... we take mice, rats, or humans<br><br>cut out their brains or pieces of it<br><br>slice it extremely thinly<br><br>...and scan it with an electron microscope<br><br>this happens in 2D - slice by slice!</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><video width="100%" height="100%" autoplay="" muted="">
+  <source src="animaltobrainscan/bobbyzoom.mp4" type="video/mp4">
+</video><br><span style="font-size:20px;position:absolute;left:30px">Kasthuri et al., Cell 2015</span></p>
+<aside class="notes"><p>...and we end up with image slices that get aligned to volumes.<br><br>Now we need to find the cell membranes.</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/labels.png" border="0" style="height:512.99px;border:none;"></p>
+<aside class="notes"><p>We do this automatically and there are a variety of different methods<br><br>big players like the allen brain institute or even google are involved<br><br>but in any case, the automatic segmentations are not perfect</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/zoom.png" border="0" style="height:512.99px;border:none;"></p>
+<aside class="notes"><p>let's take a closer look and zoom in</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/zoom2.png" border="0" style="height:512.99px;border:none;"></p>
+<aside class="notes"><p>because there are nice errors here</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/zoom3errors.png" border="0" style="height:512.99px;border:none;"></p>
+<aside class="notes"><p>please focus on these labels and the regions marked with arrows</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/zoom4errors_membranes.png" border="0" style="height:512.99px;border:none;"></p>
+<aside class="notes"><p>there are really two cells with these two membranes.<br><br>the labeling should look different</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/zoom5labels.png" border="0" style="height:512.99px;border:none;"></p>
+<p><span class="myimg fragment fade-in" data-fragment-index="0" style="color:red; position: absolute;top:450px;left:470px">Wrong</span></p>
+<p><span class="myimg fragment fade-in" data-fragment-index="1" style="color:MediumSeaGreen; position: absolute;top:450px;left:660px;">Correct</span></p>
+<aside class="notes"><p>like that...<br><br>(click 2x) How do we get from the wrong labeling on the left to the correct labeling on the right?</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/human(1).png" border="0" style="border:none;"></p>
+<aside class="notes"><p>And the answer is proofreading by humans.<br><br>there are two types of errors in the automatic labelings</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><span style="left:0px; top:-30px; position:absolute;">Split Error</span>
+<span class="fragment fade-in" data-fragment-index="3" style="left:0px; top:170px;position:absolute;">Merge Error</span></p>
+<svg width="100%" height="400" style="margin-left:50px">
+    <!-- Split Error -->
+    <rect class="fragment fade-in" data-fragment-index="0" width="150" height="100" x="0" y="0" fill="hotpink"></rect>
+    <rect class="fragment fade-in" data-fragment-index="0" width="150" height="100" x="150" y="0" fill="yellow"></rect>
+    <polygon class="fragment fade-in" data-fragment-index="1" points="350,40 369.5,40 369.5,30 389,45.5 369.5,61 369.5,52 350,52" fill="rgb(255, 255, 255)"></polygon>
+    <rect class="fragment fade-in" data-fragment-index="2" width="300" height="100" x="450" y="0" fill="hotpink"></rect>
+    <!-- Merge Error -->
+    <rect class="fragment fade-in" data-fragment-index="3" width="300" height="100" x="0" y="200" fill="hotpink"></rect>
+    <polygon class="fragment fade-in" data-fragment-index="4" points="350,240 369.5,240 369.5,230 389,245.5 369.5,261 369.5,252 350,252" fill="rgb(255, 255, 255)"></polygon>
+    <rect class="fragment fade-in" data-fragment-index="5" width="250" height="100" x="450" y="200" fill="hotpink"></rect>
+    <rect class="fragment fade-in" data-fragment-index="5" width="50" height="100" x="700" y="200" fill="cyan"></rect></svg><br>
+
+<aside class="notes"><p>One way to correct these errors is interactively.</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div style="width:400px;float:left">
+<img src="./index_files/raveler.png"><br><span style="font-size:20px;position:relative;top:-25px">Janelia FlyEM: <b>Raveler</b>, 2013</span>
+</div>
+
+<div style="width:350px;float:left;margin-left:40px;margin-top:10px">
+<img src="./index_files/mojo.png"><br><span style="font-size:20px;position:relative;top:-25px">Knowles-Barley et al.: <b>Mojo</b>, Neuroinformatics 2013</span>
+</div>
+
+<div style="width:400px;float:left;margin:100px; position:relative; top:-100px">
+<img src="./index_files/eyewire.png"><br><span style="font-size:20px;position:relative;top:-25px">Kim et al.: <b>EyeWire</b>, Nature 2014</span>
+</div>
+
+<div style="position: fixed;width:100%;height:100%;z-index:2;background:rgba(0,0,0,0.8);" class="myimg fragment fade-in" data-fragment-index="0"><br><br><br><br>
+
+</div>
+
+<p><img src="./index_files/overview.png" style="position:fixed;top:100px;left:0px;z-index:3" class="myimg fragment fade-in" data-fragment-index="0">
+<img src="./index_files/overview2.png" style="position:fixed;top:100px;left:0px;z-index: 4" class="myimg fragment fade-in" data-fragment-index="1"></p>
+<aside class="notes"><p>existing tools<br><br>Raveler, Mojo, EyeWire<br><br>limitations<br><br>we created Dojo</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><iframe id="gp0" style="position:fixed; top:0px; left:0px; width:100%; height:100%;" src="http://localhost:1337/dojo/"></iframe>
+
+<p><span style="position:absolute;z-index:1000;font-size:20px;top:600px;left:150px;width:650px">D. Haehn, S. Knowles-Barley, M. Roberts, J. Beyer, N. Kasthuri, J.W. Lichtman, and H. Pfister. <b>Design and Evaluation of Interactive Proofreading Tools for Connectomics.</b> <i>IEEE Transactions on Visualization and Computer Graphics (IEEE SciVis)</i>, 2014.</span></p>
+<aside class="notes"><p>Dojo Live Demo... <br><br>to evaluate we created a quantitative user study</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p>Raveler vs. Mojo vs. Dojo<br><br>
+<span class="fragment fade-in" data-fragment-index="0">30 Participants (17 female, avg. 27 years)</span>
+<br><br>
+<span class="fragment fade-in" data-fragment-index="1">Small Dataset (400x400x10 voxels)
+</span>
+<br><br>
+<span class="fragment fade-in" data-fragment-index="2">Fixed Timeframe (30 minutes)</span></p>
+<aside class="notes"><p>between subjects user study<br><br>from all walks of life<br><br>proofread a representative dataset in a fixed time frame of 30 minutes<br><br>to evaluate..</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/VI.001.png" style="position:fixed;top:0px;left:0px;z-index:0"></p>
+<p><img src="./index_files/VI.002.png" class="myimg fragment fade-in" data-fragment-index="0" style="position:fixed;top:0px;left:0px;z-index:1"></p>
+<p><img src="./index_files/VI.003.png" class="myimg fragment fade-in" data-fragment-index="1" style="position:fixed;top:0px;left:0px;z-index:2"></p>
+<p><img src="./index_files/VI.004.png" class="myimg fragment fade-in" data-fragment-index="2" style="position:fixed;top:0px;left:0px;z-index:3"></p>
+<aside class="notes"><p>we compare the proofread data of each participant to an expert manual segmentation<br><br>overlap is good, and no-overlap is bad<br><br>variation of information score (VI)<br><br>and surprise: most people made the initial segmentation worse!!<br><br>here are the results</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/vi3.png" border="0" style="border:none;"></p>
+<p><span class="fragment fade-in" data-fragment-index="0" style="position:absolute;color:hotpink;top:440px;right:100px;">Baseline</span></p>
+<aside class="notes"><p>VI, the lower, the better<br><br>Users of Dojo were able to fix more errors<br><br>we think: no parameters with dojo, a better 3D viewer, and a minimal user interface helped.. BUT</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p>Interactive Proofreading is hard for novices!<br><br></p>
+<p>The search for errors takes a long time!</p>
+<aside class="notes"><p>Average correction time with Dojo was 30 seconds.<br><br>what if we can present errors to the user automatically?<br><br>we were not the only ones thinking along these lines...</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/fp.png" border="0" style="border:none;height:400px"><br>Plaza et al.: Focused Proofreading, Springer 2015</p>
+<div style="position: absolute;top:0px;width:100%;height:100%;z-index:2;background:rgba(0,0,0,0.8);" class="myimg fragment fade-in" data-fragment-index="0"><br><br>Single-User<br><br>Random Forest<br><br>Only Split Errors
+
+</div>
+
+
+<aside class="notes"><p>runs originally in Raveler and suggests errors to the user based on probabilities of a random forest classifier<br><br>we thought, we can do that better</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- <video width="100%" height="100%" autoplay muted>
+  <source src="gp/video.mp4" type="video/mp4">
+</video> -->
+<iframe id="gp0" style="position:fixed; top:0px; left:0px; width:100%; height:100%;" src="http://127.0.0.1:21000/"></iframe>
+
+<p><span style="position:absolute;z-index:1000;font-size:20px;top:400px;left:100px;width:700px">D. Haehn, V. Kaynig, J. Tompkin, J.W. Lichtman, H. Pfister. <b>Guided Proofreading of Automatic Segmentations for Connectomics.</b> <i>IEEE Computer Vision and Pattern Recognition (CVPR)</i>, 2018.</span></p>
+<!-- (nolearn) d@viper:~/Projects/gp_TEST/ui (master@e896-)$>./ui.py 21000 /tmp/343242 GP -->
+<aside class="notes"><p>The Guided Proofreading system<br><br>this way, we can reduce the correction time by a factor of 7.5times<br><br>CVPR 2018<br><br>so how do we suggest the errors? we train a convolutional neural network</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/cnn.png" border="0" style="border:none;"></p>
+<aside class="notes"><p>we train a pretty traditional classifier with<br><br>4 conv layers<br><br>to detect split errors only!<br><br>let's take a closer look at the inputs</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/patch.png" border="0" style="border:none;"><img class="fragment fade-in" data-fragment-index="0" src="./index_files/groundtruth.png" border="0" style="border:none;"></p>
+<p><img class="fragment fade-in" data-fragment-index="1" src="./index_files/inputs.png" border="0" style="border:none;"><br><span class="fragment fade-in" data-fragment-index="2">CNN suggests to merge</span></p>
+<aside class="notes"><p>we patch up our input data (slice by slice)<br><br>here an example split error<br><br>now 4 channel input (image, unet prob, merged labels, border mask)<br><br>cnn suggests to merge with a high score<br><br>so this works for split errors, but we re-use the same classifier for merge errors</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/mergeerror.png" border="0" style="border:none;"></p>
+<p><img class="fragment fade-in" data-fragment-index="0" src="./index_files/mergeborders.png" border="0" style="border:none;"><img class="fragment fade-in" data-fragment-index="1" src="./index_files/aftermerge.png" border="0" style="border:none;"></p>
+<aside class="notes"><p>here is a merge error<br><br>there should be a boundary according to ground truth<br><br>soooo what we do is, we generate many different boundaries<br><br>and score each one with the classifier<br><br>if the classifier says it is a correct boundary (meaning not a split error)<br><br>this is most likely where the boundary was missing<br><br></p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p>Focused Proofreading vs. Guided Proofreading<br><br>
+<span class="fragment fade-in" data-fragment-index="0">20 Novices / 4 Experts</span>
+<br><br>
+<span class="fragment fade-in" data-fragment-index="1">Same Dataset as before (400x400x10 voxels)
+</span>
+<br><br>
+<span class="fragment fade-in" data-fragment-index="2">Fixed Timeframe (30 minutes)</span>
+<br><br>
+<span class="fragment fade-in" data-fragment-index="3">Same User Interface
+</span></p>
+<aside class="notes"><p>another user study<br><br>again novices from the street<br><br>same dataset, again 30 minutes<br><br>instead of raveler, same user interface for FP and GP<br><br>and this time people proofread much better</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/vi.png" border="0" style="border:none;position:fixed;top:150px;left:0px;z-index:0"></p>
+<p><span class="fragment fade-in" data-fragment-index="0" style="position:absolute;color:hotpink;top:-50px;left:480px;">Baseline</span></p>
+<p><img src="./index_files/vi2.png" class="fragment fade-in" data-fragment-index="1" border="0" style="border:none;position:fixed;top:150px;left:0px;z-index:2"></p>
+<aside class="notes"><p>again VI: the lower, the better, on the x-axis is the corrections over time<br><br>novices almost as good as experts<br><br>baseline is the input segmentation<br><br>since we used the same data as before, we can also compare against interactive proofreading with dojo</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/vsdojo.png" border="0" style="width:400px;border:none;"></p>
+<p><span class="fragment fade-in" data-fragment-index="0" style="position:absolute;color:hotpink;top:190px;right:165px;">Baseline</span></p>
+<aside class="notes"><p>All novices here.<br><br>Dojo is fully interactive and GP is just so much better. Reducing the time for visual search by a factor of 7.5 pays off.<br><br>Takeaways...</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><span>Proofreading will always be necessary</span>
+<br><br>
+<span class="fragment fade-in" data-fragment-index="0">Human labor will be the bottleneck</span>
+<br><br>
+<span class="fragment fade-in" data-fragment-index="1">Minimizing manual work is the goal</span>
+<br><br>
+<span class="fragment fade-in" data-fragment-index="2"><img src="./index_files/brian.png" style="width:250px;margin-bottom:30px;margin-right:50px;"><img src="./index_files/zudi.png" style="width:250px"></span></p>
+<aside class="notes"><p>Segmentation methods will not be perfect / we will always be uncertain to a degree because of the huge variability<br><br>before proofreading, lets find ways of automatically improving the segmentation<br><br>two methods under review<br><br>confirm or deny in bulk</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><span>Active Learning</span>
+<br><br>
+<span class="fragment fade-in" data-fragment-index="0">New Visualizations (AR/VR)</span>
+<span class="fragment fade-in" data-fragment-index="0"><img src="./index_files/arvr.png" style="position:absolute;width:250px;top:100px;right:0px;"></span><br><br>
+<span class="fragment fade-in" data-fragment-index="1">Educational Platform</span></p>
+<aside class="notes"><p>During proofreading we can feed in the error corrections to the algorithms<br><br></p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/perception.007.png" class="myimg" style="position:fixed;top:0px;left:0px;z-index:0"></p>
+<p><img src="./index_files/perception.008.png" class="myimg fragment fade-in" data-fragment-index="0" style="position:fixed;top:0px;left:0px;z-index:1"></p>
+<aside class="notes"><p>I would like to now move from bottom-up neurobiology studies<br><br>to top-down machine perception research.<br><br>This work I just presented at the IEEE Visualization conference in Berlin.<br><br>We test how CNNs are able to perceive simple graphical stimuli.</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/paper.png"><br><span style="font-size:20px;position:absolute;left:60px">Cleveland and McGill, Journal of the American Statistical Association 1984</span></p>
+<div style="position: fixed;width:100%;height:100%;z-index:2;background:rgba(0,0,0,0.8);top:0px;" class="myimg fragment fade-in" data-fragment-index="0"><br><br><br><br>
+
+<img src="./index_files/just_angle_and_line.png" class="myimg fragment fade-in" data-fragment-index="1" style="position:fixed;top:200px;left:200px;z-index:1">
+
+</div>
+
+<aside class="notes"><p>we do that by studying experiments of human perception by Cleveland..<br><br>for example, they investigate how humans can measure lines and angles.</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p>We replicate Cleveland and McGill's 1984 experiments<br><br>with Convolutional Neural Networks.</p>
+<aside class="notes"><p>Instead of human perception, we study machine perception<br><br>
+by replicating Cleveland and McGill's 1984 experiments with<br><br>
+Convolutional Neural Networks</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><iframe id="cnn0" style="position:fixed; top:0px; left:0px; width:100%; height:100%;" src="cnnangle/index.html"></iframe>
+
+<p><span style="position:absolute;z-index:1000;font-size:20px;top:400px;left:100px;width:700px">D. Haehn, J. Tompkin, H. Pfister. <b>Evaluating 'Graphical Perception' with CNNs.</b> <i>IEEE Transactions on Visualization and Computer Graphics (IEEE Vis)</i>, 2018.</span></p>
+<aside class="notes"><p>For instance, here I can draw an angle.<br><br>and the VGG19 network estimates it<br><br>as you see that works pretty well<br><br>but what if we modify the stimuli?</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><iframe id="cnn1" style="position:fixed; top:0px; left:0px; width:100%; height:100%;" src="cnnlength/index.html"></iframe>
+
+<p><span style="position:absolute;z-index:1000;font-size:20px;top:400px;left:100px;width:700px">D. Haehn, J. Tompkin, H. Pfister. <b>Evaluating 'Graphical Perception' with CNNs.</b> <i>IEEE Transactions on Visualization and Computer Graphics (IEEE Vis)</i>, 2018.</span></p>
+<aside class="notes"><p>Here we draw two lines.<br><br>left: thin line<br><br>right: thick one<br><br>the network estimates the length</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p>A computational model of human graphical perception would allow:<br><br>
+a) to score existing visualizations<br><br>
+b) to create new visualizations</p>
+<aside class="notes"><p>And why are we doing this?<br><br>judge/score/evaluate existing<br><br>create new optimized visualizations automatically</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><span style="font-size:60px">Can CNNs model human graphical perception?</span></p>
+<aside class="notes"><p>Since CNNs are said to model the early layers of the visual cortex,<br><br>we ask</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/spoileralert.jpg" class="myimg" style="position:fixed;top:0px;left:0px;z-index:0"></p>
+<p><img src="./index_files/spoileralert_no.png" class="myimg fragment fade-in" data-fragment-index="0" style="position:fixed;top:0px;left:0px;z-index:1"></p>
+<aside class="notes"><p>and the answer is No!<br><br>In any case...</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div style="width:400px;float:left">
+<img src="./index_files/clevr.png"><br><span style="font-size:20px;position:relative;top:-25px">Johnson et al., CVPR 2017</span>
+</div>
+
+<div style="width:350px;float:left;margin-left:40px;margin-top:10px">
+<img src="./index_files/not_so_clevr.png"><br><span style="font-size:20px;position:relative;top:-25px">Ricci et al., ICML 2018</span>
+</div>
+
+<div style="width:400px;float:left;margin:100px; position:relative; top:-100px">
+<img src="./index_files/dvqa.png"><br><span style="font-size:20px;position:relative;top:-25px">Kafle et al., CVPR 2018</span>
+</div>
+
+<div style="width:350px;float:left;margin-top:30px; position:relative;">
+<img src="./index_files/nsvqa.png"><br><span style="font-size:20px;position:relative;top:-25px">Yi et al., NeurIPS 2018</span>
+</div>
+
+<div style="position: fixed;width:100%;height:100%;z-index:2;background:rgba(0,0,0,0.8);" class="myimg fragment fade-in" data-fragment-index="0"><br><br><br><br>
+    Visual Question Answering<br><br>
+    Computational Visual Reasoning
+</div>
+
+<aside class="notes"><p>related recent work at the major conferences<br>and the buzz words are..</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/elementary_perceptual_tasks_inv.png"><br><span style="font-size:20px;position:relative;top:-25px">Elementary Perceptual Tasks, Cleveland and McGill 1984</span></p>
+<aside class="notes"><p>In their paper, ClMcGill introduce the elementary perceptual tasks<br>
+these building blocks are perceived by humans when understanding visualizations such as bar charts and pie charts</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/stimuli1_inv.png"><br><span style="font-size:20px;position:absolute;left:-30px">Cleveland and McGill 1984</span><span style="font-size:20px;position:absolute;right:300px">Our generated stimuli</span></p>
+<aside class="notes"><p>what we do is...<br><br>position, direction, position 2</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/stimuli2_inv.png"><br><span style="font-size:20px;position:absolute;left:-30px">Cleveland and McGill 1984</span><span style="font-size:20px;position:absolute;right:300px">Our generated stimuli</span></p>
+<aside class="notes"><p>angle<br>length..<br>sooo we let CNNs regress these generated images with certain constraints</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/angle_inv.png" style="width:400px;float:left;margin-left:100px">
+<span style="position:absolute;font-size:40px;margin-top:60px">~77°</span>
+<span style="position:absolute;font-size:65px;margin-top:120px">0.856</span></p>
+<aside class="notes"><p>angles are always 0..90 degrees<br>this angle is roughly 78 degrees<br><br>mapped to 0..1 for 0..90 degrees, this yields 0.87</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/position_angle_inv.png"><br><span style="font-size:20px;position:relative;top:-25px">Position-Angle Experiment, Cleveland and McGill 1984</span></p>
+<aside class="notes"><p>Position-Angle Experiment<br>comparing human perception of pie charts and bar charts</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/stimuli3_inv.png"><br><span style="font-size:20px;position:absolute;left:0px">Cleveland and McGill 1984</span><span style="font-size:20px;position:absolute;right:300px">Our generated stimuli</span></p>
+<aside class="notes"><p>now there are multiple values encoded in the stimuli<br><br>this means the regression task is more complex</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/piechart.png" class="myimg" style="position:fixed;top:100px;left:0px;z-index:0;width:400px"></p>
+<p><img src="./index_files/piechart2.png" class="myimg fragment fade-in" data-fragment-index="0" style="position:fixed;top:100px;left:0px;z-index:1;width:400px"></p>
+<p><img src="./index_files/piechart3.png" class="myimg fragment fade-in" data-fragment-index="1" style="position:fixed;top:100px;left:0px;z-index:2;width:400px"></p>
+<p><span class="fragment fade-in" data-fragment-index="2" style="position:absolute;font-size:65px;margin-top:120px">[0.2, 0.14, 0.6, 0.8]</span></p>
+<aside class="notes"><p>identify the largest area in the pie chart<br><br>then, counter-clockwise, estimate the ratio of each other segment compared to the larger one<br><br>this vector of length 4 is our regression target here</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/position_length_inv.png"><br><span style="font-size:20px;position:relative;top:-25px">Position-Length Experiment, Cleveland and McGill 1984</span></p>
+<aside class="notes"><p>Position-Length Experiment<br>comparing human perception for different types of barcharts</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/stimuli4_inv.png"><br><span style="font-size:20px;position:absolute;left:-30px">Cleveland and McGill 1984</span><span style="font-size:20px;position:absolute;right:300px">Our generated stimuli</span></p>
+<aside class="notes"><p>the third experiment is the position-length experiment</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/barchart.png" class="myimg" style="position:fixed;top:100px;left:0px;z-index:0;width:400px"></p>
+<p><img src="./index_files/barchart2.png" class="myimg fragment fade-in" data-fragment-index="0" style="position:fixed;top:100px;left:0px;z-index:1;width:400px"></p>
+<div style="position: fixed;width:100%;height:20%;top:0px;z-index:100;background:rgba(0,0,0,0.7);" class="myimg fragment fade-in" data-fragment-index="1">
+</div>
+
+
+<div style="position: fixed;width:50px;height:100%;top:20%;z-index:100;background:rgba(0,0,0,0.7);" class="myimg fragment fade-in" data-fragment-index="1">
+</div>
+
+<div style="position: fixed;width:175px;height:100%;top:20%;left:80px;z-index:100;background:rgba(0,0,0,0.7);" class="myimg fragment fade-in" data-fragment-index="1">
+</div>
+
+<div style="position: fixed;width:150px;height:100%;top:20%;left:290px;z-index:100;background:rgba(0,0,0,0.7);" class="myimg fragment fade-in" data-fragment-index="1">
+</div>
+
+<p><img src="./index_files/barchart3.png" class="myimg fragment fade-in" data-fragment-index="2" style="position:fixed;top:100px;left:0px;z-index:2;width:400px"></p>
+<p><span class="fragment fade-in" data-fragment-index="3" style="position:absolute;font-size:65px;margin-top:120px">0.5</span></p>
+<aside class="notes"><p>more complex<br><br>find the two marked segments<br><br>identify the largest segment<br><br>then, compare the other marked segment to the larger one<br><br>regression target</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/position.png" class="myimg" style="position:fixed;top:100px;left:0px;z-index:0;width:400px"></p>
+<p><span class="fragment fade-in" data-fragment-index="0" style="position:absolute;font-size:45px;margin-top:-100px">100x100 pixels<br><br>5% noise per pixel<br><br>"fuzzy binary" image</span></p>
+<aside class="notes"><p>so what about the networks?</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/neuralnetworks_inv.png"></p>
+<p><span class="fragment fade-in" data-fragment-index="0" style="position:relative;font-size:25px;left:-100px;top:-100px">from scratch / pretrained</span></p>
+<aside class="notes"><p>four different network configurations<br><br>all of them use the MLP at the end<br><br>we test 3 different convolutional feature encoders<br><br>LeNet, VGG19, Xception<br><br>VGG19, Xception two versions</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><div style="width:400px;float:left">
+<img src="./index_files/res1.png">
+</div>
+
+<div style="width:350px;float:left;margin-left:40px;margin-top:30px">
+<img src="./index_files/res2.png">
+</div>
+
+<div style="width:600px;float:left;margin:100px; position:relative; top:-100px">
+<img src="./index_files/res3.png">
+</div>
+
+<div style="position: fixed;width:100%;height:100%;z-index:2;background:rgba(0,0,0,0.8);" class="myimg fragment fade-in" data-fragment-index="0"><br><br><br><br>
+    2500+ networks<br><br>
+    &gt; 4.7 GPU years
+</div>
+
+<aside class="notes"><p>we ran all network configurations with fixed parameters<br><br>monte carlo cross validation with 12 runs per experiment</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><span>Networks vs. Humans</span>
+<br><br>
+<span class="fragment fade-in" data-fragment-index="0" style="font-size:16px">Data from MTurk, Cleveland and McGill 1984, Heer and Bostock 2010</span>
+<br><br></p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/plots.001.png" class="myimg" style="position:fixed;top:100px;left:0px;z-index:0;"></p>
+<p><img src="./index_files/plots.002.png" class="myimg fragment fade-in" data-fragment-index="0" style="position:fixed;top:100px;left:0px;z-index:1;"></p>
+<p><img src="./index_files/plots.003.png" class="myimg fragment fade-in" data-fragment-index="1" style="position:fixed;top:100px;left:0px;z-index:2;"></p>
+<p><img src="./index_files/plots.004.png" class="myimg fragment fade-in" data-fragment-index="2" style="position:fixed;top:100px;left:0px;z-index:3;"></p>
+<aside class="notes"><p>error plot, the more left, the better<br><br>log scale, 2%, 10%, 50% error<br><br>human has around 10% error<br><br>vgg19 trained from scratch around 2%<br><br>and this is a pattern...<br><br>MLP interesting without convolutional filters</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/plots.005.png" class="myimg" style="position:fixed;top:100px;left:0px;z-index:0;"></p>
+<p><img src="./index_files/plots.006.png" class="myimg fragment fade-in" data-fragment-index="0" style="position:fixed;top:100px;left:0px;z-index:1;"></p>
+<p><img src="./index_files/plots.007.png" class="myimg fragment fade-in" data-fragment-index="1" style="position:fixed;top:100px;left:0px;z-index:2;"></p>
+<aside class="notes"><p>same for angle, VGG19 from scratch is very good</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/plots.008.png" class="myimg" style="position:fixed;top:100px;left:0px;z-index:0;"></p>
+<p><img src="./index_files/plots.009.png" class="myimg fragment fade-in" data-fragment-index="0" style="position:fixed;top:100px;left:0px;z-index:1;"></p>
+<p><img src="./index_files/plots.010.png" class="myimg fragment fade-in" data-fragment-index="1" style="position:fixed;top:100px;left:0px;z-index:2;"></p>
+<aside class="notes"><p>and finally for length..<br><br>Now we did also cross network experiments...</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/crossnetwork.001.png" class="myimg" style="position:fixed;top:10px;left:0px;z-index:0;"></p>
+<p><img src="./index_files/crossnetwork.002.png" class="myimg fragment fade-in" data-fragment-index="0" style="position:fixed;top:10px;left:0px;z-index:1;"></p>
+<p><img src="./index_files/crossnetwork.003.png" class="myimg fragment fade-in" data-fragment-index="1" style="position:fixed;top:10px;left:0px;z-index:2;"></p>
+<p><img src="./index_files/crossnetwork.004.png" class="myimg fragment fade-in" data-fragment-index="2" style="position:fixed;top:10px;left:0px;z-index:3;"></p>
+<aside class="notes"><p>if we train on the length stimuli and really just vary the length<br><br>it works well on unseen testing data<br><br>but if we add slight variations such as movement in x and y, or thickness<br><br>the networks fail unless we include these variations in the training distribution</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/posangle.001.png" class="myimg" style="position:fixed;top:10px;left:0px;z-index:0;"></p>
+<p><img src="./index_files/posangle.002.png" class="myimg fragment fade-in" data-fragment-index="0" style="position:fixed;top:10px;left:0px;z-index:1;"></p>
+<p><img src="./index_files/posangle.003.png" class="myimg fragment fade-in" data-fragment-index="1" style="position:fixed;top:10px;left:0px;z-index:2;"></p>
+<p><img src="./index_files/posangle.004.png" class="myimg fragment fade-in" data-fragment-index="2" style="position:fixed;top:10px;left:0px;z-index:3;"></p>
+<aside class="notes"><p>now pie chart vs bar chart<br><br>humans perform better on bar charts<br><br>VGG19 pretty much the same<br><br>but all networks also prefer the bar chart<br><br>stat. significant<br><br>funny finding</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/poslength.001.png" class="myimg" style="position:fixed;top:10px;left:0px;z-index:0;"></p>
+<p><img src="./index_files/poslength.002.png" class="myimg fragment fade-in" data-fragment-index="0" style="position:fixed;top:10px;left:0px;z-index:1;"></p>
+<p><img src="./index_files/poslength.003.png" class="myimg fragment fade-in" data-fragment-index="1" style="position:fixed;top:10px;left:0px;z-index:2;"></p>
+<aside class="notes"><p>humans can do it<br><br>now we have two baselines (Heer and Bostock)<br><br>the two on the right are harder since no baseline measurements<br><br>vgg19 performs worse than humans on every one and much worse than in every experiment before<br><br>just too complex, too much parametrizations<br><br>what have we learned?</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p>VGG19 can estimate simple graphical stimuli very well<br><br>
+<span class="fragment fade-in" data-fragment-index="0">All networks do not generalize well</span>
+<br><br>
+<span class="fragment fade-in" data-fragment-index="1">We need systems that can abstract and reason
+</span>
+<br><br>
+<span class="fragment fade-in" data-fragment-index="2" style="font-size:75px">CNNs are not a good model for human graphical perception!</span></p>
+<aside class="notes"><p>out-of-distribution samples<br><br>will we ever achieve such systems?<br><br></p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p>Try other architectures (Capsule Networks)<br><br>
+<span class="fragment fade-in" data-fragment-index="0">Cleveland and McGill's 1985 Experiments</span>
+<br><br>
+<img src="./index_files/4angles.png" class="fragment fade-in" data-fragment-index="0"><br><br>
+<span class="fragment fade-in" data-fragment-index="1">Color, Gestalt, Illusions
+</span></p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/perception.009.png" class="myimg" style="position:fixed;top:0px;left:0px;z-index:0"></p>
+<p><img src="./index_files/perception.010.png" class="myimg fragment fade-in" data-fragment-index="0" style="position:fixed;top:0px;left:0px;z-index:1"></p>
+<aside class="notes"><p>So today I spoke about some advancements in regards to better understanding the brain and AI.<br><br>In reality, the gap between the two is very large<br><br>and we are just at the beginning in both fields.<br><br>
+massive research efforts are on the way and I am happy to contribute my share.<br><br>
+before I take questions, I would like to...</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/collaborators.png"></p>
+<aside class="notes"><p>Thank you to all my collaborators!<br><br>This work would have not been possible<br><br>and I am looking forward to future work together<br><br>I know I am privileged and fortunate to have these opportunities.<br><br>And I am currently creating an inclusive community for related projects</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/BostonGFX.001.png"></p>
+<aside class="notes"><p>Boston Graphics, spelled GFX</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/BostonGFX.002.png"></p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/BostonGFX.003.png"></p>
+</section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/BostonGFX.004.png"></p>
+<aside class="notes"><p>I want to include the research areas...</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/BostonGFX.005.png"></p>
+<aside class="notes"><p>I have collaborators and close personal contacts in a variety of different local and national institutions...<br><br>I want to open this network to everybody who is interested</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./index_files/BostonGFX.006.png"></p>
+<aside class="notes"><p>and maybe I can do this under the UMass umbrella...</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><iframe id="gp0" style="position:fixed; top:0px; left:0px; width:100%; height:100%;" src="umb/index.html"></iframe>
+
+<p><span style="position:absolute;z-index:1000;font-size:20px;top:480px;left:100px;width:700px">D. Haehn, N. Rannou, B. Ahtam, P.E. Grant, R. Pienaar. <b>Neuroimaging in the Browser using the X Toolkit</b> <i>Frontiers in Neuroinformatics</i>, 2012.</span></p>
+<!-- (nolearn) d@viper:~/Projects/gp_TEST/ui (master@e896-)$>./ui.py 21000 /tmp/343242 GP -->
+<aside class="notes"><p>Perfect opportunity to re-surrect the XTK framework I developed in 2012.<br><br>allows to render on the web in 3D with little code<br><br>fully-interactive</p>
+</aside></section><section data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p>Thank you!</p>
+<p><img src="./index_files/octocat.png" style="width:200px"><br><br></p>
+<p><a href="https://danielhaehn.com/slides/UMB">danielhaehn.com/slides/UMB</a><br><br>
+<small><a href="http://ratemytalk.com/5Z22KV">RateMyTalk.com/5Z22KV</a></small></p>
+<aside class="notes"><p>All presented projects are open source and open science<br><br>the slides are on my website<br><br>Thank you very much and please rate my talk :)</p>
+</aside></section></div>
+    <div class="backgrounds"><div class="slide-background present" data-loaded="true" style="display: block;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div></div><div class="progress" style="display: block;"><span style="width: 0px;"></span></div><aside class="controls" data-controls-layout="bottom-right" data-controls-back-arrows="faded" style="display: block;"><button class="navigate-left" aria-label="previous slide" disabled="disabled"><div class="controls-arrow"></div></button><button class="navigate-right highlight enabled" aria-label="next slide"><div class="controls-arrow"></div></button><button class="navigate-up" aria-label="above slide" disabled="disabled"><div class="controls-arrow"></div></button><button class="navigate-down" aria-label="below slide" disabled="disabled"><div class="controls-arrow"></div></button></aside><div class="slide-number" style="display: none;"></div><div class="speaker-notes" data-prevent-swipe="" tabindex="0"></div><div class="pause-overlay"><button class="resume-button">Resume presentation</button></div><div id="aria-status-div" aria-live="polite" aria-atomic="true" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);">
+</div></div>
+
+    <script src="./index_files/head.min.js"></script>
+    <script src="./index_files/reveal.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // Optional libraries used to extend on reveal.js
+      var deps = [
+        { src: '/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '/plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: '/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: '/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: '/plugin/zoom-js/zoom.js', async: true },
+        { src: '/plugin/notes/notes.js', async: true },
+        { src: '/plugin/math/math.js', async: true }
+      ];
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        dependencies: deps
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal.getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"viewDistance":1,"transition":"slide","keyboard":true}, queryOptions);
+    </script>
+
+    <script src="./index_files/main.js"></script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  
+
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_Size4, sans-serif;"></div></div></body></html>

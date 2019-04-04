@@ -66,9 +66,39 @@ Note: alcorn's work strike with a pose, where a network can identify a school bu
 
 <img src='the_gap/perception.006.png' class='myimg fragment fade-in' data-fragment-index="5" style='position:fixed;top:0px;left:0px;z-index:4'>
 
-<img src='the_gap/perception.007.png' class='myimg fragment fade-in' data-fragment-index="6" style='position:fixed;top:0px;left:0px;z-index:5'>
 
-Note: so there is a performance gap between the brain and AI<br><br>work in both fields to reduce the gap<br><br>to better understand the brain, we need to look at brain connectivity
+Note: so there is a performance gap between the brain and AI<br><br>work in both fields to reduce the gap<br><br>
+
+---
+
+<div style='position:relative;left:10px;width:500px;z-index:0;'>
+<img src='the_gap_related_work/dicarlo.png' class='myimg' style='border:solid thin black'>
+</div>
+
+<div class='fragment fade-in' data-fragment-index="1" style='position:relative;top:-50px;width:500px;right:-150px;z-index:0;'>
+<img src='the_gap_related_work/seere.png' class='myimg' style='border:solid thin black'>
+</div>
+
+<div class='fragment fade-in' data-fragment-index="2" style='position:relative;top:-100px;width:500px;right:-300px;z-index:0;'>
+<img src='the_gap_related_work/deepmind.png' class='myimg' style='border:solid thin black'>
+</div>
+
+Note: Research groups such as the DiCarlo lab, the Seere lab at Brown, <br><br>"much work is still needed to bridge the gap between machine and human-level intelligence"
+
+---
+
+<img src='contributions/contributions4.png'  border=0 style='border:none;'>
+
+<div style='position: fixed;width:100%;height:200px;top:350px;left:0px;z-index:2;background:rgba(0,0,0,0.8);' class='myimg fragment fade-in' data-fragment-index="1"></div>
+
+
+Note: My PhD research includes four projects
+
+---
+
+<img src='the_gap/perception.007.png' class='myimg' style='position:fixed;top:0px;left:0px;z-index:5'>
+
+Note: to better understand the brain, we need to look at brain connectivity
 
 ---
 

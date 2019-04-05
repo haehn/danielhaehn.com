@@ -424,7 +424,7 @@ Note: Segmentation methods will not be perfect / we will always be uncertain to 
 <img src='the_gap/perception.008.png' class='myimg fragment fade-in' data-fragment-index="2" style='position:fixed;top:0px;left:0px;z-index:1'>
 
 
-Note: I would like to now move from bottom-up neurobiology studies<br><br>to top-down machine perception research.<br><br>This work I just presented at the IEEE Visualization conference in Berlin.<br><br>We test how CNNs are able to perceive simple graphical stimuli.
+Note: the last two projects targeted natural neural networks but for the last one, we used an artificial neural network to help the human find errors.<br><br>can we assume that machine perception and human perception are very similar?<br><br>to answer this question, we look at the work of cleveland and mcgill
 
 ---
 

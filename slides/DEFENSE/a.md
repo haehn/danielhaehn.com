@@ -87,9 +87,9 @@ Note: Research groups such as the DiCarlo lab, the Seere lab at Brown, <br><br>"
 
 ---
 
-<img src='contributions/contributions4.png'  border=0 style='border:none;'>
+<img src='contributions/contributions4.png'  border=0 style='height:500px;border:none;'>
 
-<div style='position: fixed;width:100%;height:200px;top:350px;left:0px;z-index:2;background:rgba(0,0,0,0.8);' class='myimg fragment fade-in' data-fragment-index="1"></div>
+<div style='position: fixed;width:100%;height:150px;top:320px;left:0px;z-index:2;background:rgba(0,0,0,0.8);' class='myimg fragment fade-in' data-fragment-index="1"></div>
 
 
 Note: My PhD research includes four projects
@@ -119,19 +119,7 @@ MRI
 
 
 Note: and for macro-scale connectivity analysis, we can use structural and functional MRI data<br><br>my brain<br><br>we can see which regions of the brain connect..<br><br>area level<br><br>to really look at the brain.. micro-scale<br><br>
-green overlay<br><br>neurons and their synaptic connections (discipline is called connectomics)<br><br>in our brain are 100 billion neurons with trillions of connections)<br><br>datasets are massive<br><br>now neurons in 3D look like trees
-
----
-
-<div style='position:fixed; top:150px; left:0px;width:50%;'>
-    <img src='the_gap/cajal.png' class='myimg'><br><span style='font-size:20px;position:absolute;left:20px'>Santiago Ramón y Cajal, 1933</span>
-</div>
-
-<div style='position:fixed; top:150px; right:0px;width:50%;' class='fragment fade-in' data-fragment-index="2">
-    <img src='the_gap/neurons.png' class='myimg'><br><span style='font-size:20px;position:absolute;right:80px;margin-top:-20px;'>Connectomics Data</span>
-</div>
-
-Note: drawings of cajal in 1933 with great details<br><br>on the right, we see processed connectomics data showing similar structures<br><br>knowing that this is real data is astonishing
+green overlay<br><br>neurons and their synaptic connections (discipline is called connectomics)
 
 ---
 
@@ -272,6 +260,15 @@ Note: existing tools<br><br>Raveler, Mojo, EyeWire<br><br>limitations<br><br>we 
 
 ---
 
+
+<img src='papers/dojo.png' style='width:500px;margin-top:100px'>
+
+<span style='position:absolute;z-index:1000;font-size:20px;top:600px;left:150px;width:650px'>D. Haehn, S. Knowles-Barley, M. Roberts, J. Beyer, N. Kasthuri, J.W. Lichtman, and H. Pfister. <b>Design and Evaluation of Interactive Proofreading Tools for Connectomics.</b> <i>IEEE Transactions on Visualization and Computer Graphics (IEEE SciVis)</i>, 2014.</span>
+
+
+
+---
+
 <iframe id='gp0' style='position:fixed; top:0px; left:0px; width:100%; height:100%;' data-src='http://localhost:1337/dojo/'></iframe>
 
 <span style='position:absolute;z-index:1000;font-size:20px;top:600px;left:150px;width:650px'>D. Haehn, S. Knowles-Barley, M. Roberts, J. Beyer, N. Kasthuri, J.W. Lichtman, and H. Pfister. <b>Design and Evaluation of Interactive Proofreading Tools for Connectomics.</b> <i>IEEE Transactions on Visualization and Computer Graphics (IEEE SciVis)</i>, 2014.</span>
@@ -331,13 +328,21 @@ Note: runs originally in Raveler and suggests errors to the user based on probab
 
 ---
 
+<img src='papers/gp.png' style='width:500px'>
+
+
+<span style='position:absolute;z-index:1000;font-size:20px;top:450px;left:100px;width:700px'>D. Haehn, V. Kaynig, J. Tompkin, J.W. Lichtman, H. Pfister. <b>Guided Proofreading of Automatic Segmentations for Connectomics.</b> <i>IEEE Computer Vision and Pattern Recognition (CVPR)</i>, 2018.</span>
+
+
+---
+
 <!-- <video width="100%" height="100%" autoplay muted>
   <source src="gp/video.mp4" type="video/mp4">
 </video> -->
 
 <iframe id='gp0' style='position:fixed; top:0px; left:0px; width:100%; height:100%;' data-src='http://140.247.107.121:21000/'></iframe>
 
-<span style='position:absolute;z-index:1000;font-size:20px;top:400px;left:100px;width:700px'>D. Haehn, V. Kaynig, J. Tompkin, J.W. Lichtman, H. Pfister. <b>Guided Proofreading of Automatic Segmentations for Connectomics.</b> <i>IEEE Computer Vision and Pattern Recognition (CVPR)</i>, 2018.</span>
+<span style='position:absolute;z-index:1000;font-size:20px;top:450px;left:100px;width:700px'>D. Haehn, V. Kaynig, J. Tompkin, J.W. Lichtman, H. Pfister. <b>Guided Proofreading of Automatic Segmentations for Connectomics.</b> <i>IEEE Computer Vision and Pattern Recognition (CVPR)</i>, 2018.</span>
 
 
 
@@ -443,9 +448,16 @@ Convolutional Neural Networks
 
 ---
 
+<img src='papers/graphicalperception.png' style='width:500px'>
+
+<span style='position:absolute;z-index:1000;font-size:20px;top:450px;left:100px;width:700px'>D. Haehn, J. Tompkin, H. Pfister. <b>Evaluating 'Graphical Perception' with CNNs.</b> <i>IEEE Transactions on Visualization and Computer Graphics (IEEE Vis)</i>, 2018.</span>
+
+
+---
+
 <iframe id='cnn0' style='position:fixed; top:0px; left:0px; width:100%; height:100%;' data-src='cnnangle/'></iframe>
 
-<span style='position:absolute;z-index:1000;font-size:20px;top:400px;left:100px;width:700px'>D. Haehn, J. Tompkin, H. Pfister. <b>Evaluating 'Graphical Perception' with CNNs.</b> <i>IEEE Transactions on Visualization and Computer Graphics (IEEE Vis)</i>, 2018.</span>
+<span style='position:absolute;z-index:1000;font-size:20px;top:450px;left:100px;width:700px'>D. Haehn, J. Tompkin, H. Pfister. <b>Evaluating 'Graphical Perception' with CNNs.</b> <i>IEEE Transactions on Visualization and Computer Graphics (IEEE Vis)</i>, 2018.</span>
 
 Note: For instance, here I can draw an angle.<br><br>and the VGG19 network estimates it<br><br>as you see that works pretty well<br><br>but what if we modify the stimuli?
 
@@ -453,7 +465,7 @@ Note: For instance, here I can draw an angle.<br><br>and the VGG19 network estim
 
 <iframe id='cnn1' style='position:fixed; top:0px; left:0px; width:100%; height:100%;' data-src='cnnlength/'></iframe>
 
-<span style='position:absolute;z-index:1000;font-size:20px;top:400px;left:100px;width:700px'>D. Haehn, J. Tompkin, H. Pfister. <b>Evaluating 'Graphical Perception' with CNNs.</b> <i>IEEE Transactions on Visualization and Computer Graphics (IEEE Vis)</i>, 2018.</span>
+<span style='position:absolute;z-index:1000;font-size:20px;top:450px;left:100px;width:700px'>D. Haehn, J. Tompkin, H. Pfister. <b>Evaluating 'Graphical Perception' with CNNs.</b> <i>IEEE Transactions on Visualization and Computer Graphics (IEEE Vis)</i>, 2018.</span>
 
 Note: Here we draw two lines.<br><br>left: thin line<br><br>right: thick one<br><br>the network estimates the length
 
@@ -492,10 +504,10 @@ Note: and the answer is No!<br><br>In any case...
 <div style='width:400px;float:left;margin:100px; position:relative; top:-100px'>
 <img src='cleveland_mcgill/related_work/dvqa.png'><br><span style='font-size:20px;position:relative;top:-25px'>Kafle et al., CVPR 2018</span>
 </div>
-
+<!-- 
 <div style='width:350px;float:left;margin-top:30px; position:relative;'>
 <img src='cleveland_mcgill/related_work/nsvqa.png'><br><span style='font-size:20px;position:relative;top:-25px'>Yi et al., NeurIPS 2018</span>
-</div>
+</div> -->
 
 <div style='position: fixed;width:100%;height:100%;z-index:2;background:rgba(0,0,0,0.8);' class='myimg fragment fade-in' data-fragment-index="1"><br><br><br><br>
     Visual Question Answering<br><br>
@@ -650,6 +662,8 @@ Note: we ran all network configurations with fixed parameters<br><br>monte carlo
 
 <img src='cleveland_mcgill/results/elementary_plots/plots.004.png' class='myimg fragment fade-in' data-fragment-index="4"  style='position:fixed;top:100px;left:0px;z-index:3;'>
 
+<span class='myimg fragment fade-in' data-fragment-index="5" style='font-size:18px;position:absolute;bottom:-200px;left:100px;z-index:100'>21,600 permutations</span>
+
 Note: error plot, the more left, the better<br><br>log scale, 2%, 10%, 50% error<br><br>human has around 10% error<br><br>vgg19 trained from scratch around 2%<br><br>and this is a pattern...<br><br>MLP interesting without convolutional filters
 
 ---
@@ -659,6 +673,8 @@ Note: error plot, the more left, the better<br><br>log scale, 2%, 10%, 50% error
 <img src='cleveland_mcgill/results/elementary_plots/plots.006.png' class='myimg fragment fade-in' data-fragment-index="2"  style='position:fixed;top:100px;left:0px;z-index:1;'>
 
 <img src='cleveland_mcgill/results/elementary_plots/plots.007.png' class='myimg fragment fade-in' data-fragment-index="3"  style='position:fixed;top:100px;left:0px;z-index:2;'>
+
+<span style='font-size:18px;position:absolute;bottom:-200px;left:100px;z-index:100'>324,000 permutations</span>
 
 Note: same for angle, VGG19 from scratch is very good
 
@@ -670,6 +686,8 @@ Note: same for angle, VGG19 from scratch is very good
 <img src='cleveland_mcgill/results/elementary_plots/plots.009.png' class='myimg fragment fade-in' data-fragment-index="2"  style='position:fixed;top:100px;left:0px;z-index:1;'>
 
 <img src='cleveland_mcgill/results/elementary_plots/plots.010.png' class='myimg fragment fade-in' data-fragment-index="3"  style='position:fixed;top:100px;left:0px;z-index:2;'>
+
+<span style='font-size:18px;position:absolute;bottom:-200px;left:100px;z-index:100'>864,000 permutations</span>
 
 Note: and finally for length..<br><br>Now we did also cross network experiments...
 
@@ -695,6 +713,8 @@ Note: if we train on the length stimuli and really just vary the length<br><br>i
 
 <img src='cleveland_mcgill/results/posangle/posangle.004.png' class='myimg fragment fade-in' data-fragment-index="4"  style='position:fixed;top:10px;left:0px;z-index:3;'>
 
+<span style='font-size:18px;position:absolute;bottom:-500px;left:100px;z-index:100'>878,520 permutations</span>
+
 Note: now pie chart vs bar chart<br><br>humans perform better on bar charts<br><br>VGG19 pretty much the same<br><br>but all networks also prefer the bar chart<br><br>stat. significant<br><br>funny finding
 
 ---
@@ -706,7 +726,7 @@ Note: now pie chart vs bar chart<br><br>humans perform better on bar charts<br><
 
 <img src='cleveland_mcgill/results/poslength/poslength.003.png' class='myimg fragment fade-in' data-fragment-index="3"  style='position:fixed;top:10px;left:0px;z-index:2;'>
 
-
+<span style='font-size:18px;position:absolute;bottom:-500px;left:100px;z-index:100'>9.20 x 10^16 permutations</span>
 
 Note: humans can do it<br><br>now we have two baselines (Heer and Bostock)<br><br>the two on the right are harder since no baseline measurements<br><br>vgg19 performs worse than humans on every one and much worse than in every experiment before<br><br>just too complex, too much parametrizations<br><br>what have we learned?
 

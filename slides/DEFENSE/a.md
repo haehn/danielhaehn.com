@@ -751,13 +751,28 @@ Note: Thank all my collaborators!<br><br>This work would have not been possible<
 
 ---
 
-Thank you!
+<img src='thankyou/ppl.001.png' class='myimg' style='position:fixed;top:0px;left:0px;z-index:0'>
 
-<img src='thankyou/octocat.png' style='width:200px'><br><br>
+<img src='thankyou/ppl.002.png' class='myimg fragment fade-in' data-fragment-index="2" style='position:fixed;top:0px;left:0px;z-index:1'>
 
-<a href='https://danielhaehn.com/slides/DEFENSE'>danielhaehn.com/slides/DEFENSE</a>
+<img src='thankyou/ppl.003.png' class='myimg fragment fade-in' data-fragment-index="3" style='position:fixed;top:0px;left:0px;z-index:2'>
 
-Note: All presented projects are open source and open science<br><br>the slides are on my website<br><br>Thank you very much :)
+<img src='thankyou/ppl.004.png' class='myimg fragment fade-in' data-fragment-index="4" style='position:fixed;top:0px;left:0px;z-index:3'>
+
+<img src='thankyou/ppl.005.png' class='myimg fragment fade-in' data-fragment-index="6" style='position:fixed;top:0px;left:0px;z-index:5'>
+
+<img src='thankyou/ppl.006.png' class='myimg fragment fade-in' data-fragment-index="7" style='position:fixed;top:0px;left:0px;z-index:6'>
+
+<img src='thankyou/ppl.007.png' class='myimg fragment fade-in' data-fragment-index="8" style='position:fixed;top:0px;left:0px;z-index:7'>
+
+
+---
+
+<img src='contributions/contributions4.png'  border=0 style='height:500px;border:none;'>
+
+<center>Thank you!<br><img src='thankyou/octocat.png' style='width:50px'></center>
+
+Note: All presented projects are open source and open science<br><br>Thank you very much for your attention :)
 
 
 

@@ -7,7 +7,7 @@ revealOptions:
 ---
 <!-- (c) Daniel Haehn, https://danielhaehn.com, contact me for questions! -->
 
-Note: Good afternoon!<br><br>To summarize my defense: there is a performance gap between the brain and artificial intelligence and we need to work from both ends to reduce it<br><br>Today, I would like to start with a video showing this gap in the game of soccer
+Note: Good afternoon!<br><br>Thank you Hanspeter<br><br>Thank you committee. let me introduce..<br><br>my research targets neural networks<br><br>specifically, two types<br><br>between the two, there is a performance gap<br><br>and we need to work in both directions<br><br>Today, I would like to start with a video showing this gap in the game of soccer
 ---
 <video width="50%" height="50%" autoplay muted>
   <source src="messi_vs_robot/video.mp4" type="video/mp4">
@@ -45,7 +45,7 @@ Note: stating superhuman performance of algorithms in image processing<br><br>or
 ---
 
 <div style='position:relative;left:50px;width:500px;z-index:0'>
-<img src='ai_limitations/schoolbus.jpg' class='myimg'><br><span style='font-size:20px;position:absolute;left:20px'>Alcorn et al., arXiv 2018
+<img src='ai_limitations/schoolbus.jpg' class='myimg'><br><span style='font-size:20px;position:absolute;left:20px'>Alcorn et al., CVPR 2019
 </div>
 
 <div class='fragment fade-in' data-fragment-index="2" style='position:relative;top:30px;width:200px;right:-300px;z-index:0'>
@@ -67,7 +67,7 @@ Note: alcorn's work strike with a pose, where a network can identify a school bu
 <img src='the_gap/perception.006.png' class='myimg fragment fade-in' data-fragment-index="5" style='position:fixed;top:0px;left:0px;z-index:4'>
 
 
-Note: so there is a performance gap between the brain and AI<br><br>work in both fields to reduce the gap<br><br>
+Note: so there is a performance gap between the natural and artifical neural networks<br><br>work in both fields to reduce the gap<br><br>
 
 ---
 
@@ -265,7 +265,7 @@ Note: existing tools<br><br>Raveler, Mojo, EyeWire<br><br>limitations<br><br>we 
 
 <span style='position:absolute;z-index:1000;font-size:20px;top:600px;left:150px;width:650px'>D. Haehn, S. Knowles-Barley, M. Roberts, J. Beyer, N. Kasthuri, J.W. Lichtman, and H. Pfister. <b>Design and Evaluation of Interactive Proofreading Tools for Connectomics.</b> <i>IEEE Transactions on Visualization and Computer Graphics (IEEE SciVis)</i>, 2014.</span>
 
-
+Note: My research here was presented in Paris<br><br>targeting the question: How can we enable novices to proofread connectomics data?<br><br>as part of this requirement analysis, we designed dojo<br><br>live demo
 
 ---
 
@@ -332,6 +332,8 @@ Note: runs originally in Raveler and suggests errors to the user based on probab
 
 
 <span style='position:absolute;z-index:1000;font-size:20px;top:450px;left:100px;width:700px'>D. Haehn, V. Kaynig, J. Tompkin, J.W. Lichtman, H. Pfister. <b>Guided Proofreading of Automatic Segmentations for Connectomics.</b> <i>IEEE Computer Vision and Pattern Recognition (CVPR)</i>, 2018.</span>
+
+Note: My research here was presented at CVPR<br><br>targeting the question: How can we reduce the correction time during proofreading?<br><br>Can novices proofread on expert level?<br><br>i will now show our guided proofreading algorithm and its user interface
 
 
 ---
@@ -407,9 +409,9 @@ Note: All novices here.<br><br>Dojo is fully interactive and GP is just so much 
 
 ---
 
-<span>Proofreading will always be necessary</span>
+<span>Proofreading is necessary</span>
 <br><br>
-<span class='fragment fade-in' data-fragment-index="2">Human labor will be the bottleneck</span>
+<span class='fragment fade-in' data-fragment-index="2">Human labor is the bottleneck</span>
 <br><br>
 <span class='fragment fade-in' data-fragment-index="3">Minimizing manual work is the goal</span>
 <br><br>
@@ -452,6 +454,8 @@ Convolutional Neural Networks
 
 <span style='position:absolute;z-index:1000;font-size:20px;top:450px;left:100px;width:700px'>D. Haehn, J. Tompkin, H. Pfister. <b>Evaluating 'Graphical Perception' with CNNs.</b> <i>IEEE Transactions on Visualization and Computer Graphics (IEEE Vis)</i>, 2018.</span>
 
+
+Note: My research here was presented in Berlin last fall<br><br>lets try some of our trained models here in the browser
 
 ---
 
@@ -651,6 +655,8 @@ Note: we ran all network configurations with fixed parameters<br><br>monte carlo
 <span class='fragment fade-in' data-fragment-index="2" style='font-size:16px'>Data from MTurk, Cleveland and McGill 1984, Heer and Bostock 2010</span>
 <br><br>
 
+Note: for MTurk we ask 25 participants to estimate 10 stimuli each, CLMcG do 50 and 51 participants w/ 10 each
+
 ---
 
 
@@ -760,8 +766,7 @@ Try other architectures (Capsule Networks)<br><br>
 
 
 Note: So today I spoke about some advancements in regards to better understanding the brain and AI.<br><br>In reality, the gap between the two is very large<br><br>and we are just at the beginning in both fields.<br><br>
-massive research efforts are on the way and I am happy to contribute my share.<br><br>
-before I take questions, I would like to...
+massive research efforts are on the way and I am happy to contribute my share.
 
 ---
 
@@ -777,14 +782,21 @@ Note: Thank all my collaborators!<br><br>This work would have not been possible<
 
 <img src='thankyou/ppl.003.png' class='myimg fragment fade-in' data-fragment-index="3" style='position:fixed;top:0px;left:0px;z-index:2'>
 
-<img src='thankyou/ppl.004.png' class='myimg fragment fade-in' data-fragment-index="4" style='position:fixed;top:0px;left:0px;z-index:3'>
+<img src='thankyou/ppl.010.png' class='myimg fragment fade-in' data-fragment-index="4" style='position:fixed;top:0px;left:0px;z-index:3'>
 
-<img src='thankyou/ppl.005.png' class='myimg fragment fade-in' data-fragment-index="6" style='position:fixed;top:0px;left:0px;z-index:5'>
+<img src='thankyou/ppl.009.png' class='myimg fragment fade-in' data-fragment-index="5" style='position:fixed;top:0px;left:0px;z-index:4'>
 
-<img src='thankyou/ppl.006.png' class='myimg fragment fade-in' data-fragment-index="7" style='position:fixed;top:0px;left:0px;z-index:6'>
+<img src='thankyou/ppl.004.png' class='myimg fragment fade-in' data-fragment-index="6" style='position:fixed;top:0px;left:0px;z-index:5'>
 
-<img src='thankyou/ppl.007.png' class='myimg fragment fade-in' data-fragment-index="8" style='position:fixed;top:0px;left:0px;z-index:7'>
+<img src='thankyou/ppl.008.png' class='myimg fragment fade-in' data-fragment-index="7" style='position:fixed;top:0px;left:0px;z-index:6'>
 
+<img src='thankyou/ppl.005.png' class='myimg fragment fade-in' data-fragment-index="8" style='position:fixed;top:0px;left:0px;z-index:7'>
+
+<img src='thankyou/ppl.006.png' class='myimg fragment fade-in' data-fragment-index="9" style='position:fixed;top:0px;left:0px;z-index:8'>
+
+<img src='thankyou/ppl.007.png' class='myimg fragment fade-in' data-fragment-index="10" style='position:fixed;top:0px;left:0px;z-index:9'>
+
+Note: strong support by six women<br><br>also very thankful for my children (deadline mode/linux)<br><br>i live in harvard housing (community with kids, very happy to have alexander, jessamys son, in my life as well as aiden)<br><br>but also at harvard we are not only working hard<br><br>we go to sports events<br><br>we have a neuroscience club in the holidays<br><br>and very importantly, as part of hanspeter's research group we do professional development<br><br>the arcade at sunday river in maine, not gonna lie, one of our favorite spots<br><br>we practice aiming<br><br>and staying focused for the finish line
 
 ---
 

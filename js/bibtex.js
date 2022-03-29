@@ -617,7 +617,10 @@ function BibtexDisplay() {
             if (key == "AUTHOR") {
                 var smaller = false;
                 var how = -1;
-                if (value.length > 200) {
+                if (value.length > 250) {
+                    smaller = true;
+                    how = '.65';
+                } else if (value.length > 200) {
                     smaller = true;
                     how = '.75';
                 } else if (value.length > 130) {
@@ -645,6 +648,8 @@ function BibtexDisplay() {
                 value = this.fixValue(value);
                 if (value.length > 80) {
                     value = "<span style='font-size:.94em'>" + value + "</span>";                
+                } else if (value.length == 69) {
+                    value = "<span style='font-size:.9em'>" + value + "</span>";
                 } else if (value.length > 73) {
                     value = "<span style='font-size:.92em'>" + value + "</span>";
                 } else if (value.length > 69) {

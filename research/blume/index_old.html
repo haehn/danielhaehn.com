@@ -34,18 +34,30 @@
 
         var cmaps = nv1.colorMaps();
  
+        var nv2 = new niivue.Niivue();
+        nv2.attachTo('gl2');
+        nv2.loadVolumes(data);
+        nv2.setCrosshairColor([0,0,0,0]);
+        nv2.setSliceType(nv1.sliceTypeCoronal);
+
         var colors = [18, 21, 27, 28, 34];
+        // nv1.volumes[0].colorMap = cmaps[colors[0]];
+        // nv2.volumes[0].colorMap = cmaps[colors[0]];
+        // nv1.updateGLVolume();
+        // nv2.updateGLVolume();
 
         var j = 0;
         window.onkeypress = function(e) {
 
-          if (e.code == 'Space') { 
+          if (e.code == 'Space') {
             j++;
             if (j == colors.length) {
               j = 0;
             }
             nv1.volumes[0].colorMap = cmaps[colors[j]];
+            nv2.volumes[0].colorMap = cmaps[colors[j]];
             nv1.updateGLVolume();
+            nv2.updateGLVolume();
 
           }
 
@@ -55,8 +67,11 @@
     </script>
   </head>
   <body>
-    <div style='height:100%;width:100%;float:left;'>
+    <div style='height:100%;width:50%;float:left;'>
       <canvas id='gl1'></canvas>
+    </div>
+    <div style='height:100%;width:50%;float:left'>
+      <canvas id='gl2'></canvas>
     </div>
   </body>
 </html>

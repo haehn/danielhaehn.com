@@ -1,1 +1,0 @@
-reveal-md a.md --css styles.css --scripts main.js --theme theme.css

@@ -5,7 +5,16 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link rel="stylesheet" type="text/css" href="css/tooltips.css" />
 
-    <title>My Website</title>
+
+    <script type='text/javascript' src='js/jquery.js'></script>
+    <script type='text/javascript' src='js/moment.js'></script>
+
+    <script type='text/javascript' src='js/main.js'></script>
+    <script type='text/javascript' src='js/bibtex.js'></script>
+
+    <bibtex src='pub.bib'></bibtex>
+
+    <title>DANIELHAEHN.com</title>
     <style>
 
     </style>
@@ -46,6 +55,63 @@
           
           </div>
  -->
+<!--           <button>My C.V.</button>
+          <button>Machine Psychology</button>
+          <button>CS460 Graphics</button>
+          <button>CS410 Software Engineering</button>
+          <button>CS666 Biomedical Imaging</button> -->
+
+
+      <div class='margin50'><a name='publications'></a>
+          <!-- <span class='biggerwhite'>PUBLICATIONS</span> -->
+
+          <div class="bibtex_template">
+
+            <div class="pub">
+              <a class='bibtexVar' href='papers/?+BIBTEXKEY+' extra='BIBTEXKEY'><img class='bibtexVar thumbnail' src='papers/+BIBTEXKEY+.png' width=150 height=150 extra="BIBTEXKEY"></a>
+              <a class='bibtexVar' href='papers/?+BIBTEXKEY+' extra='BIBTEXKEY'><span class='white title'></span></a>
+            </div>
+
+<!-- 
+            <table class='pubtable'>
+              <tr>
+                <td class='padding10' style='width:150px' valign='top'><a class='bibtexVar' href='papers/?+BIBTEXKEY+' extra='BIBTEXKEY'><img class='bibtexVar thumbnail' src='papers/+BIBTEXKEY+.png' width=150 height=150 extra="BIBTEXKEY"></a></td>
+                <td class='small' valign='top'>
+                  <span class='small gray author'><span class="first_initial"></span> <span class="von"></span><span class="last"></span><span class="junior"></span></span><br>
+                  <a class='bibtexVar' href='papers/?+BIBTEXKEY+' extra='BIBTEXKEY'><span class='white title'></span></a><br>
+                  <span class='small lightgray journal'></span><span class='small lightgray booktitle'></span>, <span class='small lightgray year'></span><br>
+                  <span class='small bib_optional bibtexVar' extra='SPOTLIGHT' href='+SPOTLIGHT+'>Spotlight Presentation <img src='gfx/award.png' width=17 height=20><br></span>
+                  <span class='small bib_optional bibtexVar' extra='BESTPAPER' href='+BESTPAPER+'>Best Paper Award <img src='gfx/award.png' width=17 height=20><br></span>
+                  <span class='small gray'>
+                    <a class='bibtexVar' target='_blank' href='papers/+BIBTEXKEY+.pdf' extra='BIBTEXKEY'>Paper</a> |
+
+                    <span class='bib_optional bibtexVar' extra='SUPPLEMENTAL' href='+SUPPLEMENTAL+'><a class='bibtexVar' extra='SUPPLEMENTAL' href='+SUPPLEMENTAL+' target='_blank'>Supplemental</a> | </span>
+
+                    <span class='bib_optional bibtexVar' extra='WEBSITE' href='+WEBSITE+'><a class='bibtexVar' extra='WEBSITE' href='+WEBSITE+' target='_blank'>Website</a> | </span>       
+
+                    <span class='bib_optional bibtexVar' extra='FASTFORWARD' href='+FASTFORWARD+'><a class='bibtexVar' extra='FASTFORWARD' href='+FASTFORWARD+' target='_blank'>Fast Forward</a> | </span>   
+
+                    <span class='bib_optional bibtexVar' extra='VIDEO' href='+VIDEO+'><a class='bibtexVar' extra='VIDEO' href='+VIDEO+' target='_blank'>Video</a> | </span>        
+
+                    <span class='bib_optional bibtexVar' extra='CODE' href='+CODE+'><a class='bibtexVar' extra='CODE' href='+CODE+' target='_blank'>Code</a> | </span>                    
+                     
+                    <span class='bib_optional bibtexVar' extra='DATA' href='+DATA+'><a class='bibtexVar' extra='DATA' href='+DATA+' target='_blank'>Data</a> | </span>                    
+
+                    <span class='bib_optional bibtexVar' extra='POSTER' href='+POSTER+'><a class='bibtexVar' extra='POSTER' href='+POSTER+' target='_blank'>Poster</a> | </span>                                          
+
+                    <a class="bibtexVar" role="button" data-toggle="collapse" data-taget="#bib+BIBTEXKEY+" href="#bib+BIBTEXKEY+" onclick="$('#'+this.href.split('#')[1]).toggle(); return false;" extra="BIBTEXKEY">Bibtex</a>
+                  </span> 
+                  <div class="bibtexVar collapse white small" style='display:none;width:450px;' id="bib+BIBTEXKEY+" extra="BIBTEXKEY">
+                    <pre style="overflow:auto"><span class="bibtexraw noread"></span></pre>
+                  </div>                   
+                </td>                                
+              </tr>  
+            </table>       -->
+          </div>
+
+          <div id='bibtex_display'></div>
+
+        <br><br><br><br><br><br><span id='bockwurst'>LANG LEBE DIE BOCKWURST!</span><br><br><br>
 
         </div>
 

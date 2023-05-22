@@ -103,6 +103,15 @@ a:hover {
   box-sizing: border-box;
 }
 
+
+#bockwurst {
+    color: black;
+}
+
+#bockwurst:hover {
+    color: hotpink;
+}
+
 /*
  *
  * FONTZ
@@ -139,6 +148,36 @@ smallhighlight {
   text-decoration-thickness: 1px;
   font-size: 1.3em;
   font-weight: bold;
+}
+
+.margin50 {
+    margin-top: 50px;
+}
+
+/**
+ * BUTTONS
+ */
+button {
+/*  background-color: var(--linkblue);*/
+  background-color: rgba(0,0,0,0);
+/*  border: none;*/
+  border: solid thin white;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  font-family: oswald_medium;
+}
+
+button:hover {
+  background-color: white; 
+  color: black; 
+/*  border: 2px solid #4CAF50;*/
 }
 
 
@@ -179,4 +218,92 @@ smallhighlight {
 }
 .icon-book:before {
     content: "\e921"
+}
+
+
+
+
+/* BIBTEX */
+.danielhaehn {
+    text-decoration: underline;
+}
+
+.thumbnail {
+    border: solid thin var(--linkblue);
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);    
+}
+
+.pub {
+  float:left;
+}
+
+.pubtable {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-right: solid medium black;
+}
+
+.pubtable:hover {
+/*    border: solid medium var(--linkblue);*/
+/*    background:  var(--umbblue);*/
+    color:white;
+}
+
+.pub:hover .thumbnail {
+    filter: grayscale(0%);
+}
+
+.pubtable a {
+    color: white;
+    font-weight: bold;
+
+}
+
+.pubtable:hover a {
+    color: var(--linkblue);
+      text-decoration: underline solid white;
+  text-decoration-thickness: 1px;
+/*  color: white;*/
+}
+
+.pubtable:hover a:hover {
+    color: white;
+}
+
+.pubtable:hover .title {
+/*    color: var(--linkblue);*/
+/*color:white;*/
+}
+
+.bibtexVar[href='undefined'] {
+    display: none;
+}
+
+[data-innerText]::after {
+  content: attr(data-innerText);
+}
+
+.file_icon {
+    filter: grayscale(100%);
+}
+
+.file_icon:hover {
+    filter: grayscale(0%);
+}
+
+/* DOCUMENTS */
+.document {
+  margin-top: 50px;
+}
+
+.document_thumb {
+  margin-left: 20px;
+  border: solid thin var(--linkblue);
+  vertical-align: middle;
+}
+
+.document_title {
+  margin-left: 20px;
 }

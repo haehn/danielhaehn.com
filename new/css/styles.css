@@ -8,6 +8,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: oswald;
+  background-color: black;
+  color: white;
 }
 
 a {
@@ -43,7 +45,7 @@ a:hover {
   bottom: 0;
   left: 0;
   width: 30%;
-  height: min(50px,5vw);
+/*  height: min(50px,5vw);*/
   background-color: rgba(35, 35, 35, 0.5);
 
   font-family: icomoon!important;
@@ -61,7 +63,7 @@ a:hover {
   text-decoration: none;
   letter-spacing: -2px; 
   text-align: center;
-  padding-top: 10px;
+  padding: 10px;
 }
 
 
@@ -83,14 +85,13 @@ a:hover {
   color: white;
   box-sizing: border-box;
   align-items:center;
-  font-size:clamp(20px, 2.3vw, 30px);
+  font-size:25px;
   border-bottom: solid 1px var(--border);
-  height: 13%;
 }
 
 .header img {
   float:right;
-  width:clamp(100px, 15vw, 200px);
+  width:150px;
   position: absolute;
   right: 15px;
 }
@@ -99,8 +100,9 @@ a:hover {
   background-color: black;
   padding: 40px;
   overflow-y: scroll;
-  height: 87%;
+  height: 100%;
   box-sizing: border-box;
+  height: calc(100% - 115px);
 }
 
 
@@ -222,7 +224,6 @@ button:hover {
 
 
 
-
 /* BIBTEX */
 .danielhaehn {
     text-decoration: underline;
@@ -232,49 +233,47 @@ button:hover {
     border: solid thin var(--linkblue);
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);    
+    
+    max-width: 100%;
+    min-width: 10px;
+    height: auto;
 }
 
 .pub {
   float:left;
 }
 
-.pubtable {
-    width: 100%;
-    padding-right: 10px;
-    padding-left: 10px;
-    border-right: solid medium black;
-}
-
-.pubtable:hover {
-/*    border: solid medium var(--linkblue);*/
-/*    background:  var(--umbblue);*/
-    color:white;
+.pub .thumbnail {
+  vertical-align: middle;
 }
 
 .pub:hover .thumbnail {
     filter: grayscale(0%);
 }
 
-.pubtable a {
-    color: white;
-    font-weight: bold;
-
+.pub .title {
+  font-size: 30px;
 }
 
-.pubtable:hover a {
-    color: var(--linkblue);
-      text-decoration: underline solid white;
-  text-decoration-thickness: 1px;
-/*  color: white;*/
+.pub .journal {
+  font-size: 20px;
+  color: gray;
 }
 
-.pubtable:hover a:hover {
-    color: white;
+.pub .booktitle {
+  font-size: 20px;
+  color: gray;
+}
+
+.pub .year {
+  font-size: 20px;
+  color: gray;
 }
 
 .pubtable:hover .title {
 /*    color: var(--linkblue);*/
 /*color:white;*/
+
 }
 
 .bibtexVar[href='undefined'] {

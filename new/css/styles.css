@@ -131,6 +131,20 @@ a:hover {
     line-height: 120%;
 }
 
+
+.small {
+    font-size: .8em;
+}
+
+.gray {
+    color: gray;
+}
+
+.lightgray {
+    color: lightgray;
+}
+
+
 .mediumwhite{
     letter-spacing: -1px; 
     color: white;

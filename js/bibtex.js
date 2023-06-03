@@ -646,15 +646,15 @@ function BibtexDisplay() {
             // FIX FOR LONG TITLES
             } else if (key == "TITLE") {
                 value = this.fixValue(value);
-                if (value.length > 80) {
-                    value = "<span style='font-size:.94em'>" + value + "</span>";                
-                } else if (value.length == 69) {
-                    value = "<span style='font-size:.9em'>" + value + "</span>";
-                } else if (value.length > 73) {
-                    value = "<span style='font-size:.92em'>" + value + "</span>";
-                } else if (value.length > 69) {
-                    value = "<span style='font-size:.95em'>" + value + "</span>";
-                }
+                // if (value.length > 80) {
+                //     value = "<span style='font-size:.94em'>" + value + "</span>";                
+                // } else if (value.length == 69) {
+                //     value = "<span style='font-size:.9em'>" + value + "</span>";
+                // } else if (value.length > 73) {
+                //     value = "<span style='font-size:.92em'>" + value + "</span>";
+                // } else if (value.length > 69) {
+                //     value = "<span style='font-size:.95em'>" + value + "</span>";
+                // }
             } else {
                 value = this.fixValue(value);
             }

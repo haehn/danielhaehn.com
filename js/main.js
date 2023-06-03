@@ -1,67 +1,15 @@
-      window.COOLROTATION = 0;
 
-      window.TICKLEOFFSET = 1000;
+console.log('%cFREE KEVIN', 'font-weight:1000;color: black; background: orange; padding:10px; font-size: 120px');
 
-      window.onload = function() {
+RAINBOW = false;
+toggle_rainbow = function() {
+  if (!RAINBOW) {
+    document.getElementById('rainbow').style.display = 'block';
+    RAINBOW = true;
+  } else {
+    document.getElementById('rainbow').style.display = 'none';
+    RAINBOW = false;
+  }
+  
+};
 
-        var me_cube = document.getElementById('me_cube');
-
-        me_cube.onclick = function() {
-
-          clearTimeout(window.TICKLEINTERVAL_A);
-          clearTimeout(window.TICKLEINTERVAL_B);
-          clearTimeout(window.TICKLEINTERVAL_C);
-          clearInterval(window.TICKLEINTERVAL);
-
-          window.COOLROTATION += 90;
-
-          me_cube.classList.add('spin');
-
-          var me_container = document.getElementById('me_container');
-
-          var t_str = 'translateX(40px) rotateY(' + window.COOLROTATION + 'deg) translateX(-40px)';
-          me_cube.style.transform = t_str;
-          me_cube.style.webkitTransform = t_str;
-          me_cube.style.mozTransform = t_str;
-
-          me_container.classList.add('blur');
-
-          setTimeout(function() {
-            me_container.classList.remove('blur');
-          }, 250);
-
-        };
-
-        window.TICKLEINTERVAL = setInterval(function() {
-
-          window.TICKLEINTERVAL_A = setTimeout(function(){
-            var t_str = 'translateX(40px) rotateY(7deg) translateX(-40px)';
-            me_cube.style.transform = t_str;
-            me_cube.style.webkitTransform = t_str;
-            me_cube.style.mozTransform = t_str;
-
-
-          },TICKLEOFFSET+1000);
-
-          window.TICKLEINTERVAL_B = setTimeout(function(){
-
-            var t_str = 'translateX(40px) rotateY(0deg) translateX(-40px)';
-            me_cube.style.transform = t_str;
-            me_cube.style.webkitTransform = t_str;
-            me_cube.style.mozTransform = t_str;            
-
-          },TICKLEOFFSET+1500);
-
-          window.TICKLEINTERVAL_C = setTimeout(function(){
-            
-            var t_str = 'translateX(40px) rotateY(0deg) translateX(-40px)';
-            me_cube.style.transform = t_str;
-            me_cube.style.webkitTransform = t_str;
-            me_cube.style.mozTransform = t_str;            
-
-          },TICKLEOFFSET+2000);        
-
-        }, 30000);
-
-
-      };

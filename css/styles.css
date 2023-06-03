@@ -1,106 +1,123 @@
-/*
-
-                                   X
-                                   XX
-                          X        XXX
-                          XX       XXXX
-                          XXX      XXXX
-                          XXXX     XXXX
-                          XXXXX    XXXX
-                           XXXXX   XXXX
-                            XXXXX  XXXX
-                             XXXX  XXXX
-                              XXX  XXX
-                               XX  XX
-                              XXXXXXXXXX
-                             XXXXXXXXOXXXX
-                             XXXXXXXXXXXXXX
-                             XXXXXXXXXXXXXX
-                             XXXXXXXXXXXXX
-                              XXXXXXXXXX
-                              XXXXXXXXX
-                             XXXXXXXXXX
-                           XXXXXXXXXXXX
-                         XXXXXXXXXXXXXX
-                       XXXXXXXXXXXXXXXXX
-                     XXXXXXXXXXXXXXXXXXX
-                   XXXXXXXXXXXXXXXXXXXXX
-                 XXXXXXXXXXXXXXXXXXXXXXX
-               XXXXXXXXXXXXXXXXXXXXXXXXX
-              XXXXXXXXXXXXXXXXXXXXXXXXX
-             XXXXXXXXXXXXXXXXXXXXXXXXX
-            XXXXXXXXXXXXXXXXXXXXXXXXX
-            XXXXXXXXXXXXXXXXXXXXXXXXXX
-   XXXXX    XXXXXXXXXXXXXXXXXXXXXXXXXXX
- XXXXXXXXX  XXXXXXXXXXXXXXXXXXXXXX XXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    XXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX      XXXXX
- XXXXXXXXX  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-   XXXXX      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
- https://danielhaehn.com
- 
- email me!   d <AT> e y - i . o r g
-
- PZ.
-
-*/
-
-
-
-/*
- *
- * ICONS
- *
- */
+:root {
+  --umbblue: #005a8c;
+  --linkblue: #007fc4;
+  --border: #696969;
+}
 
 body {
-    background: black;
-    color: white;
-    font-family: oswald;
+  margin: 0;
+  padding: 0;
+  font-family: oswald;
+  background-color: black;
+  color: white;
 }
 
 a {
-    color: hotpink;
-    text-decoration: none;
-    cursor: hand;
+  color: var(--linkblue);
+  text-decoration: none;
+  cursor: hand;
 }
 
 a:hover {
-    color: white;
+  color: white;
 }
 
-/*
- *
- * LAYOUT
- *
- */
 
-#container {
-    margin:0 auto;
-    width: 1000px;
-    max-width: 1000px;
+
+.left {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
 }
 
-#left {
-    left: 0px;
-    top: 0px;
-    width: 200px;
-    text-align: right;
-    padding: 24px;
-    float: left;
-    color: gray;
-    font-family: oswald;
+.image {
+  background-image: url('../gfx/me.jpg');
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+  min-height: 100%;
+  max-width: 30%;
+  border-right: solid 1px var(--border);
 }
 
-#right {
-    float: right;
-    right: 0px;
-    top: 0px;
-    width: 650px;
-    /*padding: 30px;*/
-/*    position: absolute;;*/
-    font-size: 1.5em;
+.icons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  background-color: rgba(35, 35, 35, 0.5);
+
+  font-family: icomoon!important;
+  font-size: min(30px,4vw);
+  color: white;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-decoration: none;
+  letter-spacing: -2px; 
+  text-align: center;
+  padding: 10px;
+}
+
+
+
+.right {
+  flex: 1;
+  overflow-y: hidden;
+  padding: 0px;
+  color: white;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  flex: 1;
+  width:100%;
+  padding: 20px;
+  background-color: var(--umbblue);
+  color: white;
+  box-sizing: border-box;
+  align-items:center;
+  font-size:25px;
+  border-bottom: solid 1px var(--border);
+}
+
+.header img {
+  float:right;
+  width:150px;
+  position: absolute;
+  right: 15px;
+}
+
+.content {
+  background-color: black;
+  padding: 40px;
+  overflow-y: scroll;
+  height: 100%;
+  box-sizing: border-box;
+  height: calc(100% - 115px);
+}
+
+
+#bockwurst {
+    color: black;
+}
+
+#bockwurst:hover {
+    color: hotpink;
+}
+
+#heart {
+  border: solid thin white;
+  width: 44px;
+  vertical-align: bottom;
+  cursor: pointer;
 }
 
 /*
@@ -113,8 +130,16 @@ a:hover {
     font-family: oswald_medium;
 }
 
-.padding10 {
-    padding: 10px;
+.biggerwhite {
+    letter-spacing: -1px; 
+    color: white;
+    font-size: max(30px,3vw);
+    line-height: 120%;
+}
+
+
+.small {
+    font-size: .8em;
 }
 
 .gray {
@@ -125,130 +150,64 @@ a:hover {
     color: lightgray;
 }
 
-.pink {
-    color: hotpink;
-}
 
-.white {
+.mediumwhite{
+    letter-spacing: -1px; 
     color: white;
-    break-inside: none;
+    font-size: max(20px,2vw);
+    line-height: 120%;
 }
 
-.littlesmaller {
-    font-size: .99em;
+highlight {
+  text-decoration: underline solid white;
+  text-decoration-thickness: 2px;
+  font-size: 1.4em;
+  font-weight: bold;
 }
 
-.small {
-    font-size: .8em;
-}
-
-.tiny {
-    font-size: .6em;
-}
-
-.supertiny {
-    font-size: .5em;
+smallhighlight {
+  text-decoration: underline solid white;
+  text-decoration-thickness: 1px;
+  font-size: 1.3em;
+  font-weight: bold;
 }
 
 .margin50 {
     margin-top: 50px;
 }
 
-.biggerwhite {
-    letter-spacing: -1px; 
-    color: white;
-    font-size: x-large;
-    line-height: 80%;
-
-}
-
-/*
- *
- * COOL STUFF
- *
+/**
+ * BUTTONS
  */
-
-/* inspired by https://codepen.io/joshbader/pen/fFLno */
-#me_container {
-    position: relative;
-    width: 150px;
-    height: 200px;
-    /*margin: 20px auto;*/
-    perspective: 1000px;
+button {
+/*  background-color: var(--linkblue);*/
+  background-color: rgba(0,0,0,0);
+/*  border: none;*/
+  border: solid thin white;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  font-family: oswald_medium;
 }
 
-#me_info {
-    position: relative;
-    margin-top: 60px;
+button:hover {
+  background-color: white; 
+  color: black; 
+/*  border: 2px solid #4CAF50;*/
 }
 
-#me_cube {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: all 250ms;
-    /*transform: translateX(37.5px) rotateX(0) translateX(-37.5px);*/
-}
-
-#me_cube figure {
-    position: absolute;
-    display: block;
-    width: 150px;
-    height: 200px;
-    /*margin-bottom: 10px;*/
-    border: 1px solid darkgray;
-    cursor: pointer;
-}
-
-
-#me_cube .front { transform: rotateY(0deg) translateZ(75px); }
-#me_cube .back { transform: rotateX(180deg) translateZ(75px); }
-#me_cube .right { transform: rotateY(90deg) translateZ(75px); }
-#me_cube .left { transform: rotateY(-90deg) translateZ(75px); }
-#me_cube .top { transform: rotateX(90deg) translateZ(100px); }
-#me_cube .bottom { transform: rotateX(-90deg) translateZ(100px); }
-
-.blur { animation: blur 250ms; }
-
-@keyframes blur {
-    0% { -webkit-filter: blur(0px); }
-    50% { -webkit-filter: blur(5px); }
-    100% { -webkit-filter: blur(0px); }
-}
-
-#bockwurst {
-    color: black;
-}
-
-#bockwurst:hover {
-    color: hotpink;
-}
-
-.video {
-    border: thin solid white;
-}
 
 /*
  *
  * ICONS
  *
  */
-.icons {
-    font-family: icomoon!important;
-    speak: none;
-    font-style: normal;
-    font-weight: 400;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    display: inline-block;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-decoration: none;
-    letter-spacing: -2px; 
-    padding-right: 6px;
-}
 .icon-left-arrow:before {
     content: "\ea38"
 }
@@ -283,46 +242,66 @@ a:hover {
     content: "\e921"
 }
 
+
+
 /* BIBTEX */
 .danielhaehn {
     text-decoration: underline;
 }
 
 .thumbnail {
-    border: solid thin gray;
+    border: solid thin var(--linkblue);
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);    
+    
+    max-width: 100%;
+    min-width: 10px;
+    height: auto;
 }
 
-.pubtable {
-    width: 660px;
-    padding-right: 10px;
-    border-right: solid medium black;
+.pub {
+  float:left;
+  padding-bottom: 30px;
 }
 
-.pubtable:hover {
-    border-right: solid medium hotpink;
-    /*background: hotpink;*/
+.pub_text {
+  padding-left:10px;
+  float:left; 
+  vertical-align: center; 
+  width:600px
 }
 
-.pubtable:hover .thumbnail {
+.pub .thumbnail {
+  vertical-align: middle;
+}
+
+.pub:hover .thumbnail {
     filter: grayscale(0%);
 }
 
-.pubtable a {
-    color: white;
+.pub .title {
+  font-size: 30px;
 }
 
-.pubtable:hover a {
-    color: hotpink;
+.pub .journal {
+  font-size: 20px;
+  color: gray;
 }
 
-.pubtable:hover a:hover {
-    color: white;
+.pub .booktitle {
+  font-size: 20px;
+  color: gray;
+}
+
+.pub .year {
+  font-size: 20px;
+  color: gray;
 }
 
 .pubtable:hover .title {
-    color: hotpink;
+/*    color: var(--linkblue);*/
+/*color:white;*/
+
 }
 
 .bibtexVar[href='undefined'] {
@@ -348,7 +327,7 @@ a:hover {
 
 .document_thumb {
   margin-left: 20px;
-  border: solid thin hotpink;
+  border: solid thin var(--linkblue);
   vertical-align: middle;
 }
 

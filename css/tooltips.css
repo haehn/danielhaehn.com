@@ -9,20 +9,21 @@
 
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 80px;
+/*    width: 10vw;*/
 
-    background-color: gray;
+    background: rgba(35, 35, 35, 0.5);
     color: white;
     text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
+    border-radius: 0px;
+    padding: 10px;
     position: absolute;
+    white-space: nowrap;
     z-index: 1;
-/*    top: 120%;
-    left: 50%;*/
-    margin-top: 30px;
-    margin-left: -46px;
-    font-size: 12px;    
+/*    top: 120%;*/
+/*    left: 50%;*/
+    margin-top: -3vw;
+/*    margin-left: -46px;*/
+    font-size: 2vw;    
     font-family: oswald;
     /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
     opacity: 0;
@@ -31,16 +32,16 @@
     
 }
 
-.tooltip .tooltiptext::after {
+/*.tooltip .tooltiptext::after {
     content: "";
     position: absolute;
-    bottom: 100%;
+/*    top: 100%;
     left: 50%;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
     border-color: transparent transparent gray transparent;
-}
+}*/
 
 .tooltip:hover .tooltiptext {
     visibility: visible;

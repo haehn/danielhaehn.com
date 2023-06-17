@@ -97,7 +97,7 @@ a:hover {
 
 .content {
   background-color: black;
-  padding: 40px;
+  padding: 30px;
   overflow-y: scroll;
   height: 100%;
   box-sizing: border-box;

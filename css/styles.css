@@ -31,20 +31,21 @@ a:hover {
 }
 
 .image {
-  background-image: url('../gfx/me8.jpg');
+  background-image: url('../gfx/me10.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: top;
   flex: 1;
   min-height: 100%;
   max-width: 30%;
   border-right: solid 1px var(--border);
+  filter: grayscale(.2);
 }
 
 .icons {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 30%;
+  /*width: 30%;*/
   background-color: rgba(35, 35, 35, 0.5);
 
   font-family: icomoon!important;
